@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section >
+    <div class="wrapper reservation">
+        <div class="flexbox _content-sb mb60">
+            <div class="meeting-form">
+                <h4>
+                    [[#{Pleasefillincarefully}]]
+                </h4>
+                <ul id="app">
+                    <li>
+                        <span class="required">*</span>
+                        <div class="bm-selector bm-selector1">
+                            <input type="hidden" name="meetingRoomId" id="meetingRoomId"/>
+                            <div class="bm-selector__value bm-selector__value1" data-value="" id="meetingName">
+                                [[#{PleaseSelect}]]
+                            </div>
+                            <ul class="bm-selector__options bm-selector__options1">
+                            </ul>
+                        </div>
+                        <img onclick="bm.showMeetingInfo()" th:src="@{/img/eye.png}" alt="">
+                    </li>
+                    <li>
+                        <span class="required">*</span> <input type="text" name="applicant" th:placeholder="#{applicant}" />
+                    </li>
+                    <li>
+                        <span class="required">*</span> <input type="text" name="meetingTitle" th:placeholder="#{nameofthemeeting}" />
+                    </li>
+                    <li>
+                        <span class="required">*</span> <input type="text" name="meetingType" th:placeholder="#{typeofthemeeting}" />
+                    </li>
+                    <li>
+                        <span class="required">*</span>
+                        <input type="hidden" name="startTime" id="startTime" />
+                        <el-date-picker class="startDate" v-model="startDate" type="date" @change="changeStartDate" th:placeholder="#{starttimeofthemeeting}"></el-date-picker>
+                        <el-time-select class="startTime" v-model="startTime" @change="changeStartTime" :picker-options="pickerOptions"></el-time-select>
+                    </li>
+                    <li>
+                        <span class="required">*</span>
+                        <input type="hidden" name="endTime" id="endTime" />
+                        <el-select
+                                class="endTime"
+                                ref="selectEndTime"
+                                v-model="endTime"
+                                th:placeholder="#{endtimeofthemeeting}"
+                                @visible-change="visibleChange"
+                                @change="changeEndTime">
+                            <el-option
+                                    v-for="item in timeOptions"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                        <el-dialog
+                                :visible.sync="dialogVisible"
+                                class="endTimeDialog">
+                            <div class="meetingTime">[[#{DurationOfMeeting}]]：<span id="meetingTime"></span></div>
+                            <el-select class="startDate startDateDialog" v-model="endDateDialog" @change="changeEndDateDialog">
+                                <el-option
+                                        v-for="item in endDateOptions"
+                                        :key="item.value"
+                                        :label="item.label"
+                                        :value="item.value">
+                                </el-option>
+                            </el-select>
+                            <el-time-select style="margin-left: 0" class="startTime startTimeDialog" v-model="endTimeDialog" @change="changeEndTimeDialog" :picker-options="pickerTimeOptions"></el-time-select>
+
+                            <span slot="footer" class="dialog-footer">
+                                <el-button @click="dialogVisible = false">[[#{cancel}]]</el-button>
+                                <el-button type="primary" @click="dialogVisible = false">[[#{confirm}]]</el-button>
+                              </span>
+                        </el-dialog>
+                    </li>
+                    <li>
+                        <span class="required">*</span>
+<!--                        <div class="bm-selector bm-selector2">-->
+                        <input type="hidden" name="peoples" id="peoples"/>
+                        <span>[[#{Pleaseselectthenumberofparticipants}]]</span>
+<!--                            <div class="bm-selector__value bm-selector__value2" data-value="">-->
+<!--                                [[#{Pleaseselectthenumberofparticipants}]]-->
+<!--                            </div>-->
+<!--                            <ul class="bm-selector__options bm-selector__options2">-->
+<!--                            </ul>-->
+                            <el-slider style="width: 65%; margin-left: 10%" v-model="peopleNum" range show-stops :min="min" :max="max" @change="changePeopleNum"></el-slider>
+<!--                        </div>-->
+                    </li>
+
+                    <li>
+                        <span class="required"></span> <textarea th:placeholder="#{Remark}" name="remarks" cols="30" rows="4"></textarea>
+                    </li>
+                    <li>
+                        <span class="required">*</span>
+                        <div class="check-wrap">
+                            <p>
+                                [[#{meetingservice}]]
+                            </p>
+                            <div class="check-items">
+                                <label><input name="services" value="茶水" type="checkbox" /><span>[[#{tea}]]</span> </label>
+                                <label><input name="services" value="纸" type="checkbox" /><span>[[#{paper}]]</span> </label>
+                                <label><input name="services" value="笔" type="checkbox" /><span>[[#{pen}]]</span> </label>
+                                <label><input name="services" value="麦克" type="checkbox" /><span>[[#{microphone}]]</span> </label>
+                                <!--                <label><input name="services" value="音响" type="checkbox" /><span>音响</span> </label> -->
+                                <!--                <label><input name="services" value="讲台" type="checkbox" /><span>讲台</span> </label>-->
+                                <label><input name="services" value="大屏" type="checkbox" /><span>[[#{bigscreen}]]</span> </label>
+                                <!--                <label><input name="services" value="桌椅" type="checkbox" /><span>桌椅</span> </label>-->
+                                <label><input name="services" value="桌牌" type="checkbox" /><span>[[#{seatcard}]]</span> </label>
+                                <label><input name="services" value="指示牌" type="checkbox" /><span>[[#{indicatorboard}]]</span> </label>
+                                <!--                <label><input name="services" value="其他" type="checkbox" /><span>其他</span> </label>-->
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="theme-button mt40" onclick="bm.meetingApply()">
+                            [[#{Submit}]]
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-calendar">
+                <div class="mt-calendar__header">
+                    [[#{reservationstatus}]]<span class="mt-calendar__header__tips"></span>
+                </div>
+                <div class="mt-calendar__body">
+                    <div class="mt-calendar__body__week">
+                        <div>
+                            [[#{Mon}]]
+                        </div>
+                        <div>
+                            [[#{Tue}]]
+                        </div>
+                        <div>
+                            [[#{Wed}]]
+                        </div>
+                        <div>
+                            [[#{Thu}]]
+                        </div>
+                        <div>
+                            [[#{Fri}]]
+                        </div>
+                        <div>
+                            [[#{Sat}]]
+                        </div>
+                        <div>
+                            [[#{Sun}]]
+                        </div>
+                    </div>
+                    <div class="mt-calendar__body__date" id="calendar-date">
+                    </div>
+                </div>
+                <div class="mt-calendar__footer">
+                    <div class="mt-calendar__btn mt-calendar__btn--prev">
+                        [[#{lastmonth}]]
+                    </div>
+                    <div class="mt-calendar__footer__date" id="calendar-month">
+                        2022-09
+                    </div>
+                    <div class="mt-calendar__btn mt-calendar__btn--next">
+                        [[#{nextmonth}]]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="mt-modal" id="calendarModal">
+        <div class="mt-modal__header">
+            <div class="mt-modal__title">
+                [[#{AppointmentDetails}]]<span class="sub" id="dateShow"></span>
+            </div>
+            <i class="iconfont icon-Frame mt-modal__close"></i>
+        </div>
+        <div class="mt-modal__body">
+            <table class="mt-modal__table">
+                <thead>
+                <tr>
+                    <th>
+                        [[#{NameOfMeeting}]]
+                    </th>
+                    <th>
+                        [[#{applicant}]]
+                    </th>
+                    <th>
+                        [[#{MeetingTime}]]
+                    </th>
+                    <th>
+                        [[#{VenueOfMeeting}]]
+                    </th>
+                    <th>
+                        [[#{Operation}]]
+                    </th>
+                </tr>
+                </thead>
+                <tbody id="calendarModalBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="mt-modal" id="meetingInfoDetailModal">
+        <div class="mt-modal__header">
+            <div class="mt-modal__title">
+                [[#{MeetingRoomDetails}]]<span class="sub" id="meetingInfoName"></span>
+            </div>
+            <i class="iconfont icon-Frame mt-modal__close"></i>
+        </div>
+        <div class="mt-modal__body">
+            <div class="detail_span">
+                <span>[[#{OverallEnvironmentDetail}]]：</span>
+                <span id="env_detail"></span>
+            </div>
+            <div class="detail_span">
+                <span>[[#{ContactInformation}]]：</span>
+                <span id="receive_email"></span>
+            </div>
+            <div class="detail_span margin-top-detail" id="img_span">[[#{PictureOfEnvironment}]]</div>
+            <div id="env_detail_img" style="word-wrap: break-word;" class="ma5-gallery">
+
+            </div>
+        </div>
+    </div>
+    <!-- flatpicker -->
+<!--    <link rel="stylesheet" href="/js/flatpicker/flatpicker.min.css" />-->
+    <link rel="stylesheet" href="/ma5gallery/ma5gallery.css" />
+    <link rel="stylesheet" href="/element-ui/element-ui.css" />
+<!--    <script src="/js/flatpicker/flatpicker.min.js"></script>-->
+<!--    <script src="/js/flatpicker/flatpicker.zh.js"></script>-->
+<!--    <script src="/js/flatpicker/flatpicker.ru.js"></script>-->
+    <script src="/js/vue@2.6.0.js"></script>
+    <script src="/element-ui/element-ui.js"></script>
+    <script src="/element-ui/local/vue-i18n.js"></script>
+    <script src="/element-ui/local/zh_CN.js"></script>
+    <script src="/element-ui/local/en_US.js"></script>
+    <script src="/element-ui/local/ru_RU.js"></script>
+    <script src="/js/meeting.js"></script>
+    <script src="/ma5gallery/ma5gallery.js"></script>
+</section>
+<footer th:replace="common/footer"></footer>
+<style>
+    @media (min-width: 1200px) {
+        .mt-modal__body .ma5-gallery .gallery-item {
+            width: 250px;
+            height: 200px;
+            margin-right: 25px;
+            overflow: hidden;
+            float: left;
+        }
+        .startDate .el-input__inner {
+            width: 340px;
+        }
+        .startTime {
+            margin-left: 120px;
+        }
+        .startTime .el-input__inner {
+            width: 220px;
+        }
+        .endTime .el-input__inner{
+            width: 560px;
+        }
+        .endTimeDialog .el-dialog{
+            width: 35%;
+        }
+        .endTimeDialog .meetingTime {
+            margin: 0 0 20px 0;
+        }
+        #env_detail {
+            display: inline-block;
+            max-height: 400px;
+            word-break: break-word;
+        }
+    }
+    @media (max-width: 1200px) {
+        .mt-modal__body .ma5-gallery .gallery-item {
+            width: 3rem;
+            height: 3rem;
+            margin-right: 0.5rem;
+            overflow: hidden;
+            float: left;
+        }
+        #meetingInfoDetailModal {
+            width: 80%;
+            margin: 0 auto;
+            left: 10%;
+        }
+        .ma5-gallery {
+            margin: 1rem 0;
+        }
+        .startDate .el-input__inner {
+            width: 5.0333333333rem !important;
+            margin-left: 0.18rem !important;
+        }
+        .startTime .el-input__inner {
+            width: 2.38rem !important;
+        }
+        .el-input__icon {
+            line-height: 0.5rem;
+        }
+        .endTime .el-input__inner {
+            width: 7.4333rem !important;
+        }
+        .el-select-dropdown__item {
+            font-size: 0.2555rem;
+            height: 0.65rem;
+            line-height: 0.65rem;
+        }
+        .btn-box a {
+            font-size: 0.2555rem !important;
+        }
+        .endTimeDialog .el-dialog{
+            width: 80%;
+        }
+        .endTimeDialog .meetingTime {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.33rem;
+        }
+        .startDateDialog .el-input--suffix .el-input__inner {
+            width: 4rem !important;
+            margin: 0 !important;
+        }
+        .startTimeDialog {
+            width: 2rem !important;
+        }
+        .startTimeDialog .el-input--suffix .el-input__inner {
+            width: 2rem !important;
+            margin: 0 !important;
+        }
+        .el-button span {
+            font-size: 0.3rem !important;
+        }
+        #env_detail {
+            display: inline-block;
+            max-height: 3rem;
+            word-break: break-word;
+        }
+    }
+    .mt-modal__body .ma5-gallery .gallery-item img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .el-date-editor .el-input__prefix {
+        display: none;
+    }
+    .el-input--prefix .el-input__inner,.el-input--suffix .el-input__inner {
+        padding: 0;
+    }
+    .el-button--primary {
+        background-color: #7CD1F9;
+        border-color: #7CD1F9;
+        color: #FFFFFF;
+    }
+    .el-button--primary span {
+        color: #FFFFFF !important;
+    }
+    .spinner {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3498db;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        margin: auto;
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+<script>
+    if (language === 'zh_CN') {
+        ELEMENT.locale(ELEMENT.lang.zhCN)
+    } else if (language === 'en_US') {
+        ELEMENT.locale(ELEMENT.lang.en)
+    } else if (language === 'ru_RU') {
+        ELEMENT.locale(ELEMENT.lang.ruRU)
+    }
+    let hour,hours = '小时'
+    let mins = '分钟'
+    if (language === 'zh_CN') {
+        hour = '小时'
+        hours = '小时'
+        mins = '分钟'
+    } else if (language === 'en_US') {
+        hour = 'hour'
+        hours = 'hours'
+        mins = 'minutes'
+    } else if (language === 'ru_RU') {
+        hour = 'час'
+        hours = 'часа'
+        mins = 'минут'
+    }
+
+    const myVue = new Vue({
+        el: '#app',
+        data () {
+            return {
+                startDate: '',
+                startTime: '',
+                endTime: '',
+                timeOptions: [{
+                    value: '15',
+                    label: `15${mins}`
+                }, {
+                    value: '30',
+                    label: `30${mins}`
+                }, {
+                    value: '45',
+                    label: `45${mins}`
+                }, {
+                    value: '60',
+                    label: `1${hour}`
+                }, {
+                    value: '120',
+                    label: `2${hours}`
+                }, {
+                    value: '180',
+                    label: `3${hours}`
+                }],
+                peopleNum: [1,10],
+                min: 1,
+                max: 10,
+                dialogVisible: false,
+                endDateDialog: this.formatDate(new Date()),
+                endTimeDialog: this.getClosestQuarterHour(new Date()),
+            }
+        },
+        mounted() {
+            const currentDate = this.getCurrentDate(new Date())
+            this.startDate = new Date(currentDate)
+            this.startTime = this.getClosestQuarterHour(new Date())
+            $('#startTime').val(currentDate+" "+this.startTime+":00")
+            $('#peoples').val(this.peopleNum.join("-"))
+        },
+        computed: {
+            pickerOptions() {
+                return {start: '00:00',step: '00:15',end: '23:45',minTime:this.getClosestPastQuarterHour(new Date())}
+            },
+            endDateOptions() {
+                const currentDate = new Date();
+                currentDate.setDate(currentDate.getDate() + 1);
+                return [
+                    {
+                        value: this.formatDate(new Date()),
+                        label: this.formatDate(new Date())
+                    },
+                    {
+                        value: this.formatDate(currentDate),
+                        label: this.formatDate(currentDate)
+                    }
+                ]
+            },
+            pickerTimeOptions() {
+                if (this.endDateDialog === this.formatDate(new Date())) {
+                    return {start: '00:00',step: '00:15',end: '23:45',minTime:this.getClosestPastQuarterHour(new Date())}
+                }
+                return {start: '00:00',step: '00:15',end: '23:45',minTime: '00:00'}
+            }
+        },
+        methods: {
+            changeStartDate() {
+                $('#startTime').val(this.getCurrentDate(this.startDate)+" "+this.startTime+":00")
+                this.changeEndTime(this.endTime)
+            },
+            changeStartTime(time) {
+                $('#startTime').val(this.getCurrentDate(this.startDate)+" "+this.startTime+":00")
+                this.changeEndTime(this.endTime)
+            },
+            changeEndTime(time) {
+                const [datePart, timePart] = $('#startTime').val().split(' ');
+                const [year, month, day] = datePart.split('-').map(Number);
+                const [hours, minutes, seconds] = timePart.split(':').map(Number);
+
+                const date = new Date(year, month - 1, day, hours, minutes, seconds);
+                date.setMinutes(date.getMinutes() + Number(time));
+
+                const newYear = date.getFullYear();
+                const newMonth = (date.getMonth() + 1).toString().padStart(2, '0');
+                const newDay = date.getDate().toString().padStart(2, '0');
+                const newHours = date.getHours().toString().padStart(2, '0');
+                const newMinutes = date.getMinutes().toString().padStart(2, '0');
+                const newSeconds = date.getSeconds().toString().padStart(2, '0');
+                $('#endTime').val(`${newYear}-${newMonth}-${newDay} ${newHours}:${newMinutes}:${newSeconds}`)
+            },
+            changePeopleNum(value) {
+                if (value) {
+                    $('#peoples').val(value.join("-"))
+                }
+            },
+            changeEndDateDialog(date) {
+                if (!this.isToday(new Date(date))) {
+                    this.endTimeDialog = '00:00'
+                } else {
+                    this.endTimeDialog = this.getClosestQuarterHour(new Date())
+                }
+                this.changeEndTimeDialog()
+            },
+            changeEndTimeDialog(time) {
+                const endTime = this.endDateDialog+" "+this.endTimeDialog + ':00'
+                $('#endTime').val(endTime)
+                const timeDifference = new Date(endTime).getTime() - new Date($('#startTime').val()).getTime();
+                const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
+                const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                if (hoursDifference>0) {
+                    $('#meetingTime').text(`${hoursDifference}小时${minutesDifference}分钟`)
+                    this.endTime = `${hoursDifference}小时${minutesDifference}分钟`
+                } else {
+                    $('#meetingTime').text(`${minutesDifference}分钟`)
+                    this.endTime = `${minutesDifference}分钟`
+                }
+            },
+            visibleChange(visible) {
+                let SelectTheEndTime = '选择结束时间'
+                if (language === 'zh_CN') {
+                    SelectTheEndTime = '选择结束时间'
+                } else if (language === 'en_US') {
+                    SelectTheEndTime = 'Select the end time'
+                } else if (language === 'ru_RU') {
+                    SelectTheEndTime = 'Выберите время окончания'
+                }
+                // 下拉框显示隐藏
+                if (visible) {
+                    const ref = this.$refs.selectEndTime
+                    let popper = ref.$refs.popper
+                    if (popper.$el) popper = popper.$el
+                    // 判断是否有添加按钮
+                    if (!Array.from(popper.children).some(v => v.className === 'btn-box')) {
+                        const el = document.createElement('div')
+                        el.className = 'btn-box'
+                        el.innerHTML = `<a class="btn" style="font-size:16px;display:block;line-height:38px;padding-left: 20px;border: 1px solid #ddd;">${SelectTheEndTime}</a>`
+                        popper.appendChild(el)
+                        el.onclick = () => {
+                            if (ref.toggleDropDownVisible) {
+                                ref.toggleDropDownVisible(false);
+                            } else {
+                                ref.visible = false;
+                            }
+                            this.dialogVisible = true
+                        }
+                    }
+                }
+            },
+            getCurrentDate(date) {
+                const year = date.getFullYear();
+                const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 月份是从0开始的，所以需要加1
+                const day = date.getDate().toString().padStart(2, '0');
+
+                return `${year}-${month}-${day}`;
+            },
+            getClosestQuarterHour(date) {
+                let minutes = date.getMinutes();
+                const remainder = minutes % 15;
+                let adjustment = 0;
+
+                if (remainder !== 0) {
+                    adjustment = 15 - remainder;
+                } else if (date.getSeconds() > 0 || date.getMilliseconds() > 0) {
+                    adjustment = 15;
+                }
+
+                const adjustedDate = new Date(date);
+                adjustedDate.setMinutes(minutes + adjustment);
+                adjustedDate.setSeconds(0);
+                adjustedDate.setMilliseconds(0);
+
+                const hours = adjustedDate.getHours().toString().padStart(2, '0');
+                const adjustedMinutes = adjustedDate.getMinutes().toString().padStart(2, '0');
+
+                return `${hours}:${adjustedMinutes}`;
+            },
+            getClosestPastQuarterHour(date) {
+                const minutes = date.getMinutes();
+                const remainder = minutes % 15;
+
+                const adjustment = remainder !== 0 ? remainder : 15;
+                const adjustedDate = new Date(date.getTime() - (adjustment * 60000));
+
+                const hours = adjustedDate.getHours().toString().padStart(2, '0');
+                const adjustedMinutes = adjustedDate.getMinutes().toString().padStart(2, '0');
+
+                return `${hours}:${adjustedMinutes}`;
+            },
+            isToday(date) {
+                const now = new Date();
+                return date.getFullYear() === now.getFullYear() &&
+                    date.getMonth() === now.getMonth() &&
+                    date.getDate() === now.getDate();
+            },
+            formatDate(date, hasTime = false) {
+                const year = date.getFullYear();
+                const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                const day = date.getDate().toString().padStart(2, '0');
+                const hours = date.getHours().toString().padStart(2, '0');
+                const minutes = date.getMinutes().toString().padStart(2, '0');
+                const seconds = date.getSeconds().toString().padStart(2, '0');
+                if (hasTime) {
+                    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+                } else {
+                    return `${year}-${month}-${day}`
+                }
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

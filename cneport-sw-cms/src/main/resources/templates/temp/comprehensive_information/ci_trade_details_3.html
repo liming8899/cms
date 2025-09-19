@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head th:replace="public/head::head('产能合作')"></head>
+
+<body>
+<header th:replace="public/header"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+
+<section>
+    <section>
+        <div class="wrapper">
+            <div class="page-title-switch left">
+                <a href="/ci/trade_details_1" class="switch-item small " data-tag="1">国际贸易合作</a>
+                <a href="/ci/trade_details_2" class="switch-item small" data-tag="2">国际物流合作</a>
+                <a href="/ci/trade_details_3" class="switch-item small selected" data-tag="3">产能合作</a>
+                <a href="/ci/trade_details_4" class="switch-item small" data-tag="4">商旅合作</a>
+                <a href="/ci/trade_details_5" class="switch-item small" data-tag="5">综合创意</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wrapper">
+            <div class="trade-detail-item">
+                <div class="trade-detail-item-info">
+                    <p class="t1">产能合作</p>
+                    <p class="t2">双向投资中心的目标是建设双向投资制度创新的试验区、综合服务新高地、“一带一路”国家人流、物流、资金流、信息流、技术流的集聚地。</p>
+                    <p class="t2">
+                        围绕扩大城市间合作网络、加强研发和加工领域合作、开展现代农业合作、推进国际园区互动合作、便利优势企业走出去、强化金融支持力度六个方面开展16项重点工作。。</p>
+                </div>
+                <img src="../images/trade-detail22.png" alt="">
+            </div>
+
+
+        </div>
+
+    </section>
+    <section>
+        <div class="wrapper">
+            <div class="page-title">
+                <h3>合作优势</h3>
+            </div>
+            <div class="trade-detail2-transport-wrap pb50">
+                <a href="" class="trade-detail2-transport-item scale">
+                    <div class="img">
+                        <img th:src="@{/images/express-d-11.png}" alt=""></div>
+                    <h4>铁路运输</h4>
+                    <p>依托上合多式联运中心，促进中欧班列增量扩线。目前上合示范区中欧班列已通达上合组织和“一带一路”沿线20个国家的49个城市。</p>
+                </a>
+                <a href="" class="trade-detail2-transport-item scale">
+                    <div class="img">
+                        <img  th:src="@{/images/express-d-12.png}" alt=""></div>
+                    <h4>航空运输</h4>
+                    <p>依托上合多式联运中心，促进中欧班列增量扩线。目前上合示范区中欧班列已通达上合组织和“一带一路”沿线20个国家的49个城市。</p>
+                </a>
+                <a href="" class="trade-detail2-transport-item scale">
+                    <div class="img">
+                        <img  th:src="@{/images/express-d-13.png}" alt=""></div>
+                    <h4>公路运输</h4>
+                    <p>依托传化公路港开通上合至俄罗斯莫斯科、匈牙利布达佩斯、哈萨克斯坦阿拉木图国际公路快线。</p>
+                </a>
+                <a href="" class="trade-detail2-transport-item scale">
+                    <div class="img">
+                        <img  th:src="@{/images/express-d-14.png}" alt=""></div>
+                    <h4>[[#{shipping}]]</h4>
+                    <p>依托青岛港新开4条通往上合组织国家的航线，包括3条俄罗斯线（海参崴、东方港）和1条印巴（印度金奈、印诺尔）线...</p>
+                </a>
+            </div>
+
+
+<!--            <div>swiper</div>-->
+        </div>
+    </section>
+    <section>
+        <div class="wrapper">
+
+            <div class="page-title">
+                <h3>重点项目</h3>
+                <a href="">
+                    <div class="theme-button">[[#{Learnmore}]]</div>
+                </a>
+            </div>
+            <div class="trade-detail2-grid-wrap">
+                <a href="" class="trade-detail2-grid-item scale">
+                    <div class="img">
+                        <img src="../images/trade-detail11.png" alt="">
+                    </div>
+                    <h4>中国传化（上合）国际物流港项目</h4>
+                    <p class="ellipsis2">中国传化（上合）国际物流港项目总投资100亿元，占地约1343亩，总建筑面积98.9万平方米...</p>
+                    <div class="theme-button">[[#{Learnmore}]]</div>
+                </a>
+                <a href="" class="trade-detail2-grid-item scale">
+                    <div class="img">
+                        <img src="../images/trade-detail12.png" alt="">
+                    </div>
+                    <h4>青岛胶州宝湾国际物流园</h4>
+                    <p class="ellipsis2">总投资3.2亿元，占地面积398亩，总规划建筑面积18.8万平方米，计容面积33.7万平方米...</p>
+                    <div class="theme-button">[[#{Learnmore}]]</div>
+                </a>
+                <a href="" class="trade-detail2-grid-item scale">
+                    <div class="img">
+                        <img src="../images/trade-detail12.png" alt="">
+                    </div>
+                    <h4>日日顺（阿里巴巴）虚实网服务园</h4>
+                    <p class="ellipsis2">项目位于上合示范区永定河路以北、滦河路以南、青山电器项目以西、百顿坩埚项目以东...</p>
+                    <div class="theme-button">了解更多</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<footer th:replace="public/footer"></footer>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.countup.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/qing.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script>
+    $(".switch-item").click(function (event) {
+        $(this).addClass("selected");
+        $(this).siblings().removeClass("selected");
+
+    })
+</script>
+</body>
+
+</html>

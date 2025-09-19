@@ -1,0 +1,86 @@
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .industrialPark-head {
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0 px2rem(16);
+
+      a {
+        &:nth-child(1) {
+          width: 3em;
+        }
+
+        &:nth-child(2) {
+          width: 3em;
+        }
+
+        &:nth-child(3) {
+          width: 8em;
+        }
+
+        &:nth-child(4) {
+          width: 2em;
+        }
+
+        &:nth-child(5) {
+          width: 2em;
+        }
+
+        &:nth-child(6) {
+          width: 2em;
+        }
+
+        &:nth-child(7) {
+          width: 2em;
+        }
+
+        &:nth-child(8) {
+          width: 2em;
+        }
+      }
+    }
+  }
+
+  .industrialPark {
+    margin: 0 px2rem(16);
+
+    .company-grid-wrap2 {
+      display: flex;
+      justify-content: space-between;
+      margin-top: px2rem(30);
+      flex-wrap: wrap;
+    }
+
+    .company-grid-item2 {
+      width: px2rem(354);
+      height: px2rem(420);
+    }
+
+    .company-grid-item2 img {
+      width: px2rem(354);
+      height: px2rem(230);
+    }
+
+    .company-grid-item2 > p {
+      font-size: px2rem(24);
+      font-weight: 400;
+      margin-top: px2rem(14);
+    }
+
+    .company-grid-item2 > p:last-child {
+      font-size: px2rem(20);
+      font-weight: 400;
+      color: var(--font-color-text);
+      line-height: px2rem(30);
+    }
+  }
+}

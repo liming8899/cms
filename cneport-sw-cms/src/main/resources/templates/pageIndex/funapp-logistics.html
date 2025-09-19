@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<div class="logistics">
+    <div class="wrapper">
+        <div class="page-title">
+            <h3>
+                [[#{FullChainLogistics}]]
+            </h3>
+        </div>
+        <div class="flexbox _content-sb mt60">
+            <div class="express-grid-item4" th:onclick="bm.commonLinkUrl2('/funapp-logistics-serPlatform','多式联运综合服务');">
+                <img src="/images/express-002.png" alt="" />
+                <div class="show-item">
+                    <i class="iconfont icon-zhwl-img2"></i>
+                    <p class="t1">
+                        [[#{MultimodalTransportintegratedServicePlatfom}]]
+                    </p>
+                    <p class="t2 ellipsis2">
+                        [[#{Integratetheintermodaltransport}]]
+                    </p>
+                </div>
+                <div class="hidden-item">
+                    [[#{Integratetheintermodaltransport}]]
+                </div>
+                <a th:onclick="bm.commonLinkUrl2('/funapp-logistics-serPlatform','多式联运综合服务');" class="express-more-btn"> [[#{Learnmore}]] </a>
+            </div>
+            <div class="express-grid-item4" th:onclick="bm.commonLinkUrl2('https://zhfw.sdhsqlh-logistics.com:60001/#/login','山东高速中欧班列服务平台');">
+                <img src="/images/express-001.png" alt="" />
+                <div class="show-item">
+                    <i class="iconfont icon-Frame1"></i>
+                    <p class="t1">
+                        [[#{ShandongHi-speedChina-EuropeRailwayExpressServicePlatform}]]
+                    </p>
+                    <p class="t2 ellipsis2">
+                        [[#{ThefirstphaseoftheChina-EuropeRailwayExpress}]]
+                    </p>
+                </div>
+                <div class="hidden-item">
+                    [[#{ThefirstphaseoftheChina-EuropeRailwayExpress}]]
+                </div>
+                <a th:onclick="bm.commonLinkUrl2('https://zhfw.sdhsqlh-logistics.com:60001/#/login','山东高速中欧班列服务平台');" class="express-more-btn"> [[#{Learnmore}]] </a>
+            </div>
+        </div>
+    </div>
+    <div class="express-center-wrap mt60">
+        <div class="wrapper">
+            <div class="express-grid-wrap2">
+                <div class="express-grid-item2">
+                    <i class="iconfont icon-Frame3"></i>
+                    <h4>
+                        [[#{shipping}]]
+                    </h4>
+                    <p>
+                        [[#{Globalshipping,directinternationalshipping}]]
+                    </p>
+                </div>
+                <div class="express-grid-item2">
+                    <i class="iconfont icon-Frame4"></i>
+                    <h4>
+                        [[#{road}]]
+                    </h4>
+                    <p>
+                        [[#{Continertransportation}]]
+                    </p>
+                </div>
+                <div class="express-grid-item2">
+                    <i class="iconfont icon-Frame5"></i>
+                    <h4>
+                        [[#{airtransport}]]
+                    </h4>
+                    <p>
+                        [[#{Airlogistics,aircraft,informationsharing,interconnection}]]
+                    </p>
+                </div>
+                <div class="express-grid-item2">
+                    <i class="iconfont icon-Frame11"></i>
+                    <h4>
+                        [[#{railway}]]
+                    </h4>
+                    <p>
+                        [[#{China-EuropeRailwayExpress,China}]]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="flexbox _content-sb express-bottom-wrap mt60 pb60">
+            <div class="express-grid-item5">
+                <img src="/images/zngh.jpg" alt="" />
+                <h4>
+                    [[#{Multimodaltransportintelligentplanning}]]
+                </h4>
+            </div>
+            <div class="express-grid-item5">
+                <img src="/images/jjfa.jpg" alt="" />
+                <h4>
+                    [[#{Tailoredsolutions}]]
+                </h4>
+            </div>
+            <div class="express-grid-item5">
+                <img src="/images/fwzys.jpg" alt="" />
+                <h4>
+                    [[#{one-stopcustomerservice}]]
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="common/footer"></footer>
+</body>
+<style>
+    @media (min-width: 1200px) {
+        .express-grid-wrap {
+            display: flex;
+            justify-content: space-between;
+        }
+        .express-grid-item4 {
+            width: 580px;
+            height: 360px;
+            background-color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .express-grid-item4 img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .express-grid-item4 .iconfont {
+            display: block;
+            font-size: 60px;
+            margin: 20px 0;
+        }
+        .express-grid-item4 .t1 {
+            font-size: 18px;
+        }
+        .express-grid-item4 .t2 {
+            font-size: 14px;
+            width: 400px;
+            margin: 8px auto 38px auto;
+        }
+        .express-grid-item4 .express-more-btn {
+            display: block;
+            width: 142px;
+            height: 53px;
+            border: 1px solid #FFFFFF;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 53px;
+            color: #FFFFFF;
+            margin: 0 auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 55px;
+        }
+        .express-grid-item4 .hidden-item {
+            display: none;
+            font-size: 14px;
+            margin: 50px 80px 0 80px;
+            text-indent: 2em;
+            transition: all .2s ease-in;
+            height: 200px;
+            overflow-y: auto;
+            word-break: initial;
+            /*text-align: justify;*/
+        }
+        .express-grid-item4:hover .hidden-item {
+            display: block;
+        }
+        .express-grid-item4:hover .show-item {
+            display: none;
+        }
+        .express-grid-item5 {
+            width: 380px;
+            text-align: center;
+        }
+        .express-grid-item5 img {
+            width: 380px;
+            height: 256px;
+        }
+        .express-grid-item5 h4 {
+            font-size: 18px;
+            margin-top: 18px;
+            margin-bottom: 10px;
+        }
+        .express-grid-item5 p {
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            color: #A7A7A7;
+        }
+    }
+</style>
+</html>

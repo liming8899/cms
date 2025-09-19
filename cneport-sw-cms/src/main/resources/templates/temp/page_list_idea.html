@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+    <header th:replace="common/header::header(${currentNavList})"></header>
+    <section th:replace="common/search"></section>
+    <section th:replace="common/nav"></section>
+    <section>
+        <div class="wrapper">
+            <div class="pt60 flexbox _content-sb _items-mid">
+                <div class="idea-img1" style="width: 380px; height: 430px; overflow: hidden;">
+                    <img th:src="@{/images/zkff.png}" alt="">
+                </div>
+                <div class="idea-text idea-ctx">
+                    <h3 class="convention-title">高端智库</h3>
+                    <p class="text-indent mt20"> 咨询与智库服务是针对用户的个性化需求，由中国经济信息社就某一具体问题提供相关咨询报告或咨询服务。</p>
+                    <p class="text-indent mt5">这项服务依中国经济信息社托遍布全球的新闻信息采集网络和海内外调研力量，以及在各行业的合作机构和特约经济分析师，面向各级党政机关、企事业单位提供企业投融资分析、行业发展趋势分析、项目风险评估与建议等个性化定制咨询服务。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gray-bg">
+            <div class="wrapper">
+                <div class="page-title">
+                    <h3>国别风险分析报告</h3>
+                    <a href="/cs/idea_report">
+                        <!-- <i class="iconfont icon-more"></i> -->
+                        <div class="theme-button">[[#{Learnmore}]]</div>
+                    </a>
+                </div>
+                <div class="idea-img-wrap2 mt40 pb60">
+                    <a href="/cs/idea_report_details">
+                        <div class="idea-img-item2 scale">
+                            <div class="img-wrap img">
+                                <img src="/images/cover1%201.png" alt="">
+                            </div>
+                            <p class="idea-item-title ellipsis1"> 2022国别风险深度调研预测报告</p>
+                        </div>
+                    </a>
+                    <a href="/cs/idea_report_details">
+                        <div class="idea-img-item2 scale">
+                            <div class="img-wrap img">
+                                <img src="/images/cover1%201.png" alt="">
+                            </div>
+                            <p class="idea-item-title ellipsis1"> 2022国别风险深度调研预测报告</p>
+                        </div>
+                    </a>
+                    <a href="/cs/idea_report_details">
+                        <div class="idea-img-item2 scale">
+                            <div class="img-wrap img">
+                                <img src="/images/cover1%201.png" alt="">
+                            </div>
+                            <p class="idea-item-title ellipsis1"> 2022国别风险深度调研预测报告</p>
+                        </div>
+                    </a>
+                    <a href="/cs/idea_report_details">
+                        <div class="idea-img-item2 scale">
+                            <div class="img-wrap img">
+                                <img src="/images/cover1%201.png" alt="">
+                            </div>
+                            <p class="idea-item-title ellipsis1"> 2022国别风险深度调研预测报告</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="page-title">
+                <h3>定制国别分析报告</h3>
+                <a href="/cs/idea_custom_report">
+                    <div class="theme-button">[[#{Learnmore}]]</div>
+                </a>
+            </div>
+            <div class="idea-img-wrap3 flexbox _wrap _content-sb mt40 pb60">
+                <a href="/cs/idea_custom_report_details">
+                    <div class="idea-img-item3 scale">
+                        <div class="img">
+                            <img src="/images/zhfw-report-img.png" alt="">
+                        </div>
+                        <p class="idea-item-title ellipsis1"> 定制国别风险深度分析报告</p>
+                        <p class="idea-item-desc ellipsis2"> 定制国别风险深度分析报告定制国别风险深度分析报告定制国别风险深度分析报告</p>
+                    </div>
+                </a>
+                <a href="/cs/idea_custom_report_details">
+                    <div class="idea-img-item3 scale">
+                        <div class="img">
+                            <img src="/images/zhfw-report-img.png" alt="">
+                        </div>
+                        <p class="idea-item-title ellipsis1"> 定制国别风险深度分析报告</p>
+                        <p class="idea-item-desc ellipsis2"> 定制国别风险深度分析报告定制国别风险深度分析报告定制国别风险深度分析报告</p>
+                    </div>
+                </a>
+                <a href="/cs/idea_custom_report_details">
+                    <div class="idea-img-item3 scale">
+                        <div class="img">
+                            <img src="/images/zhfw-report-img.png" alt="">
+                        </div>
+                        <p class="idea-item-title ellipsis1"> 定制国别风险深度分析报告</p>
+                        <p class="idea-item-desc ellipsis2"> 定制国别风险深度分析报告定制国别风险深度分析报告定制国别风险深度分析报告</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="gray-bg">
+            <div class="wrapper">
+                <div class="page-title">
+                    <h3>上合组织国家数据图示</h3>
+                    <a href="/cs/idea_report_data">
+                        <div class="theme-button">[[#{Learnmore}]]</div>
+                    </a>
+                </div>
+                <div class="idea-img2 mt60">
+                    <img src="/images/Frame%20396.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer th:replace="common/footer"></footer>
+</body>
+</html>

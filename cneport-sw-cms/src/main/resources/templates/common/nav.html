@@ -1,0 +1,81 @@
+<section class="m-nav" id="mNav" th:fragment="nav">
+    <div class="wrapper">
+        <div class="m-nav-wrap">
+            <div class="m-nav-close" id="mNavCloseBtn">
+                <i class="iconfont icon-guanbi"></i>
+            </div>
+            <div class="m-nav-logo">
+                <img th:src="@{/img/nav_logo.png}">
+            </div>
+
+            <ul id="accordion" class="mobile accordion-header mt20" >
+                <li class="accordion-item"  th:each="nav, navState : ${navList}">
+                    <th:block th:switch="${nav.attribute}">
+                        <div class="tit">
+                            <div class="ellipsis1">
+                                <a th:classappend="${not #lists.isEmpty(nav.children)} ? '':'open_a'" th:onclick="bm.commonLinkUrl2([[${nav.linkUrl}]],[[${nav.name}]]);" th:case="3">[[${nav.name}]]</a>
+                                <a th:classappend="${not #lists.isEmpty(nav.children)} ? '':'open_a'" th:onclick="bm.commonLinkUrl2([[${nav.linkUrl}]],[[${nav.name}]]);" th:case="4" target="_blank">[[${nav.name}]]</a>
+                                <a th:classappend="${not #lists.isEmpty(nav.children)} ? '':'open_a'" th:onclick="bm.commonLinkUrl2([['/'+${nav.path}]],[[${nav.name}]]);" th:case="*">[[${nav.name}]]</a>
+                            </div>
+                            <i class="iconfont icon-Vector-down" th:if="${not #lists.isEmpty(nav.children)}"></i>
+                        </div>
+                    </th:block>
+                    <div class="desc ellipsis3" th:if="${not #lists.isEmpty(nav.children)}">
+                        <ul>
+                            <li th:each="child, childStat : ${nav.children}">
+                                <div class="tit">
+                                    <th:block th:switch="${child.attribute}">
+                                        <div class="ellipsis1">
+                                            <a th:classappend="${not #lists.isEmpty(child.children)} ? '':'open_a'" th:onclick="bm.commonLinkUrl2([[${child.linkUrl}]],[[${child.name}]]);" th:case="3">[[${child.name}]]</a>
+                                            <a th:classappend="${not #lists.isEmpty(child.children)} ? '':'open_a'" th:onclick="bm.commonLinkUrl2([[${child.linkUrl}]],[[${child.name}]]);" th:case="4" target="_blank">[[${child.name}]]</a>
+                                            <a th:classappend="${not #lists.isEmpty(child.children)} ? '':'open_a'" th:onclick="bm.commonLinkUrl2([['/'+${child.path}]],[[${child.name}]]);" th:case="*">[[${child.name}]]</a>
+                                        </div>
+                                        <i class="iconfont icon-Vector-down" th:if="${not #lists.isEmpty(child.children)}"></i>
+                                    </th:block>
+                                </div>
+<!--                                <div class="tit" th:unless="${#lists.isEmpty(child.children)}">-->
+<!--                                    <span>[[${child.name}]]</span>-->
+<!--                                    <i class="iconfont icon-Vector-down"></i>-->
+<!--                                </div>-->
+                                <div class="desc ellipsis4" th:if="${not #lists.isEmpty(child.children)}">
+                                    <ul>
+                                        <li th:each="thirdChild, thirdChildStat : ${child.children}">
+                                            <th:block th:switch="${thirdChild.attribute}">
+                                                <div class="tit">
+                                                    <div class="ellipsis1">
+                                                        <a class="open_a" th:onclick="bm.commonLinkUrl2([[${thirdChild.linkUrl}]],[[${thirdChild.name}]]);" th:case="3">[[${thirdChild.name}]]</a>
+                                                        <a class="open_a" th:onclick="bm.commonLinkUrl2([[${thirdChild.linkUrl}]],[[${thirdChild.name}]]);" th:case="4" target="_blank">[[${thirdChild.name}]]</a>
+                                                        <a class="open_a" th:onclick="bm.commonLinkUrl2([['/'+${thirdChild.path}]],[[${thirdChild.name}]]);" th:case="*">[[${thirdChild.name}]]</a>
+                                                    </div>
+                                                </div>
+                                            </th:block>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="m-nav-menu">
+                <div class="m-nav-menu-item" th:each="nav, navState : ${navList} ">
+                    <th:block th:switch="${nav.attribute}">
+                        <a th:onclick="bm.commonLinkUrl2([[${nav.linkUrl}]],[[${nav.name}]]);" th:case="3" class="m-nav-menu-item-title">[[${nav.name}]]</a>
+                        <a th:onclick="bm.commonLinkUrl2([[${nav.linkUrl}]],[[${nav.name}]]);" th:case="4" target="_blank" class="m-nav-menu-item-title">[[${nav.name}]]</a>
+                        <a th:onclick="bm.commonLinkUrl2([['/'+${nav.path}]],[[${nav.name}]]);" th:case="*" class="m-nav-menu-item-title">[[${nav.name}]]</a>
+                    </th:block>
+                    <ul th:if="${not #lists.isEmpty(nav.children)}">
+                        <li th:each="child, childStat : ${nav.children}">
+                            <th:block th:switch="${child.attribute}">
+                                <a th:onclick="bm.commonLinkUrl2([[${child.linkUrl}]],[[${child.name}]]);" th:case="3">[[${child.name}]]</a>
+                                <a th:onclick="bm.commonLinkUrl2([[${child.linkUrl}]],[[${child.name}]]);" th:case="4" target="_blank">[[${child.name}]]</a>
+                                <a th:onclick="bm.commonLinkUrl2([['/'+${child.path}]],[[${child.name}]]);" th:case="*">[[${child.name}]]</a>
+                            </th:block>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

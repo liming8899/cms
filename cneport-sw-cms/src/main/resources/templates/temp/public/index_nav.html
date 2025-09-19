@@ -1,0 +1,28 @@
+<ul class="nav-ul clearfix" th:fragment="indexNav">
+    <li><a href="/temp/templateslates/temp/public">首页</a></li>
+    <li th:each="nav, navState : ${navList} ">
+        <th:block th:switch="${nav.attribute}">
+            <a th:href="@{${nav.linkUrl}}" th:case="3">[[${nav.name}]]</a>
+            <a th:href="@{${nav.linkUrl}}" th:case="4" target="_blank">[[${nav.name}]]</a>
+            <a th:href="@{'/'+${nav.id}}" th:case="*">[[${nav.name}]]</a>
+        </th:block>
+        <ul class="erji-ul" th:if="${not #lists.isEmpty(nav.children)}">
+            <li th:each="child, childStat : ${nav.children}">
+                <th:block th:switch="${child.attribute}">
+                    <a th:href="@{${child.linkUrl}}" th:case="3">[[${child.name}]]</a>
+                    <a th:href="@{${child.linkUrl}}" th:case="4" target="_blank">[[${child.name}]]</a>
+                    <a th:href="@{'/'+${child.id}}" th:case="*">[[${child.name}]]</a>
+                </th:block>
+                <ul class="snji-ul" th:if="${not #lists.isEmpty(child.children)}">
+                    <li th:each="sub, subState : ${child.children}">
+                        <th:block th:switch="${sub.attribute}">
+                            <a th:href="@{${sub.linkUrl}}" th:case="3">[[${sub.name}]]</a>
+                            <a th:href="@{${sub.linkUrl}}" th:case="4" target="_blank">[[${sub.name}]]</a>
+                            <a th:href="@{'/'+${sub.id}}" th:case="*">[[${sub.name}]]</a>
+                        </th:block>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>

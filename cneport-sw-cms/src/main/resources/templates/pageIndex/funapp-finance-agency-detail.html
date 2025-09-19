@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<th:block th:if="${#strings.trim(lang_session) eq 'zh_CN'}">
+    <head th:replace="common/head::head(${financeAgencyDetails.name})"></head>
+</th:block>
+<th:block th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(financeAgencyDetails.enName)}">
+    <head th:replace="common/head::head(${financeAgencyDetails.enName})"></head>
+</th:block>
+<th:block th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(financeAgencyDetails.enName)}">
+    <head th:replace="common/head::head(${financeAgencyDetails.name})"></head>
+</th:block>
+<th:block th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(financeAgencyDetails.ruName)}">
+    <head th:replace="common/head::head(${financeAgencyDetails.ruName})"></head>
+</th:block>
+<th:block th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(financeAgencyDetails.ruName)}">
+    <head th:replace="common/head::head(${financeAgencyDetails.name})"></head>
+</th:block>
+
+<body>
+<!--<div class="sco-hbt-head">-->
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<!--</div>-->
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section >
+    <div class="wrapper pb60 sco-hbt">
+        <div class="page-title">
+            <h3 th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${financeAgencyDetails.name}]]</h3>
+            <h3 th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(financeAgencyDetails.enName)}">[[${financeAgencyDetails.enName}]]</h3>
+            <h3 th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(financeAgencyDetails.enName)}">[[${financeAgencyDetails.name}]]</h3>
+            <h3 th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(financeAgencyDetails.ruName)}">[[${financeAgencyDetails.ruName}]]</h3>
+            <h3 th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(financeAgencyDetails.ruName)}">[[${financeAgencyDetails.name}]]</h3>
+        </div>
+
+        <div th:if="${#strings.trim(lang_session) eq 'zh_CN'}" th:utext="${financeAgencyDetails.content}"></div>
+        <div th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(financeAgencyDetails.enContent)}" th:utext="${financeAgencyDetails.enContent}"></div>
+        <div th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(financeAgencyDetails.enContent)}" th:utext="${financeAgencyDetails.content}"></div>
+        <div th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(financeAgencyDetails.ruContent)}" th:utext="${financeAgencyDetails.ruContent}"></div>
+        <div th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(financeAgencyDetails.ruContent)}" th:utext="${financeAgencyDetails.content}"></div>
+
+    </div>
+    <style>
+        @media (min-width: 1200px) {
+            .huibaotong-img1 {
+                width: 1200px;
+                height: 380px;
+                border-radius: 10px;
+            }
+
+            .huibaotong-img2 {
+                width: 773px;
+                height: 190px;
+                border-radius: 10px;
+            }
+
+            .huibaotong-img3 {
+                width: 360px;
+                height: 190px;
+                border-radius: 10px;
+            }
+
+            .huibaotong-img4 {
+                width: 600px;
+                height: 455px;
+                border-radius: 10px;
+            }
+
+            .huibaotong-t1 {
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 35px;
+            }
+
+            .huibaotong-t2 {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 28px;
+                /*text-align: justify;*/
+                color: #626262;
+                margin-top: 25px;
+            }
+        }
+    </style>
+</section>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cloud.onion.cms.mapper.XhInfoContentMapper">
+
+    <select id="getPageList" resultType="cloud.onion.cms.model.res.ArticleRes">
+        SELECT
+            a.id,
+            a.contentId,
+            a.cbfCatalogID,
+            a.catalogID,
+            a.contentType,
+            a.title,
+            a.subTitle,
+            a.shortTitle,
+            a.sourceTitle,
+            a.content,
+            a.author,
+            a.editor,
+            a.original,
+            a.externalSource source,
+            a.language,
+            a.logoFile coverImage,
+            a.summary description,
+            a.keyword,
+            a.genre,
+            a.publishTime createTime,
+            a.publishUser,
+            a.modifyUser,
+            a.modifyTime,
+            a.operType,
+            a.recTime,
+            a.eisDel,
+            CASE WHEN d.review_status = 1 THEN b.title ELSE '' END enTitle,
+            CASE WHEN d.review_status = 1 THEN c.title ELSE '' END ruTitle,
+            CASE WHEN d.review_status = 1 THEN b.summary ELSE '' END enDescription,
+            CASE WHEN d.review_status = 1 THEN c.summary ELSE '' END ruDescription,
+            CASE WHEN d.review_status = 1 THEN b.externalSource ELSE '' END enSource,
+            CASE WHEN d.review_status = 1 THEN c.externalSource ELSE '' END ruSource,
+            CASE WHEN d.review_status = 1 THEN b.content ELSE '' END enContent,
+            CASE WHEN d.review_status = 1 THEN c.content ELSE '' END ruContent,
+            d.review_status
+        FROM
+            shpt_info_content a
+            LEFT JOIN shpt_info_content_en b on a.ID = b.ID
+            LEFT JOIN shpt_info_content_ru c on a.ID = c.ID
+            LEFT JOIN (
+                SELECT
+                a.id AS id,
+                a.content_id AS content_id,
+                a.review_status AS review_status,
+                a.create_time AS create_time
+                FROM
+                shpt_info_content_review a
+                JOIN (
+                SELECT
+                content_id AS content_id,
+                max( create_time ) AS max_create_time
+                FROM
+                shpt_info_content_review
+                GROUP BY content_id
+                ) latest ON
+                a.content_id = latest.content_id
+                AND a.create_time = latest.max_create_time
+            ) d ON a.id = d.content_id
+        <where>
+         a.eisDel = 0
+         <if test="menuIds != null and menuIds.length > 0">
+            AND a.catalogID in
+            <foreach collection="menuIds" item="id" index="index"
+                     open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </if>
+        </where>
+        ORDER BY a.publishTime DESC
+    </select>
+</mapper>

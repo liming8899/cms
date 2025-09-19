@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="public/head::head('[[#{ConvenienceServicesforForeignersComingtoChina}]]')"></head>
+
+<body>
+<header th:replace="public/header4"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+    <section>
+        <div class="wrapper talent-header">
+            <div class="wrapper">
+                <div class="page-title-switch">
+                    <div class="switch-item selected" data-tag="1">[[#{ConvenienceServicesforForeignersComingtoChina}]]</div>
+                    <div class="switch-item " data-tag="2">外籍人来华工作一窗通办，办理流程图</div>
+                </div>
+            </div>
+        </div>
+        <div class="talent-container1">
+            <div class="gray-bg">
+                <div class="wrapper pt60">
+                    <div class="flexbox _content-sb">
+                        <div class="talent-item">
+                            <img src="/images/zhfw-img3.png" alt="">
+                            <p class="talent-sub mt30">共建上合人才创新高地！一批高校院所签约上合示范区</p>
+                            <p class="talent-text mt10">今天上午，胶州市举行“共建上合人才创新高地”集中签约仪式，活动深入贯彻落实“一核引领、全域联动”工作机制，推动人才...</p>
+                        </div>
+                        <div class="talent-item">
+                            <img src="/images/Ellipse%2061.png" alt="">
+                            <p class="talent-sub mt30">首届上合全球人才创新创业大赛总决赛在青岛胶州举行</p>
+                            <p class="talent-text mt10">今天上午，胶州市举行“共建上合人才创新高地”集中签约仪式，活动深入贯彻落实“一核引领、全域联动”工作机制，推动人才...</p>
+                        </div>
+                        <div class="talent-item">
+                            <img src="/images/Ellipse%2062.png" alt="">
+                            <p class="talent-sub mt30">共建上合人才创新高地！一批高校院所签约上合示范区</p>
+                            <p class="talent-text mt10">今天上午，胶州市举行“共建上合人才创新高地”集中签约仪式，活动深入贯彻落实“一核引领、全域联动”工作机制，推动人才...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="mt60 flexbox _content-sb _items-mid">
+                    <div class="law-img2">
+                        <img src="/images/zhfw-img4.png" alt="">
+                    </div>
+                    <div class="law-text law-ctx">
+                        <p class="text-indent">谈到这一意见出台的意义，中国文化产业协会副会长范周表示，意见的出台解决了目前文化数字化的四梁八柱问题，是实现党领导下数字文化治理的系统工程。</p>
+                        <p class="text-indent mt5">意见明确，到“十四五”时期末，基本建成文化数字化基础设施和服务平台，形成线上线下融合互动、立体覆盖的文化服务供给体系。到2035年，建成物理分布、逻辑关联、快速链接、高效搜索、全面共享、重点集成的国家文化大数据体系，中华文化全景呈现，中华文化数字化成果全民共享。</p>
+                    </div>
+                </div>
+                <div class="mt60 flexbox _content-sb _items-mid">
+                    <div class="law-text law-ctx">
+                        <p class="text-indent">谈到这一意见出台的意义，中国文化产业协会副会长范周表示，意见的出台解决了目前文化数字化的四梁八柱问题，是实现党领导下数字文化治理的系统工程。</p>
+                        <p class="text-indent mt5">意见明确，到“十四五”时期末，基本建成文化数字化基础设施和服务平台，形成线上线下融合互动、立体覆盖的文化服务供给体系。到2035年，建成物理分布、逻辑关联、快速链接、高效搜索、全面共享、重点集成的国家文化大数据体系，中华文化全景呈现，中华文化数字化成果全民共享。</p>
+                    </div>
+                    <div class="law-img2">
+                        <img src="/images/zhfw-img5.png" alt="">
+                    </div>
+                </div>
+                <div class="talent-img2 mt60">
+                    <img src="/images/zhfw-img6.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="talent-container2 hide">
+            <div class="wrapper">
+                <img src="/images/talent-process.png" alt="">
+            </div>
+        </div>
+    </section>
+<footer th:replace="public/footer"></footer>
+
+    <script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+    <script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+    <script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.countup.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/qing.js"></script>
+
+    <script>
+        $(".switch-item").click(function(event) {
+            $(this).addClass("selected");
+            $(this).siblings().removeClass("selected");
+            if (event.currentTarget.dataset.tag == "1") {
+                $(".talent-container2").addClass('hide')
+                $(".talent-container1").removeClass('hide')
+            } else {
+                $(".talent-container1").addClass('hide')
+                $(".talent-container2").removeClass('hide')
+            }
+
+        })
+    </script>
+</body>
+
+</html>

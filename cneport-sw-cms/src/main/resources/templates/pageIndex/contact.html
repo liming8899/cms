@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section>
+    <div class="gray-bg">
+        <div class="wrapper">
+            <div class="contact-header-wrap">
+                <div class="contact-header-left">
+                    <img src="/img/main_logo_mini.png" style="width:290px;height:100px;margin-top: 25px;" alt="" />
+                    <h4>
+                        中国-上海合作组织地方经贸合作综合服务平台
+                    </h4>
+                    <p style="zoom:0.85;">
+                        Комплексная сервисная платформа регионального торгово-экономического сотрудничества «Китай - ШОС»
+                    </p>
+                    <p>
+                        China-scolocal economic and trade cooperation Comprehensive service platform
+                    </p>
+                </div>
+                <div class="contact-header-right">
+                    <div class="page-title">
+                        <span style="line-height: 27px;font-size: 27px;position: relative;">
+<!--                            关于上合-->
+                            [[#{AboutChina-SCOLocalEconomicandTradeCooperationComp}]]
+                        </span>
+                    </div>
+<!--                    <p>-->
+<!--                        中国—上海合作组织地方经贸合作综合服务平台（简称“上合综服平台”）服务及展示中心是上合示范区为拓展中国与上合组织国家的地方经贸交流合作、进一步优化营商环境、提升政务商务服务水平而打造的中国—上海合作组织地方经贸合作综合服务线下平台，于2022年9月正式对外服务。-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        中心位于上合国家客厅，总建筑面积1000平方米，分为平台服务中心、展示中心两大部分，其中服务中心面积约为500平米，设置综合服务大厅、网上会客厅、集中反馈中心、商务区等功能区，联合海关、税务、公安等多个机构和部门，为企业提供原产地审签、税务、外国人来华、信用保险、涉外法律、商事咨询、涉外仲裁、语言服务等政务商务服务。展示中心面积约为500平米，与线上平台互联互通，采用文字、照片、电子大屏等形式，利用声、光、电、多媒体等现代科技手段，从上合综服平台建设背景、服务体系、资源赋能、功能亮点、数据驾驶舱、平台综述等方面系统呈现平台功能与特色。服务及展示中心是上合示范区展示上合综服平台的名片，是上合组织国家间经贸合作的平台，也是市民了解并参与上合组织经贸的窗口。-->
+<!--                    </p>-->
+                    <p>
+                        [[#{TheSCOEconomicandTradeComprehensiveServicePlatform}]]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="wrapper map-wrap-box">
+        <div class="page-title">
+            <h3>
+                [[#{ContactInformation}]]
+            </h3>
+        </div>
+        <div class="map-wrap">
+            <ul>
+                <li>
+                    <img src="/images/map-address.png" alt="" /> <span>[[#{SCOAddress}]]</span>
+                </li>
+                <li>
+                    <img src="/images/map-mail.png" alt="" /> <span>contact@scocsp.com</span>
+                </li>
+                <li>
+                    <img src="/images/phone.png" alt="" /> <span>0532-58081699</span>
+                </li>
+                <div class="button primary contact-btn" id="contactBtn">
+                    [[#{Iwanttoinquire}]]
+                </div>
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="contact-popup">
+        <div class="contact-popup-header">
+            <div class="tit">
+                [[#{Iwanttoinquire}]]
+            </div>
+            <i class="iconfont icon-Frame close" id="closePopup"></i>
+        </div>
+        <div class="contact-form-item">
+            <div class="form-item">
+                <div class="form-item-label">
+                    [[#{Category}]]
+                </div>
+                <!--                <div class="form-item-input">-->
+                <!--                    <div class="select" id="typeSelect">-->
+                <!--                        <div class="select-value" id="contactType">-->
+                <!--                            类别-->
+                <!--                        </div>-->
+                <!--                        <ul class="select-options select-option1" style="display:none;">-->
+                <!--                            <li data-value="平台操作">-->
+                <!--                                平台操作-->
+                <!--                            </li>-->
+                <!--                            <li data-value="业务办理">-->
+                <!--                                业务办理-->
+                <!--                            </li>-->
+                <!--                            <li data-value="平台挑错">-->
+                <!--                                平台挑错-->
+                <!--                            </li>-->
+                <!--                        </ul>-->
+                <!--                    </div>-->
+                <label class="radioContact"><input type="radio" name="contactType" value="平台操作" /><span>[[#{PlatformOperation}]]</span></label>
+                <label class="radioContact"><input type="radio" name="contactType" value="业务办理" /><span>[[#{BusinessHandling}]]</span></label>
+                <label class="radioContact"><input type="radio" name="contactType" value="平台挑错" /><span>[[#{FindIssuesofthePlatform}]]</span></label>
+                <!--                </div>-->
+            </div>
+
+        </div>
+
+        <div class="contact-form-item">
+            <div class="form-item">
+                <div class="form-item-label">
+                    [[#{ContactEmail}]]
+                </div>
+                <div class="form-item-input">
+                    <input type="text" id="contactEmail" th:placeholder="#{Pleaseenteryouremail}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-item">
+            <div class="form-item">
+                <div class="form-item-label">
+                    [[#{phonenumber}]]
+                </div>
+                <div class="form-item-input">
+                    <input type="text" id="contactMobile" th:placeholder="#{Pleaseenteryourphonenumber}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <div class="form-item-label">
+                [[#{Inquiry}]]
+            </div>
+            <div class="form-item-input">
+                <textarea rows="3" id="contactContent"></textarea>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="button primary" id="contactSubmit">
+                [[#{Submit}]]
+            </div>
+        </div>
+    </div>
+</section>
+<footer th:replace="common/footer"></footer>
+</body>
+<style>
+    .radioContact {
+        font-size: 20px;
+        height: 30px;
+        line-height: 55px;
+        display: inline-block;
+        padding: 10px;
+        margin-right: 50px;
+    }
+    input[type="radio"] {
+        margin-right: 8px;
+        height: 16px;
+        line-height: 16px;
+    }
+</style>
+
+<script th:inline="javascript">
+
+    $(window).resize(function(){
+        if ($(window).width()<1200){
+            // $('.contact-popup').css("overflow","auto")
+            //
+            if ($(window).height()<=450) {
+                $('.contact-popup').css("height", "60%")
+            }
+            else {
+                $('.contact-popup').css("height","55%")
+            }
+
+            if ($(window).width()>=1180) {
+                $('.contact-popup').css("height", "60%")
+            }
+
+            if ($(window).width()>700 && $(window).width()<844) {
+                $('.contact-popup').css("height", "70%")
+            }
+
+        }
+    })
+
+
+
+    $("#contactBtn").on("click", function (e){
+        if ($(window).width()<1200){
+            if ($(window).height()<=450) {
+                $('.contact-popup').css("height", "60%")
+            } else {
+                $('.contact-popup').css("height","55%")
+            }
+
+            if ($(window).width()>=1180) {
+                $('.contact-popup').css("height", "60%")
+            }
+
+            if ($(window).width()>700 && $(window).width()<844) {
+                $('.contact-popup').css("height", "70%")
+            }
+
+        }
+    })
+
+</script>
+</html>

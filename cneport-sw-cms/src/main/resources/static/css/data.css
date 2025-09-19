@@ -1,0 +1,219 @@
+@media (min-width: 1200px) {
+@charset "UTF-8";
+  .sh_cont1 {
+    background: -webkit-linear-gradient(top, #237BD8 0%, #0B3365 100%);
+    background: -moz-linear-gradient(top, #237BD8 0%, #0B3365 100%);
+    background: -o-linear-gradient(top, #237BD8 0%, #0B3365 100%);
+    background: linear-gradient(180deg, #237BD8 0%, #0B3365 100%);
+    overflow: hidden;
+    padding: 4vw 0;
+    min-height: 100vh;
+  }
+
+  .sh_wh {
+    width: 1460px;
+    margin: 0 auto;
+  }
+
+  /* 去除浮动 */
+  .sh_clearfix:after, .sh_clearfix:before {
+    display: table;
+    content: "";
+  }
+
+  .sh_clearfix:after {
+    clear: both;
+  }
+
+  /* 左浮动 */
+  .sh_fl {
+    float: left;
+  }
+
+  /* 右浮动 */
+  .sh_fr {
+    float: right;
+  }
+
+  #csv {
+    display: none;
+  }
+
+  .sh_title {
+    text-align: center;
+    color: #fff;
+  }
+
+  .sh_title dt {
+    font: 500 48px/1.5em "";
+  }
+
+  .sh_title span {
+    font: 500 36px/1.5em "";
+    text-transform: uppercase;
+  }
+
+  .sh_wehx-a {
+    background: -webkit-linear-gradient(top, #1E6BBE 0%, #165397 101.99%);
+    background: -moz-linear-gradient(top, #1E6BBE 0%, #165397 101.99%);
+    background: -o-linear-gradient(top, #1E6BBE 0%, #165397 101.99%);
+    background: linear-gradient(180deg, #1E6BBE 0%, #165397 101.99%);
+    border: 1px solid #63A8FF;
+    box-shadow: inset 2px 2px 8px 8px rgba(99, 168, 255, 0.2);
+    border-radius: 10px;
+    padding: 0 14px;
+  }
+
+  .sh_wehx-a .sh_tia-dt {
+    color: #fff;
+    font: 500 13px/2em "";
+    border-bottom: 1px solid #63A8FF;
+    padding: 21px 0 17px;
+    text-align: center;
+    word-break: initial;
+  }
+
+  .sh_cont1 .sh_wh {
+    position: relative;
+    z-index: 1;
+    padding-top: 80px;
+  }
+
+  .sh_cont1 .sh_wh .sh_a1_v1 {
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .sh_cont1 .sh_wh .sh_a1_v1::before {
+    content: "";
+    width: 620px;
+    height: 499px;
+    background: url(../img/bj1.svg) no-repeat center;
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    margin-left: -310px;
+    top: -520px;
+  }
+
+  .sh_a1_v1 .sh_a1_b1 {
+    width: 460px;
+  }
+
+  .sh_myzt {
+    color: #fff;
+  }
+
+  .sh_a1_v2 {
+    margin-top: 90px;
+  }
+
+  .sh_a1_v1 .sh_wehx-a {
+    background: -webkit-linear-gradient(top, #155092 0%, #0D386D 100%);
+    background: -moz-linear-gradient(top, #155092 0%, #0D386D 100%);
+    background: -o-linear-gradient(top, #155092 0%, #0D386D 100%);
+    background: linear-gradient(180deg, #155092 0%, #0D386D 100%);
+  }
+
+  .sh_a1_v2 .sh_a1_b2 {
+    width: 441px;
+  }
+
+  .sh_a1_v2 .sh_a1_b2 .sh_wehx_sa .sh_a1c1 {
+    width: 265px;
+  }
+
+  .sh_a1_v2 .sh_a1_b2 .sh_wehx_sa .sh_a1c2 {
+    width: 130px;
+    margin-top: 1em;
+  }
+
+  .sh_a1_v2 .sh_a1_b2 .sh_wehx_sa .sh_a1c2 dl span {
+    display: inline-block;
+    color: #fff;
+    font: 500 12px/1.3em "";
+    margin-left: 6px;
+  }
+
+  .sh_a1c2 dl{
+    padding:8px 0px;
+    margin:0px;
+  }
+
+  .sh_a1_v1 .sh_a1_b1 + .sh_a1_b1 {
+    margin-left: 40px;
+  }
+
+  .sh_yds {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #79E093;
+  }
+
+  .sh_elss {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #F6A96F;
+  }
+
+  .sh_bjsts {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #FF7387;
+  }
+
+  .sh_hstds {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #D2F399;
+  }
+
+  .sh_wzbkds {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #A770FF;
+  }
+
+  .sh_tjkds {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #FF78F1;
+  }
+
+  .sh_jrjsds {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #76D8FF;
+  }
+
+  .sh_ylds {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #FEDC80;
+  }
+
+  .sh_yl {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #299BF8;
+  }
+
+}

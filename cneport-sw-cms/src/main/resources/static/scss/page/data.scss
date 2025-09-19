@@ -1,0 +1,140 @@
+/* 贸易合作 */
+@media (max-width: 1200px) {
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .data-head {
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0 px2rem(16);
+
+      a {
+        &:nth-child(1) {
+          width: 2em;
+        }
+
+        &:nth-child(2) {
+          width: 2em;
+        }
+
+        &:nth-child(3) {
+          width: 2em;
+        }
+
+        &:nth-child(4) {
+          width: 2em;
+        }
+
+        &:nth-child(5) {
+          width: 2em;
+        }
+
+        &:nth-child(6) {
+          width: 2em;
+        }
+
+        &:nth-child(7) {
+          width: 2em;
+        }
+
+        &:nth-child(8) {
+          width: 2em;
+        }
+      }
+
+    }
+  }
+  .achaDisplay-head {
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0 px2rem(16);
+
+      a {
+        &:nth-child(1) {
+          width: 3em;
+        }
+
+        &:nth-child(2) {
+          width: 3em;
+        }
+
+        &:nth-child(3) {
+          width: 8em;
+        }
+
+        &:nth-child(4) {
+          width: 2em;
+        }
+
+        &:nth-child(5) {
+          width: 2em;
+        }
+
+        &:nth-child(6) {
+          width: 2em;
+        }
+
+        &:nth-child(7) {
+          width: 2em;
+        }
+
+        &:nth-child(8) {
+          width: 2em;
+        }
+      }
+
+    }
+  }
+
+  .trade-list-item {
+    padding: 0 px2rem(16);
+    margin-top: px2rem(30);
+    margin-bottom: px2rem(30);
+    display: flex;
+    flex-direction: column;
+  }
+  .te {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .trade-list-item img {
+    width: px2rem(360);
+    height: px2rem(219);
+    overflow: hidden;
+    font-size: px2rem(16);
+  }
+
+  .trade-list-item-info {
+    margin-bottom: px2rem(30);
+  }
+
+  .trade-list-item-info .t1 {
+    font-size: px2rem(36);
+    font-weight: 400;
+    margin-top: px2rem(36);
+  }
+
+  .trade-list-item-info .t2 {
+    color: var(--font-color-text);
+    font-size: px2rem(20);
+    line-height: px2rem(30);
+    font-weight: 400;
+    margin-top: px2rem(10);
+  }
+
+  .trade-list-item-info .theme-button {
+    margin-top: px2rem(20);
+  }
+}

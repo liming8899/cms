@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section >
+  <div class="wrapper">
+    <div class="page-title flexbox _content-sb">
+      <h3>一单两报</h3>
+      <a href="http://kjm.scoda.com/searail" target="_blank" class="button primary">[[#{Enterthesystem}]]</a>
+    </div>
+    <div class="reports-wrap">
+      <div class="reports-title">一单两报操作流程</div>
+      <img src="/images/reports/reports_0.png" alt="">
+      <div class="reports-title mt60">一单两报系统实单总结</div>
+      <div class="reports-item">
+        <img src="/images/reports/reports_1.png" alt="">
+        <div class="reports-info">
+          <h3>效益</h3>
+          <div class="reports-info-item">
+            <h5>提高操作效率，降低重复录入工作。</h5>
+            <p>通过一单两报功能，客户只需上传一次报关数据，既可以自动解析上传单一窗口，省去录入时间，同时也支持一键转译，生成对俄申报单据。</p>
+          </div>
+          <div class="reports-info-item">
+            <h5>实现智能化操作和跟踪</h5>
+            <p>降低申报操作难度，实现全程电子化数据流转，提高企业操作的便利性，同时可跟进申报进程。</p>
+          </div>
+        </div>
+      </div>
+      <div class="reports-item">
+        <div class="reports-info">
+          <h3>价值</h3>
+          <div class="reports-info-item">
+            <h5>为中俄贸易提供便利化措施</h5>
+            <p>中俄报关一单多报功能的实现，客户可以通过简单的线上操作完成中俄两国的报关单据的录入和生成，不仅是提高了国内关务申报的便捷，也为区内企业对俄贸易提供了便利化操作。</p>
+          </div>
+          <div class="reports-info-item">
+            <h5>丰富上合示范区企业化应用功能</h5>
+            <p>随着上合示范区跨境贸易服务中心“一单两报”系统的实单走通，既增强了平台的核心实力，也为示范区提供了新的企业应用功能点，丰富了示范区的企业服务能力。</p>
+          </div>
+        </div>
+        <img src="/images/reports/reports_2.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

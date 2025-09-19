@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(#{Searchresults})"></head>
+
+<body>
+    <header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+    <section th:replace="common/search"></section>
+    <section th:replace="common/nav"></section>
+    <section>
+        <div class="wrapper search-keywords">
+            <div class="page-title">
+                <h3>[[#{Searchresults}]]</h3>
+            </div>
+            <div class="search-page">
+                <div class="search-page-header">
+                    <div class="search-box">
+                        <input class="search-box-input" name="keywords" th:value="${keywords}" type="text" th:placeholder="#{Pleaseenterthekeywordsyouwanttoquery}">
+                        <div class="search-box-btn" onclick="bm.search('keywords')" >
+                            <i class="iconfont icon-search"></i>
+                        </div>
+                    </div>
+                    <div class="search-hotkey-wrap ellipsis1">
+                        <span>[[#{Popularsearches}]]：</span>
+                        <th:block th:each="key, keyStat : ${searchKeys}">
+                            <a th:href="@{'?keywords='+${key.name}}" th:class="${key.isHot == 2} ? 'myClass' : ''">[[${key.name}]]</a>
+                        </th:block>
+                    </div>
+                </div>
+                <div class="search-page-body">
+                    <div class="search-page-body-l">
+                        <th:block th:if="${searchList.total > 0}">
+                            <div class="search-result-total">[[#{RelatedResults}]]:[[${searchList.total}]]</div>
+                            <div class="search-result-list">
+                                <th:block th:each="search, searchStat : ${searchList.records}">
+                                    <!--文章-->
+                                    <a th:data="${T(cn.hutool.json.JSONUtil).parseObj(search)}" class="search-result-item">
+                                        <div class="title ellipsis1">
+                                            <span class="searchResType" th:data="${search.type}"></span>
+                                            <span th:if="${#strings.trim(lang_session)} eq 'zh_CN'" th:utext="${search.title}"></span>
+                                            <span th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(search.enTitle)}" th:utext="${search.enTitle}"></span>
+                                            <span th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(search.enTitle)}" th:utext="${search.title}"></span>
+                                            <span th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(search.ruTitle)}" th:utext="${search.ruTitle}"></span>
+                                            <span th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(search.ruTitle)}" th:utext="${search.title}"></span>
+                                        </div>
+                                        <div th:if="${#strings.trim(lang_session)} eq 'zh_CN'" class="summary ellipsis3">[[${search.description}]]</div>
+                                        <div th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(search.enDescription)}" class="summary ellipsis3">[[${search.enDescription}]]</div>
+                                        <div th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(search.enDescription)}" class="summary ellipsis3">[[${search.description}]]</div>
+                                        <div th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(search.ruDescription)}" class="summary ellipsis3">[[${search.ruDescription}]]</div>
+                                        <div th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(search.ruDescription)}" class="summary ellipsis3">[[${search.description}]]</div>
+                                        <div class="date">[[${#dates.format(search.addTime,'yyyy-MM-dd')}]]</div>
+                                    </a>
+<!--                                    &lt;!&ndash;商品&ndash;&gt;-->
+<!--                                    <a th:if="${search.type == 2}" th:href="@{'/b2b/product/'+${search.id}}" class="search-result-item">-->
+<!--                                        <div class="title ellipsis1">-->
+<!--                                            <span class="searchResType">[商品]</span>-->
+<!--                                            <span th:utext="${search.title}"></span>-->
+<!--                                        </div>-->
+<!--                                        <div class="summary ellipsis3">[[${search.description}]]</div>-->
+<!--                                        <div class="date">[[${#dates.format(search.addTime,'yyyy-MM-dd')}]]</div>-->
+<!--                                    </a>-->
+<!--                                    &lt;!&ndash;需求&ndash;&gt;-->
+<!--                                    <a th:if="${search.type == 3}" th:href="@{'/b2b/purchase/'+${search.id}}" class="search-result-item">-->
+<!--                                        <div class="title ellipsis1">-->
+<!--                                            <span class="searchResType">[需求]</span>-->
+<!--                                            <span th:utext="${search.title}"></span>-->
+<!--                                        </div>-->
+<!--                                        <div class="summary ellipsis3">[[${search.description}]]</div>-->
+<!--                                        <div class="date">[[${#dates.format(search.addTime,'yyyy-MM-dd')}]]</div>-->
+<!--                                    </a>-->
+                                </th:block>
+                            </div>
+                        </th:block>
+                        <th:block th:unless="${searchList.total > 0}">
+                            <div class="search-page__nodata">
+                                <img th:src="@{/img/no_data.png}" th:alt="#{NoDataAvailable}">
+                                <p>[[#{NoDataAvailable}]]</p>
+                            </div>
+                        </th:block>
+                    </div>
+                    <div class="search-page-body-r">
+                        <div>
+                            <h3>[[#{HotSearchResources}]]</h3>
+                            <th:block th:each="article, articleStat : ${niceList}">
+                                <a th:if="${#strings.trim(lang_session) eq 'zh_CN'}" th:href="@{'/article/'+${article.categoryId}+'/'+${article.id}}" class="search-r-list-item ellipsis1" th:title="${article.title}"><span>[[${articleStat.index + 1}]]</span>[[${article.title}]]</a>
+                                <a th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(article?.enTitle)}" th:href="@{'/article/'+${article.categoryId}+'/'+${article.id}}" class="search-r-list-item ellipsis1" th:title="${article.title}"><span>[[${articleStat.index + 1}]]</span>[[${article.title}]]</a>
+                                <a th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(article?.enTitle)}" th:href="@{'/article/'+${article.categoryId}+'/'+${article.id}}" class="search-r-list-item ellipsis1" th:title="${article.enTitle}"><span>[[${articleStat.index + 1}]]</span>[[${article.enTitle}]]</a>
+                                <a th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(article?.ruTitle)}" th:href="@{'/article/'+${article.categoryId}+'/'+${article.id}}" class="search-r-list-item ellipsis1" th:title="${article.title}"><span>[[${articleStat.index + 1}]]</span>[[${article.title}]]</a>
+                                <a th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(article?.ruTitle)}" th:href="@{'/article/'+${article.categoryId}+'/'+${article.id}}" class="search-r-list-item ellipsis1" th:title="${article.ruTitle}"><span>[[${articleStat.index + 1}]]</span>[[${article.ruTitle}]]</a>
+                            </th:block>
+                        </div>
+                        <div class="mt20">
+                            <h3>[[#{Recentsearches}]]</h3>
+                            <div class="search-history-list" id="searchHistoryList">
+                                <a href="javascript:location.href='/search?keywords='" class="search-r-list-item history ellipsis1">上海合作组织</a>
+                            </div>
+                            <div class="search-history-clean" onclick="bm.history.clean()">
+                                <i class="iconfont icon-list"></i>
+                                [[#{Deletesearchhistory}]]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div th:replace="common/pagination::pagination(${searchList},'?keywords='+${keywords})"></div>
+        </div>
+    </section>
+    <footer th:replace="common/footer"></footer>
+    <script th:inline="javascript">
+        $('.search-result-item').each(function () {
+            const data = JSON.parse($(this).attr('data'))
+            if (data.type === 1) {
+                if (data.menuId === 83 || data.menuId === 84 || data.menuId === 85) {
+                    if (data.dataType === 1) {
+                        $(this).attr('href', `/article/SWB/${data.menuId}/${data.id}`)
+                    } else if (data.dataType === 2) {
+                        $(this).attr('href', `/article/XHS/${data.menuId}/${data.id}`)
+                    }
+                } else {
+                    $(this).attr('href', `/article/${data.menuId}/${data.id}`)
+                }
+            } else if (data.type === 2) {
+                $(this).attr('href', `/b2b/product/${data.id}`)
+            } else if (data.type === 3) {
+                $(this).attr('href', `/b2b/purchase/${data.id}`)
+            }
+        })
+        $('.searchResType').each(function () {
+            const langSession = [[${lang_session}]];
+            const data = $(this).attr('data')
+            if (data === '1') {
+                if (langSession === 'zh_CN') {
+                    $(this).text('文章')
+                } else if (langSession === 'en_US') {
+                    $(this).text('Article')
+                } else if (langSession === 'ru_RU') {
+                    $(this).text('Статьи')
+                }
+            } else if (data === '2') {
+                if (langSession === 'zh_CN') {
+                    $(this).text('商品')
+                } else if (langSession === 'en_US') {
+                    $(this).text('Product')
+                } else if (langSession === 'ru_RU') {
+                    $(this).text('Товары')
+                }
+            } else if (data === '3') {
+                if (langSession === 'zh_CN') {
+                    $(this).text('需求')
+                } else if (langSession === 'en_US') {
+                    $(this).text('Demand')
+                } else if (langSession === 'ru_RU') {
+                    $(this).text('Спрос')
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
+<style>
+    .myClass{
+        color: red !important;
+
+    }
+    .searchResType {
+        font-weight: bold;
+        margin-right: 20px;
+        color: blue;
+    }
+</style>

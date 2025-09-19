@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head th:replace="public/head::head('[[#{OnlineReceptionRoom}]]')"></head>
+
+<body>
+<header th:replace="public/header3"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+
+<section>
+
+    <section>
+        <div class="wrapper">
+            <div class="page-title">
+                <h3>[[#{OnlineReceptionRoom}]]</h3>
+            </div>
+            <div class="meetingOrder-header-wrap">
+                <div class="meetingOrder-header-item-wrap">
+                    <div class="meetingOrder-accordion-wrap">
+                        <div class="t">[[#{Functionalpositioning}]]</div>
+                        <ul id="accordion" class="accordion mt20">
+                            <li class='accordion-item'>
+                                <div class="tit is-active">
+                                    <p>01.国际商贸展示</p> <i class="iconfont icon-Vector-top"></i></div>
+                                <p class="desc is-active">
+                                    以国别集聚、产品集聚、信息集聚为特点，旨在进一步对接上合组织国家、“一带一路”沿线政府、商协会、企业各类资源，为愿意进入中国市场的企业提供线上及线下展示平台</p>
+                            </li>
+                            <li class='accordion-item'>
+                                <div class="tit">
+                                    <p>01.国际商贸展示</p> <i class="iconfont icon-Vector-down"></i>
+                                </div>
+                                <p class="desc">
+                                    以国别集聚、产品集聚、信息集聚为特点，旨在进一步对接上合组织国家、“一带一路”沿线政府、商协会、企业各类资源，为愿意进入中国市场的企业提供线上及线下展示平台</p>
+                            </li>
+                            <li class='accordion-item'>
+                                <div class="tit">
+                                    <p>01.国际商贸展示</p> <i class="iconfont icon-Vector-down"></i></div>
+                                <p class="desc">
+                                    以国别集聚、产品集聚、信息集聚为特点，旨在进一步对接上合组织国家、“一带一路”沿线政府、商协会、企业各类资源，为愿意进入中国市场的企业提供线上及线下展示平台</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <img th:src="@{/images/Mask}" alt="">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="gray-bg pt60 pb60">
+            <div class="wrapper">
+                <div class="notice-wrap">
+                    <i class="iconfont icon-notice"></i>
+                    <p>通知：中国—上海合作组织国家金融合作与资本市场发展论坛预约2022年7月14日会议成功</p>
+                </div>
+                <div class="meetingOrder-grid-wrap">
+                    <a href="">
+                        <div class="meetingOrder-grid-item">
+                            <img th:src="@{/images/Mask}" alt="">
+                            <div class="tit">
+                                <h4>会议室预订</h4>
+                                <i class="iconfont icon-zhxx-right"></i>
+                            </div>
+                            <p>过高科技和智慧化手段，集中展示示范区勇挑国之重任，敢于创新担当的实干精神，展馆按照...</p>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="meetingOrder-grid-item">
+                            <img th:src="@{/images/Mask}" alt="">
+                            <div class="tit">
+                                <h4>会议室预订</h4>
+                                <i class="iconfont icon-zhxx-right"></i>
+                            </div>
+                            <p>过高科技和智慧化手段，集中展示示范区勇挑国之重任，敢于创新担当的实干精神，展馆按照...</p>
+                        </div>
+                    </a>
+                </div>
+                <!--                    <div>swiper</div>-->
+            </div>
+        </div>
+    </section>
+</section>
+<footer th:replace="public/footer"></footer>
+
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.countup.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/qing.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script>
+    // 改进版本的手风琴菜单效果
+    $('#accordion .tit').click(function () {
+        $(this).addClass('is-active');
+        $(this).next('.desc').slideToggle();
+        $(this).find('.iconfont').removeClass('icon-Vector-down').addClass('icon-Vector-top')
+
+
+        $(this).parent().siblings('li').find('.tit').removeClass('is-active')
+        $(this).parent().siblings('li').find('.desc').slideUp();
+        $(this).parent().siblings('li').find('.iconfont').removeClass('icon-Vector-top').addClass('icon-Vector-down')
+
+        $(".accordion-img").attr('src', '')
+    });
+</script>
+</body>
+
+</html>

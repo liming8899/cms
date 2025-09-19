@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<div class="wrapper thinkTanks">
+    <div class="mb60">
+        <div class="financial-item">
+            <img style="object-fit: fill;" src="/images/zk_01.jpeg" alt="" />
+            <div class="financial-item-info">
+                <p class="t1">
+                    [[#{ThinkTankConsultingServiceIntroduction}]]
+                </p>
+                <p class="t2 ">
+                    [[#{Consultingandthinktankservicesareaimedattheindivid}]]
+                </p>
+                <a th:onclick="bm.commonLinkUrl2('/search/country',[[#{thinkTankSearchService}]]);" target="_blank">
+                    <div class="theme-button">
+                        [[#{Learnmore}]]
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="financial-item" style="display:none;">
+            <div class="financial-item-info">
+                <p class="t1">
+                    行业发展趋势分析
+                </p>
+                <p class="t2 ">
+                    根据用户点题需求，组织业内专家、分析师力量，通过资料搜集、实地调研、座谈交流等方式，针对特定行业的发展现状、发展机遇和发展趋势进行系统性分析和研究，形成书面研究成果，供用户参考。
+                </p>
+            </div>
+            <img src="/images/zk_02.png" alt="" />
+        </div>
+        <div class="financial-item" style="display:none;">
+            <img src="/images/zk_03.jpeg" alt="" />
+            <div class="financial-item-info">
+                <p class="t1">
+                    境外产业项目风险评估
+                </p>
+                <p class="t2 ">
+                    根据用户海外项目发展等方面点题需求，组织业内专家、分析师和记者力量，通过资料搜集、实地调研、座谈交流等方式，针对特定国家的相关产业的发展环境、现状、发展机遇和发展趋势进行系统性分析和研究，形成书面研究成果，供用户参考
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="common/footer"></footer>
+</body>
+<style>
+
+    @media (max-width: 1200px){
+        .mb60 {
+            margin-bottom: 10px;
+        }
+    }
+</style>
+</html>

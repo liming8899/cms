@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>通关参数应用查询 </title>
+    <meta name="keywords" content="上合跨国供求信息平台">
+    <meta name="description" content="上合跨国供求信息平台">
+    <link rel="shortcut icon" href="/img/favicon.ico"/>
+    <link rel="bookmark" href="/img/favicon.ico"/>
+    <link rel="stylesheet" href="/font/iconfont.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/qing.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/parameter.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/font_3300752_h0zqlzzmss.css">
+    <script src="/js/jquery.min.js"></script>
+</head>
+
+<body>
+<header class="m-head">
+    <div class="h-wrap wrapper">
+        <div class="h-top">
+            <div class="h-logo">
+                <a href="/">
+                    <img src="/img/main_logo.png" alt="">
+                </a>
+            </div>
+            <div class="luange-div tr">
+                <a href="/">中</a>
+                <a href="http://scocsp.com/language/index/webru/index">РУС</a>
+                <a href="http://scocsp.com/language/index/weben/index">EN</a>
+                <span class="sou-img ds" id="mSearchShowBtn">
+                    <i class="iconfont ds icon-fangdajing"></i>
+                </span>
+                <a href="javascript:;" id="mNavShowBtn">
+                    <i class="iconfont icon-daohang"></i>
+                    [[#{Navigation}]]
+                </a>
+            </div>
+        </div>
+        <div class="h-fot clearfix">
+            <div class="h-fot-nav fr">
+                <a href="http://scocsp.com/b2b/" target="_blank">[[#{Cross-borderProcurement}]]</a>
+                <a href="/funapp-through">[[#{One-stopCustomsClearance}]]</a>
+                <a href="/funapp-logistics">[[#{FullChainLogistics}]]</a>
+                <a href="/funapp-smarttax">[[#{SmartTaxEngine}]]</a>
+                <a href="/funapp-finance">[[#{FeaturedFianance}]]</a>
+                <a href="/funapp-service-law">[[#{PanoramaService}]]</a>
+                <a href="/funapp-win-history">[[#{NewDistrictWindow}]]</a>
+                <a href="/funapp-data">[[#{DigitalSCO}]]</a>
+            </div>
+        </div>
+    </div>
+    <div class="m-head__crumbs">
+        <ul class="crumbs wrapper">
+            <li><i class="iconfont icon-daohang"></i></li>
+            <li><a href="/">首页</a></li>
+            <li>
+                <a href="/funapp-through">[[#{ComprehensiveFunctionApplication}]]</a>
+            </li>
+            <li>
+                <a href="/funapp-through">[[#{One-stopCustomsClearance}]]</a>
+            </li>
+            <li>
+               <a href="javascript:;">通关参数应用查询</a>
+            </li>
+
+
+        </ul>
+    </div>
+</header>
+<section th:replace="common/nav"></section>
+<section th:replace="common/search"></section>
+
+<section>
+    <div class="wrapper">
+        <div class="mb60">
+            <div class="page-title">
+                <h3>
+                    参数查询
+                </h3>
+            </div>
+            <div class="w1200">
+                <div class="el-row">
+                    <div class="el-col">
+                        <div class="tool">
+                            <div class="tab-list-wrap">
+                                <section th:replace="common/customs_parameters.html"></section>
+                            </div>
+                        </div>
+                    </div>
+                    <div th:fragment="search_recorde" class="search_recorde" >
+                        <div class=" el-col-20">
+                            <div style="float: left;margin: 10px 5px;">
+                                <span id="inner-title" style="float: left; font-size: inherit;margin-right: 20px;"></span>
+                                <select id="keywords2" th:value="${keywords2}">
+                                    <option value="" selected="selected">--请选择--</option>
+                                    <option value="1">商品名称</option>
+                                    <option value="2">商品编码</option>
+                                </select>
+                                <input class="ikey" id="keywords" name="keywords" th:value="${keywords}" type="text" placeholder="请输入您要查询的内容">
+                                <div class="search-box-btn" onclick="parameter.searchchange1('complexLimitSearch')" style="float: left;">
+                                    <i class="iconfont icon-search"></i>
+                                </div>
+                            </div>
+                            <div th:fragment="columns_recorde" class="columns_recorde">
+                                <div  style="width: 1080px;overflow: scroll;">
+                                    <table class="orderList" border="0" cellspacing="0" cellpadding="0" >
+                                        <thead>
+                                        <tr>
+                                            <td style="min-width: 200px;">商品编码</td>
+                                            <td style="min-width: 200px">商品名称</td>
+                                            <td style="min-width: 200px;">管理方式</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="detailItem, detailStat : ${detailList.records}">
+                                            <td><a href="javascript:void(0);" style="color: #2d8cf0;">[[${detailItem.code_ts}]]</a></td>
+                                            <td>[[${detailItem.g_name}]]</td>
+                                            <td>[[${detailItem.manage_style}]]</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div th:replace="common/paramters_pagination::pagination(${detailList},${path})"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        /*.sh-visited a:hover,
+        .sh-visited a:link,
+        .sh-visited a:visited,
+        .sh-visited a.is-active {
+            color: #FFF;
+        }*/
+
+    </style>
+</section>
+<div style="margin-top: 700px">
+    <footer th:replace="common/footer"></footer>
+</div>
+
+</body>
+<link href="/js/sweetalert/sweetalert.css" rel="stylesheet" />
+<script src="/js/sweetalert/sweetalert.min.js"></script>
+<script src="/js/parameter.js"></script>
+<script>
+    $(function () {
+        $("#menu_ul li").click(function () {
+            $(this).addClass("active");
+            $(this).siblings("li").removeClass("active");
+        });
+    });
+    function changePage(url,currentPage,pageSize,){
+        // debugger
+        var keywords = $("#keywords").val();
+        var keywords2 = $("#keywords2").val();
+
+
+
+        $.ajax({
+            url : url +'?currentPage='+currentPage+'&pageSize'+pageSize+'&keywords=' + keywords+'&keywords2='+keywords2+'&flush="1"',
+            type : "GET",
+            success : function (data) {
+                $(".columns_recorde").html(data);
+            },
+            error:function (errorMsg) {
+                console.log(errorMsg);
+            }
+        })
+    }
+</script>
+<script th:inline="javascript">
+    var url = [[${#request.requestURL}]].split('/')[4]
+    $("#menu_ul li").each(function () {
+        $(this).removeClass("active");
+        // console.log($(this).find('a').attr("href").indexOf(url) > -1)
+        if ($(this).find('a').attr("onclick").indexOf(url) > -1) {
+            $(this).addClass("active");
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<!--<div class="sco-hbt-head">-->
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<!--</div>-->
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section class="cpic">
+  <div class="wrapper">
+    <div class="page-title">
+      <h3>
+        跨境电商保（责任险）
+      </h3>
+    </div>
+    <div class="mg20">
+      <p class="content-p">
+        针对跨境电商在交易环节、物流环节、售后环节的潜在风险敞口提供全方位保障。关于交易环节及物流环节主要存在的错发错运、配送时效、货损货丢、支付安全的常见风险，我司的网络交易平台责任保险、配送服务延迟赔偿责任保险、网络安全保险等产品可为广大对外贸易企业提供有效解决方案。
+      </p>
+      <p class="content-p">
+        售后环节主要风险点包括产品缺陷、产品召回、退货延保等，对应产品包括产品责任险、出口产品责任险、商业综合责任保险、出口产品商业综合责任保险、产品责任及产品召回责任保险、产品召回损失保险、产品质量保障保险等。
+      </p>
+      <p class="content-p ti0 important">
+        1、商业综合保险
+      </p>
+      <p class="content-p">
+        商业综合保险是一款承保风险广泛的成熟产品，可针对第三者的人身伤害、财产损失、个人和广告侵权责任、医疗费用三个普通责任风险进行承保，基本涵盖企业生产经营销售过程中常见的责任风险，为企业经营保驾护航。
+      </p>
+
+      <p class="content-p ti0 important">
+        2、产品责任及产品召回责任保险
+      </p>
+      <p class="content-p">
+        承保企业的产品责任、产品质保责任、财务损失责任和产品召回费用。保障企业生产或销售的产品存在缺陷而造成的第三方人身伤害或财产损失，含法律费用。因产品缺陷所引起的召回费用，可通过产品召回责任保险保障。
+      </p>
+
+      <p class="content-p ti0 important">
+        3、网络交易平台责任保险
+      </p>
+      <p class="content-p">
+        因商家销售的产品/服务侵犯了购买者的合法权益，造成购买者的人身损害和财产损失，作为网络交易平台经营者应承担的陪产责任，可通过购买此保险产品进行保障。
+      </p>
+
+      <p class="content-p ti0 important">
+        4、配送服务延迟赔偿责任保险
+      </p>
+      <p class="content-p">
+        可保障企业向消费者提供配送服务并作出承诺，但企业因疏忽、过失导致货物送达时间超过规定送达时间，消费者向企业提出的经济补偿索赔责任，对于电商平台经营者、网点运营者等客户十分适用。
+      </p>
+    </div>
+
+    <hr class="hr-twill">
+
+    <div class="gzh">
+      <div class="gzh-left">
+        <p>更多产品服务，详情请咨询</p>
+        <p>太平洋保险官方客服电话：95500</p>
+        <p>太平洋产险服务专员：张经理</p>
+        <p>联系方式：13335058619</p>
+      </div>
+      <div class="gzh-right">
+        <div><img src="/images/finance/wxgzh.png"></div>
+        <div>
+          <p>太平洋保险微信公众号</p>
+          <p>请微信扫描</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer th:replace="common/footer"></footer>
+<style>
+
+  .cpic-img1 {
+    margin: 0 auto;
+  }
+  .ti0 {
+    text-indent: 0 !important;
+  }
+
+  .cpic .page-title {
+    margin-top: 0;
+  }
+
+  @media (min-width: 1200px) {
+    .mg20 {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+    .content-p {
+      text-indent: 2em;
+      font-size: 16px;
+      color: #5c5c5c;
+    }
+    .scancode {
+      max-width: 200px;
+    }
+
+    .important {
+      font-size: 18px !important;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .mg20 {
+      margin: 0.3rem 0;
+    }
+    .content-p {
+      margin: 0 0.2133333333rem;
+      color: var(--font-color-text);
+      font-size: 0.2666666667rem;
+      line-height: 0.4rem;
+      text-indent: 2em;
+    }
+    .scancode {
+      max-width: 2.3rem;
+    }
+
+    .important {
+      font-size: 0.28888888rem !important;
+      margin: 0.2rem 0.213rem;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+</style>
+</body>
+</html>

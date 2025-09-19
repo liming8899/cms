@@ -1,0 +1,20 @@
+<head  th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[${title}]] </title>
+    <meta name="keywords" th:content="${site.keywords}">
+    <meta name="description" th:content="${site.description}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}"/>
+    <link rel="bookmark" th:href="@{/img/favicon.ico}"/>
+    <link rel="stylesheet" th:href="@{/font/iconfont.css}">
+    <link rel="stylesheet" th:href="@{/css/common.css(v=${T(java.lang.System).currentTimeMillis()})}">
+    <link rel="stylesheet" th:href="@{/css/qing.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css(v=${T(java.lang.System).currentTimeMillis()})}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css(v=${T(java.lang.System).currentTimeMillis()})}">
+    <link rel="stylesheet" th:href="@{/css/data.css(v=${T(java.lang.System).currentTimeMillis()})}">
+    <link rel="stylesheet" th:href="@{/css/scssToCss.css(v=${T(java.lang.System).currentTimeMillis()})}">
+    <link rel="stylesheet" th:href="@{/css/font_3300752_h0zqlzzmss.css}">
+    <script th:src="@{/js/jquery.min.js}"></script>
+</head>

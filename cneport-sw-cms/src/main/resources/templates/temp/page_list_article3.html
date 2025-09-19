@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+    <header th:replace="common/header::header(${currentList})"></header>
+    <section th:replace="common/search"></section>
+    <section th:replace="common/nav"></section>
+    <section>
+        <div class="wrapper">
+            <div class="sound-list-wrap">
+                <ul>
+                    <th:block th:each="item, itemStat : ${articleList.records}">
+                        <th:block th:if="${item.isLink > 1}">
+                            <a th:href="@{${item.linkUrl}}" target="_blank"  class="sound-list-item">
+                                <img
+                                        th:src="@{${item.coverImage}}"
+                                        th:alt="${item.title}"
+                                        onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null"
+                                >
+                                <div>
+                                    <p class="t1 ellipsis1">[[${item.title}]]</p>
+                                    <p class="t3">[[${item.description}]]</p>
+                                    <div class="flexbox _content-sb">
+                                        <p class="t2">[[${#dates.format(item.createTime,'yyyy年MM月dd')}]]</p>
+                                        <div class="theme-button">[[#{Learnmore}]]</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </th:block>
+                        <th:block th:unless="${item.isLink > 1}">
+                            <a th:href="@{'/article/'+${item.id}}" target="_blank"  class="sound-list-item">
+                                <img
+                                        th:src="@{${item.coverImage}}"
+                                        th:alt="${item.title}"
+                                        onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null"
+                                >
+                                <div>
+                                    <p class="t1 ellipsis1">[[${item.title}]]</p>
+                                    <p class="t3">[[${item.description}]]</p>
+                                    <div class="flexbox _content-sb">
+                                        <p class="t2">[[${#dates.format(item.createTime,'yyyy年MM月dd')}]]</p>
+                                        <div class="theme-button">[[#{Learnmore}]]</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </th:block>
+                    </th:block>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer th:replace="common/footer"></footer>
+</body>
+</html>

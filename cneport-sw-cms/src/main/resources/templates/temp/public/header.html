@@ -1,0 +1,42 @@
+<header class="m-head" th:fragment="header">
+    <div class="h-wrap wrapper">
+        <div class="h-top">
+            <div class="h-logo">
+                <img th:src="@{/img/main_logo.png}" alt="">
+            </div>
+            <div class="luange-div tr">
+                <a href="">中文</a>
+                <a href="">РУС</a>
+                <a href="">ENG</a>
+                <span class="sou-img ds">
+                    <i class="iconfont ds icon-fangdajing"></i>
+                </span>
+                <a href="javascript:;" id="mNavShowBtn">
+                    <i class="iconfont icon-daohang"></i>
+                    [[#{Navigation}]]
+                </a>
+            </div>
+        </div>
+        <div class="h-fot">
+            <ul class="crumbs">
+                <li><i class="iconfont icon-daohang"></i></li>
+                <li><a href="/temp/templateslates/temp/public">首页</a></li>
+            </ul>
+            <div>
+            <div class="h-fot-nav">
+                <a href="/ci/news">上合组织时政要闻展示</a>
+                <a href="/ci/study">上合组织研究成果展示</a>
+                <a href="/ci/great">大事记</a>
+                <a href="/ci/policy">政策展示</a>
+                <a href="/ci/risk">上合风险发布</a>
+                <a href="/ci/conditions">国家国情图解</a>
+                <a href="/ci/company">[[#{LeadingEnterprises}]]</a>
+                <a href="/ci/park">[[#{IndustrialPark}]]</a>
+                <a href="/ci/dynamic">新区动态</a>
+                <a href="/ci/trade">[[#{Constructionachievementsdisplay}]]</a>
+                <a href="/ci/sound">上合之声</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</header>

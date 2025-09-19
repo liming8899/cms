@@ -1,0 +1,96 @@
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .onlinehall-head {
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0 px2rem(16);
+
+    }
+  }
+
+
+  .onlinehall {
+    .t {
+      display: none;
+    }
+
+    .ellipsis2 {
+      display: block;
+    }
+
+    .page-title {
+      margin: 0 px2rem(16);
+    }
+
+    .meeting-header-wrap {
+      padding: 0 px2rem(16);
+      box-sizing: border-box;
+    }
+
+    .notice-wrap {
+      display: flex;
+      color: #ff0000;
+      font-size: px2rem(16);
+      align-items: center;
+    }
+
+    .notice-wrap i {
+      font-size: px2rem(24);
+      margin-right: px2rem(18);
+    }
+
+    .meeting-grid-wrap {
+      padding-top: px2rem(25);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .meeting-grid-item {
+      width: px2rem(354);
+      border-radius: px2rem(10);
+      background-color: #fff;
+      margin-bottom: px2rem(30);
+    }
+
+    .meeting-grid-item img {
+      width: 100%;
+      height: px2rem(285);
+    }
+
+    .meeting-grid-item .tit {
+      padding: 0 px2rem(20);
+      font-size: px2rem(24);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .meeting-grid-item h4 {
+      font-size: px2rem(24);
+      font-weight: 400;
+    }
+
+    .meeting-grid-item i {
+      color: var(--font-color-text);
+    }
+
+    .meeting-grid-item p {
+
+      text-align: justify;
+      padding: px2rem(20) px2rem(20);
+      font-size: px2rem(20);
+      line-height: px2rem(30);
+      color: var(--font-color-text);
+    }
+  }
+}

@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section >
+  <!DOCTYPE html>
+  <html>
+  <head>
+  </head>
+  <body>
+  <div class="wrapper agreement" style="font-size: 16px;line-height: 24px;">
+    <section th:if="${#strings.trim(lang_session)} eq 'zh_CN'">
+      <p class="MsoNormal" style="text-align:center;" align="center">
+        <b><span style="font-size: 24px">用户信息保护政策</span></b><b><span></span></b>
+      </p>
+      <p class="MsoNormal">
+        <span>&nbsp;</span>
+      </p>
+      <p class="MsoNormal">
+        <span>本政策仅适用于中国</span><span>-</span><span>上海合作组织地方经贸合作综合服务平台项目。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>最近更新日期：</span><span>2022</span><span>年</span><span>10</span><span>月。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>如果您有任何疑问、意见或建议，请通过以下联系方式与我们联系：</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>电子邮件：</span><span>feedback@scocsp.com<a class="msocomanchor" id="_anchor_2" href="#_msocom_2" name="_msoanchor_2"></a></span>
+      </p>
+      <p class="MsoNormal">
+        <span>电</span><span> </span><span>话：</span><span>0532-58081699</span>
+      </p>
+      <p class="MsoNormal">
+        <span>本政策将帮助您了解以下内容：</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>&nbsp;</span>
+      </p>
+      <p class="MsoNormal">
+        <span>◼ </span><span>用户注册信息收集使用规则</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>◼ </span><span>我们如何保护您的用户信息</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>◼ </span><span>您的权利</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>◼ </span><span>本政策如何更新</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>◼ </span><span>如何联系我们</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>&nbsp;</span>
+      </p>
+      <p class="MsoNormal">
+        <span>中国</span><span>-</span><span>上海合作组织地方经贸合作综合服务平台项目组深知用户信息对您的重要性，并会尽全力保护您的用户信息安全可靠。我们致力于维持您对我们的信任，恪守以下原则，保护您的个人信息：权责一致原则、目的明确原则、选择同意原则、最小必要原则、确保安全原则、主体参与原则、公开透明原则等。同时，中国</span><span>-</span><span>上海合作组织地方经贸合作综合服务平台项目组承诺，我们将按业界成熟的安全标准，采取相应的安全保护措施来保护您的用户信息。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>请在使用我们的产品或服务前，仔细阅读并了解本《信息保护政策》。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>&nbsp;</span>
+      </p>
+      <p class="MsoNormal">
+        <span>一、用户注册信息收集使用规则</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>1</span><span>、我们收集哪些您的用户信息</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>我们提供的业务功能需要依赖部分信息才得以运行。您选择使用该项业务功能，则需要向我们提供或允许我们收集的必要信息包括：<a>联系人、联系电话、邮箱地址，共计</a></span><span><span>3</span></span><span><span>类个人信息；企业名称、企业地址、所属行业、海关十位编码、统一社会信用编码、纳税人识别号、营业执照、企业资质、企业银行账户名称、开户银行、开户地址，共计</span></span><span><span>10</span></span><span><span>类企业信息。</span></span><span><a class="msocomanchor" id="_anchor_3" href="#_msocom_3" name="_msoanchor_3"></a></span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>2</span><span>、我们如何使用您的用户信息</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>对于必要的用户信息，我们会用来提供该项业务功能，包括：跨境采购、一站通关、全链物流、智税引擎、特色金融等，我们也会使用上述信息来维护和改进本项业务功能，开发新的业务功能等。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>3</span><span>、我们如何委托处理、共享、转让、公开披露您的信息</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(</span><span>1</span><span>)委托处理</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>本业务功能中暂没有具体的模块或功能由外部供应商提供。后期如有委托外部供应商处理用户信息的公司、组织和个人，我们会与其签署严格的保密协定，要求他们按照我们的要求、按用户信息保护政策以及其他任何相关的保密和安全措施来处理用户信息。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(</span><span>2</span><span>)共享</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>我们不会与本公司以外的任何公司、组织和个人分享您的信息，除非获得您的明确同意。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(</span><span>3</span><span>)转让</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>我们不会将您的信息转让给任何公司、组织和个人。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(</span><span>4</span><span>)公开披露</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>我们仅会在以下情形下，公开披露您的信息：</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>a) </span><span>获得您明确同意后；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>b) </span><span>基于法律的披露：在法律、法律程序、诉讼或政府主管部门强制性要求的情况下，我们可能会公开披露您的用户信息。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>&nbsp;</span>
+      </p>
+      <p class="MsoNormal">
+        <span>二、我们如何保护您的用户信息</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>1.</span><span>保存期限</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>您在使用系统期间，我们将持续为您保存您的用户信息。如果您注销帐户或主动删除上述信息，我们将依据网络安全法等法律法规规定保存您的信息。在您注销帐户或主动删除上述信息后，我们不会再对您的用户信息进行使用，但我们可能会对您的用户信息进行匿名化处理后使用。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>2.</span><span>保存地域</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>您的用户信息均储存于中华人民共和国境内，我们会严格按照法律法规的规定执行，并保证您的用户信息安全。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>3.</span><span>安全措施</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(1</span><span>)我们会以业界成熟的安全标准和规范收集、使用、存储和传输用户信息，并通过用户协议和隐私政策告知您相关信息的使用目的和范围。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(2</span><span>)我们非常重视信息安全。我们成立了专责团队负责研发和应用多种安全技术和程序等，我们会对安全管理负责人和关键安全岗位的人员进行安全背景审查，我们建立了完善的信息安全管理制度和内部安全事件处置机制等。我们会采取符合业界标准的合理可行的安全措施和技术手段存储和保护您的个人信息，以防止您的信息遭到被未经授权的访问、公开披露、使用、修改、毁损、丢失或泄漏。我们会采取一切合理可行的措施，保护您的个人信息。我们会使用加密技术确保数据的保密性；我们会使用受信赖的保护机制防止数据遭到恶意攻击。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(3</span><span>)我们会对员工进行数据安全的意识培养和安全能力的培训和考核，加强员工对于保护用户信息重要性的认识。我们部署访问控制机制，对处理用户信息的员工进行身份认证及权限控制，并会与接触您用户信息的员工、合作伙伴签署保密协议，明确岗位职责及行为准则，确保只有授权人员才可访问用户信息。若有违反保密协议的行为，会被追究相关责任。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(4</span><span>)我们提醒您注意，互联网并非绝对安全的环境，当您通过电子邮件、短信等与其他用户交互信息时，不确定第三方软件对信息的传递是否完全加密，请注意确保您用户信息的安全，我们建议您不要通过此类方式发送用户信息，以免信息泄露．请使用复杂密码，协助我们保证您的帐号以及用户信息安全。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>4.</span><span>安全事件通知</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(1</span><span>)我们会制定网络安全事件应急预案，及时处置系统漏洞、计算机病毒、网络攻击、网络侵入等安全风险，在发生危害网络安全的事件时，我们会立即启动应急预案，采取相应的补救措施，并按照规定向有关主管部门报告。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(2)</span><span>根据我们的安全管理制度，用户信息泄露、毁损、丢失属于公司级特大安全事件，我们会负责定期组织工作组成员进行安全预案演练，防止此类安全事件发生。若一旦不幸发生，我们将按照最高优先级启动应急预案，由公司内部的安全部门、法务部门等多个部门组成应急响应小组，在最短时间内追溯原因并减少损失。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(3</span><span>)在不幸发生用户信息安全事件后，我们将按照法律法规的要求，及时向您告知安全事件的基本情况和可能的影响、我们已采取或将要采取的处理措施、您可自主防范和降低的风险的建议、对您的补救措施等。我们将及时将事件相关情况以站内通知、短信通知、电话、邮件等您预留的联系方式告知您，难以逐一告知时我们会采取合理、有效的方式发布公告。同时，我们还将按照监管部门要求，主动上报用户信息安全事件的处置情况。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>&nbsp;</span>
+      </p>
+      <p class="MsoNormal">
+        <span>三、您的权利</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>按照中国相关的法律、法规、标准，以及其他国家、地区的通行做法，我们保障您对自己的用户信息行使以下权利：</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(一)访问您的用户信息</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>您有权访问您的用户信息，法律法规规定的例外情况除外。如果您想行使数据访问权，可以通过以下方式自行访问：以备案通过后的登录名登录中国</span><span>-</span><span>上海合作组织地方经贸合作综合服务平台(</span><span>http://www.scocsp.com</span><span>)进行访问。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>如果您无法通过上述链接访问这些用户信息，您可以随时联系中国</span><span>-</span><span>上海合作组织地方经贸合作综合服务平台服务中心进行咨询并获得处理。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(二)更正您的用户信息</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>当您发现我们处理的关于您的用户信息有错误时，您有权要求我们作出更正。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(三)删除您的用户信息</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>在以下情形中，您可以向我们提出删除用户信息的请求：</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>1</span><span>、如果我们处理用户信息的行为违反法律法规；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>2</span><span>、如果我们收集、使用您的用户信息，却未征得您的同意；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>3</span><span>、如果我们处理用户信息的行为违反了与您的约定；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>4</span><span>、如果您不再使用我们的产品或服务，或您注销了账号；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>5</span><span>、如果我们不再为您提供产品或服务。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <a></a><a><span><span>若我们决定响应您的删除请求，我们还将同时通知从我们获得您的用户信息的实体，要求其及时删除，除非法律法规另有规定，或这些实体获得您的独立授权。</span></span></a><span><span><span> <span></span></span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span><span><span>当您从我们的服务中删除信息后，我们可能不会立即在备份系统中删除相应的信息，但会在备份更新时删除这些信息。</span></span></span><span><span><span> </span></span></span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(四)用户信息主体注销账户</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>您随时可申请注销此前注册的账户，在注销账户之后，我们将停止为您提供产品或服务，并依据您的要求，删除您的用户信息，法律法规另有规定的除外。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(五)用户信息主体获取用户信息副本</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>您有权获取您的用户信息副本，<a><span>您可以通过以下方式自行操作：登录中国</span></a></span><span><span><span>-</span></span></span><span><span><span>上海合作组织地方经贸合作综合服务平台会员中心模块自行获取。</span></span></span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <a></a><a><span><span>(六)约束信息系统自动决策</span></span></a><span><span><span></span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span><span><span>在某些业务功能中，我们可能仅依据信息系统、算法等在内的非人工自动决策机制作出决定。如果这些决定显著影响您的合法权益，您有权要求我们作出解释。</span></span></span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>(七)响应您的上述请求</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>为保障安全，您可能需要提供书面请求，或以其他方式证明您的身份。我们可能会先要求您验证自己的身份，然后再处理您的请求。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>对于您合理的请求，我们原则上不收取费用，但对多次重复、超出合理限度的请求，我们将视情收取一定成本费用。对于那些无端重复、需要过多技术手段(例如，需要开发新系统或从根本上改变现行惯例)、给他人合法权益带来风险或者非常不切实际(例如，涉及备份磁带上存放的信息)的请求，我们可能会予以拒绝。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>在以下情形中，我们将无法响应您的请求：</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>1</span><span>、与用户信息控制者履行法律法规规定的义务相关的；</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>2</span><span>、与国家安全、国防安全直接相关的；</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>3</span><span>、与公共安全、公共卫生、重大公共利益直接相关的；</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>4</span><span>、与刑事侦查、起诉、审判和执行判决等直接相关的；</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>5</span><span>、用户信息控制者有充分证据表明用户信息主体存在主观恶意或滥用权利的；</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>6</span><span>、出于维护用户信息主体或其他个人的生命、财产等重大合法权益但又很难得到本人同意的；</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>7</span><span>、响应用户信息主体的请求将导致用户信息主体或其他个人、组织的合法权益受到严重损害的；涉及商业秘密的。</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>&nbsp;</span>
+      </p>
+      <p class="MsoNormal">
+        <span>四、本政策如何更新</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>我们的用户信息保护政策可能变更。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>未经您明确同意，我们不会削减您按照本用户信息保护政策所应享有的权利。我们会在本页面上发布对本政策所做的任何变更。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>对于重大变更，我们还会提供更为显著的通知(包括对于某些服务，我们会通过电子邮件发送通知，说明用户信息保护政策的具体变更内容)。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>本政策所指的重大变更包括但不限于：</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>1</span><span>、我们的服务模式发生重大变化。如处理用户信息的目的、处理的用户信息类型、用户信息的使用方式等；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>2</span><span>、我们在所有权结构、组织架构等方面发生重大变化。如业务调整、破产并购等引起的所有者变更等；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>3</span><span>、用户信息共享、转让或公开披露的主要对象发生变化；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>4</span><span>、您参与用户信息处理方面的权利及其行使方式发生重大变化；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>5</span><span>、我们负责处理用户信息安全的责任部门、联络方式及投诉渠道发生变化时；</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>6</span><span>、用户信息安全影响评估报告表明存在高风险时。</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>&nbsp;</span>
+      </p>
+      <p class="MsoNormal">
+        <span>五、如何联系我们</span><span> <span></span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>如果您对本用户信息保护政策有任何疑问、意见或建议，通过以下方式与我们联系，我们的联系方式是：</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>联系单位：中国</span><span>-</span><span>上海合作组织地方经贸合作综合服务平台服务中心</span><span></span>
+      </p>
+      <p class="MsoNormal">
+        <span>电子邮箱：</span><span>contact@scocsp.com</span>
+      </p>
+      <p class="MsoNormal">
+        <span>服务电话：</span><span>0532-58081699</span>
+      </p>
+      <p class="MsoNormal">
+        <span>为保障我们高效处理您的问题并及时向您反馈，需要您提交身份证明、有效联系方式和书面请求及相关证据，我们会在验证您的身份后处理您的请求。一般情况下，我们将在三十天内回复。</span><span> <span></span></span>
+      </p>
+      <p class="MsoCommentText">
+        <span>如果您对我们的回复不满意，特别是我们的用户信息处理行为损害了您的合法权益，您还可以联系上合服务中心寻求解决方案。</span><span></span>
+      </p>
+    </section>
+
+    <section th:if="${#strings.trim(lang_session)} eq 'en_US'">
+      <p class="MsoNormal" style="text-align:center;" align="center">
+        <b> User Information Protection Policy </b><b></b>
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        This policy applies only to China-SCO Local Economic and Trade Cooperation Comprehensive Service Platform (SCOCSP) projects.
+      </p>
+      <p class="MsoNormal">
+        Last updated: October 2022.
+      </p>
+      <p class="MsoNormal">
+        If you have any questions, comments or suggestions, Please contact us at
+      </p>
+      <p class="MsoNormal">
+        Email: feedback@scocsp.com <a class="msocomanchor" id="_anchor_2" href="#_msocom_2" name="_msoanchor_2"></a>
+      </p>
+      <p class="MsoNormal">
+        Tel: 0532-58081699
+      </p>
+      <p class="MsoNormal">
+        This policy will help you understand the following:
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        User Registration Information Collection and Use Rules
+      </p>
+      <p class="MsoNormal">
+        How We Protect Your User Information
+      </p>
+      <p class="MsoNormal">
+        Your Rights
+      </p>
+      <p class="MsoNormal">
+        How This Policy Is Updated
+      </p>
+      <p class="MsoNormal">
+        How to contact us
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        The China-SCO Local Economic and Trade Cooperation Comprehensive Service Platform (SCOCSP) team understands the importance of user information to you and will do its best to protect your user information. We are committed to maintaining your trust in us and protecting your personal information in accordance with the following principles: the principle of consistency of rights and responsibilities, the principle of clarity of purpose, the principle of choice and consent, the principles of minimum necessity, the principles of ensuring security, and the principles of subject participation and openness and transparency. At the same time, the China-SCO Local Economic and Trade Cooperation Comprehensive Service Platform (SCOCSP) project team promises that we will take appropriate security measures to protect your user information according to the mature security standards of the industry.
+      </p>
+      <p class="MsoNormal">
+        Please read and understand this Information Protection Policy carefully before using our products or services.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        I. Rules for collecting and using user registration information
+      </p>
+      <p class="MsoNormal">
+        1. What kind of user information we collect
+      </p>
+      <p class="MsoNormal">
+        The business functions we provide need to rely on some information to run. If you choose to use this service function, you need to provide us with or allow us to collect the necessary information, including: <a> contact person, contact telephone, email address, totaling </a> three types of personal information; Enterprise name, enterprise address, industry, customs ten-digit code, unified social credit code, taxpayer identification number, business license, enterprise qualification, enterprise bank account name, opening bank, opening address, a total of 10 types of enterprise information. <a class="msocomanchor" id="_anchor_3" href="#_msocom_3" name="_msoanchor_3"></a>
+      </p>
+      <p class="MsoNormal">
+        2. How we use your user information
+      </p>
+      <p class="MsoNormal">
+        We will use the necessary user information to provide this business function, including cross-border procurement, one-stop customs clearance, full-chain logistics, intelligent tax engine, featured finance, etc. We will also use the above information to maintain and improve this business function and develop new business functions.
+      </p>
+      <p class="MsoNormal">
+        3. How do we entrust, share, transfer and publicly disclose your information
+      </p>
+      <p class="MsoNormal">
+        (1) Entrusted processing
+      </p>
+      <p class="MsoNormal">
+        No specific module or function in this business function is provided by an external supplier. Later, we will sign strict confidentiality agreements with companies, organizations and individuals who entrust external suppliers to handle user information, requiring them to handle user information in accordance with our requirements, user information protection policies and any other relevant confidentiality and security measures.
+      </p>
+      <p class="MsoNormal">
+        (2) Sharing
+      </p>
+      <p class="MsoNormal">
+        We will not share your information with any company, organization, or individual outside of our company unless we have your express consent.
+      </p>
+      <p class="MsoNormal">
+        (3) Transfer
+      </p>
+      <p class="MsoNormal">
+        We will not transfer your information to any company, organization or individual.
+      </p>
+      <p class="MsoNormal">
+        (4) Public Disclosure
+      </p>
+      <p class="MsoNormal">
+        We will only disclose your information publicly:
+      </p>
+      <p class="MsoNormal">
+        a) with your express consent;
+      </p>
+      <p class="MsoNormal">
+        B) Disclosure based on law: We may publicly disclose your user information when required by law, legal proceedings, litigation or mandatory requirements of governmental authorities.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        II. How we protect your user information
+      </p>
+      <p class="MsoNormal">
+        1. Retention Period
+      </p>
+      <p class="MsoNormal">
+        We will keep your user information for you while you are using the system. If you cancel your account or take the initiative to delete the above information, we will keep your information in accordance with the network security law and other laws and regulations. After you cancel your account or actively delete the above information, we will no longer use your user information, but we may anonymize your user information before using it.
+      </p>
+      <p class="MsoNormal">
+        2. Storage area
+      </p>
+      <p class="MsoNormal">
+        Your user information is stored within the territory of the People's Republic of China. We will strictly comply with the provisions of laws and regulations and ensure the security of your user information.
+      </p>
+      <p class="MsoNormal">
+        3. Safety measures
+      </p>
+      <p class="MsoNormal">
+        (1) We will collect, use, store and transmit user information in accordance with established security standards and norms in the industry, and inform you of the purpose and scope of the use of relevant information through user agreements and privacy policies.
+      </p>
+      <p class="MsoNormal">
+        (2) We take information security very seriously. We have set up a dedicated team to develop and apply a variety of security technologies and procedures. We will conduct security background checks on security management leaders and personnel in key security positions. We have established a sound information security management system and internal security incident handling mechanism. We will store and protect your personal information by taking reasonable and feasible security measures and technical means in line with industry standards, so as to prevent your information from unauthorized access, public disclosure, use, modification, destruction, loss or leakage. We will take all reasonably practicable steps to protect your personal information. We use encryption to ensure the confidentiality of our data; we use trusted protection mechanisms to protect our data from malicious attack.
+      </p>
+      <p class="MsoNormal">
+        (3) We will train and assess employees on data security awareness and security capabilities to enhance their awareness of the importance of protecting user information. We deploy an access control mechanism to authenticate the identity and control the authority of employees who handle user information, and sign confidentiality agreements with employees and partners who have access to your user information to clarify job responsibilities and codes of conduct, so as to ensure that only authorized personnel can access user information. If there is any violation of the confidentiality agreement, they will be held accountable.
+      </p>
+      <p class="MsoNormal">
+        (4) We remind you that the Internet is not an absolutely secure environment. When you exchange information with other users through e-mail, SMS, etc., you are not sure whether the transmission of information by third-party software is completely encrypted. Please pay attention to ensure the security of your user information. We recommend that you do not send user information through such means to avoid information disclosure. Please use a complex password to help us keep your account and user information secure.
+      </p>
+      <p class="MsoNormal">
+        4. Security incident notification
+      </p>
+      <p class="MsoNormal">
+        (1) We will develop a network security incident contingency plan to deal with system vulnerabilities, computer viruses, network attacks, network intrusions and other security risks in a timely manner. In the event of a network security incident, we will immediately start the contingency plan, take appropriate remedial measures, and report to the relevant authorities in accordance with the provisions.
+      </p>
+      <p class="MsoNormal">
+        (2) According to our security management system, the leakage, damage and loss of user information are major security incidents at the company level, and we will be responsible for regularly organizing members of the working group to conduct security plan drills to prevent such security incidents. In case of misfortune, we will start the contingency plan according to the highest priority, and the emergency response team will be composed of the company's internal security department, legal department and other departments to trace the causes and reduce losses in the shortest time.
+      </p>
+      <p class="MsoNormal">
+        (3) In the unfortunate event of a user information security incident, we will, in accordance with the requirements of laws and regulations, promptly inform you of the basic situation and possible impact of the security incident, the measures we have taken or will take to deal with it, the suggestions on the risks you can prevent and reduce independently, and the remedial measures for you. We will promptly inform you of the event in the form of in-station notification, SMS notification, telephone, e-mail and other contact information reserved by you. When it is difficult to inform you one by one, we will issue an announcement in a reasonable and effective way. At the same time, we will also take the initiative to report the disposal of user information security incidents in accordance with the requirements of the regulatory authorities.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        III. Your rights
+      </p>
+      <p class="MsoNormal">
+        In accordance with the relevant laws, regulations and standards of China, as well as the common practices of other countries and regions, we guarantee that you exercise the following rights to your user information:
+      </p>
+      <p class="MsoNormal">
+        (I) Access to your user information
+      </p>
+      <p class="MsoNormal">
+        You have the right to access your user information. Except for the exceptions provided by laws and regulations. If you want to exercise the right to access the data, you can access it yourself by logging in to the China-SCO Local Economic and Trade Cooperation Comprehensive Service Platform (SCOCSP) (http://www.scocsp.com) with the login name after the record is approved.
+      </p>
+      <p class="MsoNormal">
+        If you are unable to access this user information through the link above, you may contact the China-SCO Local Economic and Trade Cooperation Comprehensive Service Platform (SCOCSP) Service Center at any time for consultation and treatment.
+      </p>
+      <p class="MsoNormal">
+        (II) Correcting Your User Information
+      </p>
+      <p class="MsoNormal">
+        You have the right to ask us to make corrections when you find that there are errors in the user information we process about you.
+      </p>
+      <p class="MsoNormal">
+        (III) Delete your user information
+      </p>
+      <p class="MsoNormal">
+        Under the following circumstances, you may request us to delete your user information:
+      </p>
+      <p class="MsoNormal">
+        1. If our handling of user information violates laws and regulations;
+      </p>
+      <p class="MsoNormal">
+        2. If we collect and use your user information without your consent;
+      </p>
+      <p class="MsoNormal">
+        3. If our processing of user information violates our agreement with you;
+      </p>
+      <p class="MsoNormal">
+        4. If you no longer use our products or services, or you cancel your account;
+      </p>
+      <p class="MsoNormal">
+        5. If we no longer provide you with products or services.
+      </p>
+      <p class="MsoNormal">
+        <a></a><a> If we decide to respond to your request for deletion, we will also notify the entities that have obtained your user information from us and ask them to delete it in a timely manner, unless otherwise required by laws and regulations, or those entities have your independent authorization. </a>
+      </p>
+      <p class="MsoNormal">
+        When you delete information from our service, we may not immediately delete the corresponding information in the backup system, but will delete the information when the backup is updated.
+      </p>
+      <p class="MsoNormal">
+        (IV) Cancellation of User Information Subject Account
+      </p>
+      <p class="MsoNormal">
+        You may apply at any time to cancel your previously registered account. After the account is cancelled, we will stop providing you with products or services and delete your user information at your request, unless otherwise provided by laws and regulations.
+      </p>
+      <p class="MsoNormal">
+        (V) Subject of user information Obtaining a copy of user information
+      </p>
+      <p class="MsoNormal">
+        You have the right to obtain a copy of your user information. <a> You can operate by yourself in the following ways: Log in to the Member Center module of the China </a>-Shanghai Cooperation Organization Local Economic and Trade Cooperation Integrated Service Platform to obtain it by yourself.
+      </p>
+      <p class="MsoNormal">
+        <a></a><a> (VI) Automatic decision-making of constraint information system </a>
+      </p>
+      <p class="MsoNormal">
+        In some business functions, we may only make decisions based on non-manual automatic decision-making mechanisms including information systems and algorithms. If these decisions significantly affect your legitimate interests, you have the right to an explanation from us.
+      </p>
+      <p class="MsoNormal">
+        (VII) Responding to your request above
+      </p>
+      <p class="MsoNormal">
+        For your safety, you may need to provide a written request or otherwise prove your identity. We may ask you to verify your identity before we process your request.
+      </p>
+      <p class="MsoNormal">
+        In principle, we do not charge for your reasonable requests, but we will charge a certain cost for repeated requests that exceed reasonable limits. Requests that are unnecessarily repetitive, require excessive technical effort (for example, requiring the development of new systems or fundamental changes to existing practices), pose a risk to the legitimate interests of others, or are highly impractical (for example, involving information stored on backup tapes) may be denied.
+      </p>
+      <p class="MsoNormal">
+        Under the following circumstances, we will not be able to respond to your request:
+      </p>
+      <p class="MsoNormal">
+        1. Related to the user information controller's performance of obligations under laws and regulations;
+      </p>
+      <p class="MsoNormal">
+        2. Directly related to national security and national defense security;
+      </p>
+      <p class="MsoNormal">
+        3. Directly related to public security, public health and major public interests;
+      </p>
+      <p class="MsoNormal">
+        4. Directly related to criminal investigation, prosecution, trial and execution of judgments;
+      </p>
+      <p class="MsoNormal">
+        5. The controller of user information has sufficient evidence to show that the subject of user information has subjective malice or abuse of rights;
+      </p>
+      <p class="MsoNormal">
+        6. In order to protect the life, property and other major legitimate rights and interests of the user information subject or other individuals, but it is difficult to obtain their consent;
+      </p>
+      <p class="MsoNormal">
+        7. Responding to the request of the user information subject will cause serious damage to the legitimate rights and interests of the users information subject or other individuals and organizations; involving trade secrets.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        IV. How this policy is updated
+      </p>
+      <p class="MsoNormal">
+        Our user information protection policy is subject to change.
+      </p>
+      <p class="MsoNormal">
+        We will not reduce your rights under this User Information Protection Policy without your express consent. We will post any changes to this policy on this page.
+      </p>
+      <p class="MsoNormal">
+        We may also provide more prominent notice of major changes (including, for some services, email notices of specific changes to our User Information Protection Policy).
+      </p>
+      <p class="MsoNormal">
+        Major changes referred to in this policy include but are not limited to:
+      </p>
+      <p class="MsoNormal">
+        1. Major changes in our service model. Such as the purpose of processing user information, the type of user information to be processed, and the manner in which user information is used;
+      </p>
+      <p class="MsoNormal">
+        2. Significant changes have taken place in our ownership structure and organizational structure. For example, the change of owner caused by business adjustment, bankruptcy and merger;
+      </p>
+      <p class="MsoNormal">
+        3. The main object of user information sharing, transfer or public disclosure has changed;
+      </p>
+      <p class="MsoNormal">
+        4. Your right to participate in user information processing and the way to exercise it have changed significantly;
+      </p>
+      <p class="MsoNormal">
+        5. When the department responsible for handling user information security, the contact method and the complaint channel change;
+      </p>
+      <p class="MsoNormal">
+        6. When the user information security impact assessment report indicates that there is a high risk.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        V. How to contact us
+      </p>
+      <p class="MsoNormal">
+        If you have any questions, comments or suggestions about this User Information Protection Policy, please contact us through the following ways:
+      </p>
+      <p class="MsoNormal">
+        Contact Unit: China-SCO Local Economic and Trade Cooperation Comprehensive Service Platform (SCOCSP) Service Center
+      </p>
+      <p class="MsoNormal">
+        E-mail: contact@scocsp.com
+      </p>
+      <p class="MsoNormal">
+        Service Telephone: 0532-58081699
+      </p>
+      <p class="MsoNormal">
+        In order to ensure that we handle your problem efficiently and give you timely feedback, you need to submit your identity, valid contact information, written request and relevant evidence. We will process your request after verifying your identity. In general, we will reply within thirty days.
+      </p>
+      <p class="MsoCommentText">
+        If you are not satisfied with our reply, especially if our user information processing behavior damages your legitimate rights and interests, you can also contact the Shanghai Cooperation Service Center for solutions.
+      </p>
+    </section>
+
+    <section th:if="${#strings.trim(lang_session)} eq 'ru_RU'">
+    <p class="MsoNormal" style="text-align:center;" align="center">
+        <b>Политика защиты информации о пользователях </b><b></b>
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        Данная политика распространяется только на проект Комплексной сервисной платформы для местного торгово-экономического сотрудничества между Китаем и Шанхайской организацией сотрудничества.
+      </p>
+      <p class="MsoNormal">
+        Дата последнего обновления: октябрь 2022 года.
+      </p>
+      <p class="MsoNormal">
+        Если у вас есть какие-либо вопросы, замечания или предложения, пожалуйста, свяжитесь с нами по следующим контактным данным:
+      </p>
+      <p class="MsoNormal">
+        Электронная почта: feedback @ scocsp.com <a class="msocomanchor" id="_anchor_2" href="#_msocom_2" name="_msoanchor_2"></a>
+      </p>
+      <p class="MsoNormal">
+        Телефон: 0532-58081699
+      </p>
+      <p class="MsoNormal">
+        Эта политика поможет вам понять следующее:
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        Правила сбора и использования регистрационной информации пользователя
+      </p>
+      <p class="MsoNormal">
+        Как мы можем защитить вашу пользовательскую информацию
+      </p>
+      <p class="MsoNormal">
+        Ваши права
+      </p>
+      <p class="MsoNormal">
+        Как обновляется эта политика
+      </p>
+      <p class="MsoNormal">
+        Как связаться с нами
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        Команда проекта « Комплексная сервисная платформа регионального торгово-экономического сотрудничества «Китай - ШОС» » осознает важность информации о пользователях для вас и сделает все возможное, чтобы защитить вашу информацию о пользователях.  Мы стремимся поддерживать ваше доверие к нам и защищать вашу личную информацию в соответствии со следующими принципами: принцип последовательности полномочий и обязанностей, принцип ясности цели, принцип согласия на выбор, принцип минимальной необходимости, принцип обеспечения безопасности, принцип участия субъекта, принцип открытости и прозрачности и т. Д.  В то же время, команда проекта в Комплексная сервисная платформа регионального торгово-экономического сотрудничества «Китай - ШОС» обещает, что мы примем соответствующие меры безопасности для защиты вашей пользовательской информации в соответствии со зрелыми стандартами безопасности в отрасли.
+      </p>
+      <p class="MsoNormal">
+        Пожалуйста, внимательно прочитайте и ознакомьтесь с настоящей Политикой защиты информации, прежде чем использовать наши продукты или услуги.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        I. Правила сбора и использования регистрационной информации пользователей
+      </p>
+      <p class="MsoNormal">
+        1. Какую информацию о ваших пользователях мы собираем
+      </p>
+      <p class="MsoNormal">
+        Бизнес-функции, которые мы предоставляем, зависят от части информации, чтобы работать.  Если вы решите использовать эту бизнес-функцию, вам необходимо предоставить нам или разрешить нам собирать необходимую информацию, включая: <a>Контактное лицо, контактный телефон, адрес электронной почты, всего </a>3 вида личной информации: название предприятия, адрес предприятия, отрасль, таможенный десятизначный код, единый код социального кредита, идентификационный номер налогоплательщика, лицензия на ведение бизнеса, квалификация предприятия, название банковского счета предприятия, банк, в котором открыт счет, адрес открытия счета, всего 10 видов информации предприятия. <a class="msocomanchor" id="_anchor_3" href="#_msocom_3" name="_msoanchor_3"></a>
+      </p>
+      <p class="MsoNormal">
+        2. Как мы используем вашу пользовательскую информацию
+      </p>
+      <p class="MsoNormal">
+        Для необходимой информации о пользователях мы будем использовать для предоставления данной бизнес-функции, в том числе: трансграничные закупки, таможенное оформление на одной остановке, полноцепная логистика, интеллектуальный налоговый двигатель, специальные финансы и т.д., мы также будем использовать вышеуказанную информацию для поддержания и улучшения данной бизнес-функции, разработки новых бизнес-функций и т.д..
+      </p>
+      <p class="MsoNormal">
+        3. Как мы поручаем обработку, обмен, передачу и публичное раскрытие вашей информации
+      </p>
+      <p class="MsoNormal">
+        (1) Доверенная обработка
+      </p>
+      <p class="MsoNormal">
+        В данной бизнес-функции пока нет конкретных модулей или функций, предоставленных внешним поставщиком.&nbsp; На более позднем этапе мы подпишем строгие соглашения о конфиденциальности с компаниями, организациями и частными лицами, которые поручают внешним поставщикам обработку информации о пользователях, требуя, чтобы они обрабатывали информацию о пользователях в соответствии с нашими требованиями, политикой защиты информации о пользователях и любыми другими соответствующими мерами конфиденциальности и безопасности.
+      </p>
+      <p class="MsoNormal">
+        2) Совместное использование
+      </p>
+      <p class="MsoNormal">
+        Мы не будем делиться Вашей информацией ни с одной компанией, организацией или частным лицом, кроме Компании, кроме как с Вашего явного согласия.
+      </p>
+      <p class="MsoNormal">
+        3) Передача
+      </p>
+      <p class="MsoNormal">
+        Мы не передаем вашу информацию ни одной компании, организации или частному лицу.
+      </p>
+      <p class="MsoNormal">
+        4) Публичное раскрытие информации
+      </p>
+      <p class="MsoNormal">
+        Мы будем публично раскрывать вашу информацию только в следующих случаях:
+      </p>
+      <p class="MsoNormal">
+        А) после получения Вашего явного согласия;
+      </p>
+      <p class="MsoNormal">
+        B) Раскрытие информации на основе закона: мы можем публично раскрывать информацию о ваших пользователях в случаях, когда это требуется законом, судебным разбирательством, судебным разбирательством или обязательным требованием компетентных государственных органов.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        II. Как мы защищаем вашу пользовательскую информацию
+      </p>
+      <p class="MsoNormal">
+        1. Срок хранения
+      </p>
+      <p class="MsoNormal">
+        Мы будем продолжать сохранять вашу пользовательскую информацию для вас, пока вы используете систему.  Если вы выйдете из учетной записи или удалите вышеуказанную информацию по собственной инициативе, мы сохраним вашу информацию в соответствии с законами и правилами, такими как Закон о кибербезопасности.  После того, как вы выйдете из учетной записи или активно удалите вышеуказанную информацию, мы больше не будем использовать вашу пользовательскую информацию, но мы можем использовать вашу пользовательскую информацию после анонимизации.
+      </p>
+      <p class="MsoNormal">
+        2. Географическое сохранение
+      </p>
+      <p class="MsoNormal">
+        Ваша пользовательская информация хранится на территории Китайской Народной Республики, мы будем строго соблюдать законы и правила и обеспечивать безопасность вашей пользовательской информации.
+      </p>
+      <p class="MsoNormal">
+        3. Меры безопасности
+      </p>
+      <p class="MsoNormal">
+        (1) Мы собираем, используем, храним и передаем пользовательскую информацию в соответствии со зрелыми стандартами и спецификациями безопасности в отрасли, а также информируем вас о цели и объеме использования соответствующей информации через пользовательское соглашение и политику конфиденциальности.
+      </p>
+      <p class="MsoNormal">
+        2) Мы придаем большое значение информационной безопасности.  Мы создали специальную команду, отвечающую за разработку и применение различных технологий и процедур безопасности и т.д., мы проверим фон безопасности ответственного лица по управлению безопасностью и персонала на ключевых постах безопасности, мы создали совершенную систему управления информационной безопасностью и механизм устранения внутренних инцидентов безопасности и т.д..  Мы принимаем разумные и выполнимые меры безопасности и технические средства для хранения и защиты вашей личной информации в соответствии с отраслевыми стандартами, чтобы предотвратить несанкционированный доступ, публичное раскрытие, использование, изменение, повреждение, потерю или утечку вашей информации.  Мы примем все разумные и выполнимые меры для защиты вашей личной информации.  Мы используем криптографию для обеспечения конфиденциальности данных; мы используем надежные механизмы защиты от вредоносных атак на данные.
+      </p>
+      <p class="MsoNormal">
+        (3) Мы будем обучать и оценивать сотрудников по повышению осведомленности о безопасности данных и способности к безопасности, чтобы повысить осведомленность сотрудников о важности защиты информации пользователей.  Мы внедряем механизм контроля доступа для аутентификации личности и контроля прав сотрудников, которые обрабатывают информацию о пользователях, и подписываем соглашение о конфиденциальности с сотрудниками и партнерами, которые имеют доступ к информации о пользователях, уточняем должностные обязанности и правила поведения, чтобы только уполномоченные лица могли получить доступ к информации о пользователях.  В случае нарушения соглашения о конфиденциальности будет привлечена к ответственности.
+      </p>
+      <p class="MsoNormal">
+        (4) Мы напоминаем вам, что Интернет не является абсолютно безопасной средой. Когда вы взаимодействуете с другими пользователями по электронной почте, текстовым сообщениям и т. Д., Вы не уверены, что программное обеспечение третьей стороны полностью зашифровало передачу информации. Пожалуйста, обратите внимание на обеспечение безопасности вашей пользовательской информации. Мы рекомендуем вам не отправлять пользовательскую информацию таким образом, чтобы избежать утечки информации.  Пожалуйста, используйте сложные пароли, чтобы помочь нам обеспечить безопасность вашей учетной записи и пользовательской информации.
+      </p>
+      <p class="MsoNormal">
+        4. Уведомление об инциденте в области безопасности
+      </p>
+      <p class="MsoNormal">
+        (1) Мы разработаем план действий в чрезвычайных ситуациях при инцидентах сетевой безопасности, своевременно устраним системные уязвимости, компьютерные вирусы, сетевые атаки, сетевые вторжения и другие риски безопасности, при возникновении инцидентов, угрожающих сетевой безопасности, мы немедленно запустим план действий в чрезвычайных ситуациях, примем соответствующие меры по исправлению положения и сообщим соответствующим компетентным органам в соответствии с правилами.
+      </p>
+      <p class="MsoNormal">
+        (2) Согласно нашей системе управления безопасностью, утечка, повреждение и потеря информации о пользователе относятся к чрезвычайным инцидентам безопасности на уровне компании, мы будем регулярно организовывать членов рабочей группы для проведения учений по плану безопасности во избежание таких инцидентов безопасности.  В случае несчастного случая мы запустим план действий в чрезвычайных ситуациях в соответствии с самым высоким приоритетом, и группа реагирования на чрезвычайные ситуации будет сформирована из отдела безопасности компании, юридического отдела и других отделов, чтобы проследить причину и уменьшить потери в кратчайшие сроки.
+      </p>
+      <p class="MsoNormal">
+        (3) После несчастного случая с информационной безопасностью пользователя, мы будем своевременно информировать вас об основных обстоятельствах и возможном влиянии инцидента с безопасностью, мерах, которые мы приняли или будем принимать, предложениях о рисках, которые вы можете предотвратить и уменьшить самостоятельно, и мерах по исправлению положения для вас в соответствии с требованиями законов и правил.  Мы своевременно сообщим вам информацию о событии с помощью внутристанционного уведомления, SMS-уведомления, телефона, электронной почты и других зарезервированных вами контактных данных. Если трудно сообщить один за другим, мы сделаем объявление разумным и эффективным способом.  В то же время, в соответствии с требованиями регулирующих органов, мы также будем активно сообщать о ликвидации инцидентов информационной безопасности пользователей.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        III. ВАШИ ПРАВА
+      </p>
+      <p class="MsoNormal">
+        В соответствии с соответствующими законами, правилами и стандартами Китая, а также общепринятой практикой других стран и регионов, мы гарантируем вам осуществление следующих прав на вашу пользовательскую информацию:
+      </p>
+      <p class="MsoNormal">
+        I) Доступ к информации о ваших пользователях
+      </p>
+      <p class="MsoNormal">
+        Вы имеете право на доступ к своей пользовательской информации, за исключением случаев, предусмотренных законами и правилами.  Если вы хотите воспользоваться правом доступа к данным, вы можете получить доступ самостоятельно, войдя в Платформу комплексного обслуживания местного торгово-экономического сотрудничества между Китаем и Шанхайской организацией сотрудничества (http://www.scocsp.com) с зарегистрированным именем входа.
+      </p>
+      <p class="MsoNormal">
+        Если вы не можете получить доступ к этой информации о пользователях по вышеуказанным ссылкам, вы всегда можете обратиться в Сервисный центр Платформы комплексного обслуживания местного торгово-экономического сотрудничества Китай-Шанхайская организация сотрудничества для консультации и обработки.
+      </p>
+      <p class="MsoNormal">
+        Ii) Исправление информации о пользователях
+      </p>
+      <p class="MsoNormal">
+        Когда вы обнаружите, что мы обрабатываем неправильную информацию о ваших пользователях, вы имеете право потребовать от нас внести исправления.
+      </p>
+      <p class="MsoNormal">
+        (3) Удалить вашу информацию о пользователе
+      </p>
+      <p class="MsoNormal">
+        Вы можете обратиться к нам с просьбой удалить информацию о пользователе в следующих случаях:
+      </p>
+      <p class="MsoNormal">
+        1. Если наши действия по обработке информации о пользователях нарушают законы и правила;
+      </p>
+      <p class="MsoNormal">
+        2. Если мы собираем и используем вашу пользовательскую информацию без вашего согласия;
+      </p>
+      <p class="MsoNormal">
+        3. Если наши действия по обработке информации о пользователе нарушают соглашение с вами;
+      </p>
+      <p class="MsoNormal">
+        4. Если вы больше не используете наши продукты или услуги, или вы вышли из учетной записи;
+      </p>
+      <p class="MsoNormal">
+        5. Если мы больше не предоставляем вам продукты или услуги.
+      </p>
+      <p class="MsoNormal">
+        <a></a><a>Если мы решим ответить на ваш запрос об удалении, мы также сообщим субъектам, которые получили от нас информацию о ваших пользователях, с просьбой своевременно удалить ее, если иное не предусмотрено законами и правилами или если эти субъекты не имеют вашего независимого разрешения. </a>
+      </p>
+      <p class="MsoNormal">
+        Когда вы удаляете информацию из наших сервисов, мы можем не удалять соответствующую информацию в системе резервного копирования сразу, но удалять ее при обновлении резервного копирования.
+      </p>
+      <p class="MsoNormal">
+        (4) Снятие учетной записи субъектом пользовательской информации
+      </p>
+      <p class="MsoNormal">
+        Вы можете подать заявку на аннулирование ранее зарегистрированной учетной записи в любое время. После аннулирования учетной записи мы прекратим предоставлять вам продукты или услуги и удалим вашу пользовательскую информацию по вашему требованию, если иное не предусмотрено законами и правилами.
+      </p>
+      <p class="MsoNormal">
+        (5) Субъект информации пользователя получает копию информации пользователя
+      </p>
+      <p class="MsoNormal">
+        Вы имеете право на получение копии вашей пользовательской информации, <a>Вы можете сделать это самостоятельно, войдя в Китай </a>Модуль Центра членов Платформы комплексного обслуживания местного торгово-экономического сотрудничества Шанхайской организации сотрудничества приобретается самостоятельно.
+      </p>
+      <p class="MsoNormal">
+        <a></a><a>(6) Автоматическое принятие решений с помощью ограниченных информационных систем </a>
+      </p>
+      <p class="MsoNormal">
+        В некоторых бизнес-функциях мы можем принимать решения только на основе неискусственных автоматических механизмов принятия решений, включая информационные системы, алгоритмы и т. Д.  Если эти решения существенно влияют на ваши законные права и интересы, вы имеете право потребовать от нас объяснений.
+      </p>
+      <p class="MsoNormal">
+        (7) В ответ на ваш вышеупомянутый запрос
+      </p>
+      <p class="MsoNormal">
+        Для обеспечения безопасности вам может потребоваться предоставить письменный запрос или иным образом подтвердить свою личность.  Мы можем попросить вас проверить свою личность, прежде чем обрабатывать ваш запрос.
+      </p>
+      <p class="MsoNormal">
+        Мы в принципе не взимаем плату за ваши разумные запросы, но мы будем взимать определенную плату за запросы, которые повторяются несколько раз и превышают разумные пределы, в зависимости от обстоятельств.  Мы можем отклонить запросы, которые являются необоснованно повторяющимися, требуют чрезмерных технических средств (например, требуют разработки новой системы или коренного изменения существующей практики), представляют риск для законных прав и интересов других лиц или очень непрактичны (например, связаны с информацией, хранящейся на резервной ленте).
+      </p>
+      <p class="MsoNormal">
+        Мы не сможем ответить на ваш запрос в следующих случаях:
+      </p>
+      <p class="MsoNormal">
+        1) в связи с выполнением контролером информации о пользователе обязательств, предусмотренных законодательством и подзаконными актами;
+      </p>
+      <p class="MsoNormal">
+        2. Те, которые имеют непосредственное отношение к национальной безопасности и национальной обороне;
+      </p>
+      <p class="MsoNormal">
+        3. Те, которые непосредственно связаны с общественной безопасностью, общественным здравоохранением или важными общественными интересами;
+      </p>
+      <p class="MsoNormal">
+        4) непосредственно связаны с уголовным расследованием, уголовным преследованием, судебным разбирательством и исполнением приговора;
+      </p>
+      <p class="MsoNormal">
+        5. Контролер информации о пользователе имеет достаточные доказательства того, что субъект информации о пользователе имеет субъективный злой умысел или злоупотребляет правами;
+      </p>
+      <p class="MsoNormal">
+        6. Для защиты основных законных прав и интересов субъекта информации пользователя или других лиц, таких как жизнь и имущество, но трудно получить их согласие;
+      </p>
+      <p class="MsoNormal">
+        7. Если ответ на запрос субъекта пользовательской информации приведет к серьезному ущемлению законных прав и интересов субъекта пользовательской информации или других лиц или организаций; если речь идет о коммерческой тайне.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        IV. КАК ОБНОВЛЯЕТСЯ ПОЛИТИКА
+      </p>
+      <p class="MsoNormal">
+        Наша политика защиты информации о пользователях может измениться.
+      </p>
+      <p class="MsoNormal">
+        Мы не будем ограничивать ваши права в соответствии с настоящей Политикой защиты информации о пользователях без вашего явного согласия.&nbsp; Мы публикуем любые изменения, внесенные в эту политику на этой странице.
+      </p>
+      <p class="MsoNormal">
+        Мы также предоставляем более заметные уведомления о существенных изменениях (в том числе для некоторых услуг мы отправляем уведомления по электронной почте с указанием конкретных изменений в политике защиты информации пользователя).
+      </p>
+      <p class="MsoNormal">
+        Существенные изменения, упомянутые в настоящей политике, включают, но не ограничиваются:
+      </p>
+      <p class="MsoNormal">
+        1. Наша модель обслуживания претерпела значительные изменения.  Например, цель обработки пользовательской информации, тип обрабатываемой пользовательской информации, способ использования пользовательской информации и т. Д.;
+      </p>
+      <p class="MsoNormal">
+        2. У нас произошли значительные изменения в структуре собственности, организационной структуре и т. д.  Например, изменение владельца, вызванное корректировкой бизнеса, слиянием и поглощением банкротства;
+      </p>
+      <p class="MsoNormal">
+        3. Изменение основных объектов обмена, передачи или публичного раскрытия информации о пользователях;
+      </p>
+      <p class="MsoNormal">
+        4. Существенные изменения в ваших правах на участие в обработке пользовательской информации и порядке ее осуществления;
+      </p>
+      <p class="MsoNormal">
+        5. При изменении ответственного отдела, контактной информации и канала подачи жалоб, отвечающих за информационную безопасность пользователей;
+      </p>
+      <p class="MsoNormal">
+        6. Отчет об оценке воздействия на информационную безопасность пользователя показывает, что существует высокий риск.
+      </p>
+      <p class="MsoNormal">
+        <br />
+      </p>
+      <p class="MsoNormal">
+        V. Как связаться с нами
+      </p>
+      <p class="MsoNormal">
+        Если у вас есть какие-либо вопросы, замечания или предложения по политике защиты информации о пользователях, пожалуйста, свяжитесь с нами следующим образом, наша контактная информация:
+      </p>
+      <p class="MsoNormal">
+        Контактное лицо: Центр обслуживания в Комплексная сервисная платформа регионального торгово-экономического сотрудничества «Китай - ШОС»
+      </p>
+      <p class="MsoNormal">
+        Электронная почта: contact@scocsp.com
+      </p>
+      <p class="MsoNormal">
+        Телефон службы: 0532-58081699
+      </p>
+      <p class="MsoNormal">
+        Чтобы гарантировать, что мы эффективно обрабатываем ваши вопросы и своевременно даем вам обратную связь, вам необходимо представить удостоверение личности, действительную контактную информацию, письменный запрос и соответствующие доказательства. Мы обработаем ваш запрос после проверки вашей личности.  Как правило, мы ответим в течение тридцати дней.
+      </p>
+      <p class="MsoCommentText">
+        Если вы не удовлетворены нашим ответом, в частности, наши действия по обработке информации о пользователях наносят ущерб вашим законным правам и интересам, вы также можете обратиться в Сервисный центр ШОС за решением.
+      </p>
+    </section>
+  </div>
+  </body>
+  </html>
+</section>
+<footer th:replace="common/footer"></footer>
+<!--<script th:inline="javascript">-->
+<!--  const lang_session = [[${lang_session}]];-->
+<!--</script>-->
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="public/head::head('文章')"></head>
+
+<body>
+<header th:replace="public/header5"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+
+<section>
+    <section class="gray-bg">
+        <div class="wrapper">
+            <div class="page-title">
+                <h3>[[${categoryName}]]</h3>
+            </div>
+            <div class="article-top">
+                <a th:href="@{'/article/'+${item.id}}" th:each="item, itemStat : ${pageList.records}" th:if="${itemStat.index} lt 3">
+                    <div class="article-top-item">
+                        <div class="article-cover br10">
+                            <img
+                                    th:src="@{${item.coverImage}}"
+                                    th:alt="${item.title}"
+                                    onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null"
+                            >
+                        </div>
+                        <h5 class="article-title mt20 ellipsis1">[[${item.title}]]</h5>
+                        <p class="article-sub mt10">[[${#dates.format(item.createTime,'yyyy年MM月dd')}]]</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wrapper">
+            <ul class="article-list">
+                <li th:each="item, itemStat : ${pageList.records} " th:if="${itemStat.index} gt 3">
+                    <a th:href="@{'/article/'+${item.id}}">
+                        <div class="article-list-item flexbox _items-mid">
+                            <div class="article-cover br10">
+                                <img
+                                        th:src="@{${item.coverImage}}"
+                                        th:alt="${item.title}"
+                                        onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null"
+                                >
+                            </div>
+                            <div class="it-info">
+                                <h5 class="article-title">[[${item.title}]]</h5>
+                                <p class="article-desc mt10">[[${item.description}]]</p>
+                                <p class="article-sub mt30">[[${#dates.format(item.createTime,'yyyy年MM月dd')}]]</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+
+<footer th:replace="public/footer"></footer>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.countup.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/qing.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<header class="m-head" th:fragment="header">
+  <div class="h-wrap wrapper">
+    <div class="h-top">
+      <div class="h-logo">
+        <img th:src="@{/img/main_logo.png}" alt="">
+      </div>
+      <div class="luange-div tr">
+        <a href="/">中文</a>
+        <a href="http://scocsp.com/language/index/webru/index">РУС</a>
+        <a href="http://scocsp.com/language/index/weben/index">EN</a>
+        <span class="sou-img ds"id="mSearchShowBtn">
+                        <i class="iconfont ds icon-fangdajing"></i>
+                    </span>
+        <a href="javascript:;" id="mNavShowBtn">
+          <i class="iconfont icon-daohang"></i> [[#{Navigation}]]
+        </a>
+      </div>
+    </div>
+    <div class="h-fot clearfix">
+      <div class="h-fot-nav fr">
+        <a href="http://scocsp.com/b2b/" target="_blank">[[#{Cross-borderProcurement}]]</a>
+        <a href="/funapp-through">[[#{One-stopCustomsClearance}]]</a>
+        <a href="/funapp-logistics">[[#{FullChainLogistics}]]</a>
+        <a href="/funapp-smarttax">[[#{SmartTaxEngine}]]</a>
+        <a href="/funapp-finance">[[#{FeaturedFianance}]]</a>
+        <a href="/funapp-service-law">[[#{PanoramaService}]]</a>
+        <a href="/funapp-win-history">[[#{NewDistrictWindow}]]</a>
+        <a href="/funapp-data">[[#{DigitalSCO}]]</a>
+      </div>
+    </div>
+  </div>
+  <div class="m-head__crumbs">
+    <ul class="crumbs wrapper">
+      <li><i class="iconfont icon-daohang"></i></li>
+      <li><a href="/">首页</a></li>
+      <li>
+        <a href="/funapp-through">[[#{ComprehensiveFunctionApplication}]]</a>
+      </li>
+      <li>
+        <a href="javascript:;">[[#{One-stopCustomsClearance}]]</a>
+      </li>
+    </ul>
+  </div>
+</header>

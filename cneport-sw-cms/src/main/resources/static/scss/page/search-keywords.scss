@@ -1,0 +1,212 @@
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .search-keywords-head {
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0 px2rem(16);
+
+
+    }
+  }
+  .search-keywords {
+    margin: 0 px2rem(16);
+    /* 搜索结果页 */
+    .search-page-header {
+      width: px2rem(600);
+      margin: 0 auto;
+      padding: px2rem(40) 0;
+    }
+
+    .search-box {
+      width: px2rem(600);
+      height: px2rem(60);
+      border-radius: px2rem(5);
+      background: #FFFFFF;
+      border: px2rem(1) solid #BDBBBB;
+      display: flex;
+    }
+
+    .search-box > .search-box-btn {
+      width: px2rem(78);
+      height: 100%;
+      background-color: #22549B;
+      color: #ffffff;
+      font-size: px2rem(30);
+      text-align: center;
+      line-height: px2rem(58);
+      cursor: pointer;
+      transition: all ease-in-out .3s;
+      outline: none;
+      border: none;
+    }
+
+    .search-box > .search-box-btn > .iconfont {
+      font-size: px2rem(30);
+    }
+
+    .search-box > .search-box-btn:hover,
+    .search-box > .search-box-btn:active {
+      opacity: 0.8;
+    }
+
+    .search-box > .search-box-input {
+      flex: 1;
+      border: 0;
+      height: px2rem(58);
+      line-height: px2rem(58);
+      padding: 0 px2rem(15);
+      font-size: px2rem(18);
+    }
+
+    .search-hotkey-wrap {
+      width: 100%;
+      padding-top: px2rem(10);
+      font-size: px2rem(20);
+      line-height: px2rem(30);
+    }
+
+    .search-hotkey-wrap > a {
+      display: inline-block;
+      padding-right: px2rem(10);
+    }
+
+    .search-page-body {
+      width: 100%;
+      padding: px2rem(50) 0;
+    }
+
+    .search-page-body-l {
+      flex: 1;
+    }
+
+    .search-page-body-r {
+      width: px2rem(400);
+    }
+
+    .search-page-body-r h3 {
+      font-size: px2rem(30);
+      line-height: px2rem(44);
+      color: #000000;
+      font-weight: 400;
+      margin-bottom: px2rem(10);
+    }
+
+    .search-result-total {
+      font-weight: 400;
+      font-size: px2rem(18);
+      line-height: px2rem(26);
+      /* identical to box height */
+
+
+      color: #565656;
+    }
+
+    .search-result-item {
+      width: 100%;
+      padding: px2rem(25) 0;
+      display: block;
+      border-bottom: px2rem(1) dashed #D7D7D7;
+    }
+
+    .search-result-item > .title {
+      font-size: px2rem(18);
+      line-height: px2rem(26);
+      color: #000000;
+      font-weight: bold;
+      position: relative;
+      padding-left: px2rem(10);
+    }
+
+    .search-result-item > .title::after {
+      content: "";
+      width: px2rem(4);
+      height: px2rem(16);
+      background-color: #22549B;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: px2rem(4);
+    }
+
+    .search-result-item > .summary {
+      width: 100%;
+      font-size: px2rem(20);
+      line-height: px2rem(30);
+      color: #666666;
+      margin-top: px2rem(10);
+      margin-bottom: px2rem(20);
+    }
+
+    .search-result-item > .date {
+      font-size: px2rem(16);
+      line-height: px2rem(20);
+      color: #a7a7a7;
+    }
+
+    .search-r-list-item {
+      width: 100%;
+      height: px2rem(40);
+      font-size: px2rem(20);
+      line-height: px2rem(40);
+      color: #000000;
+      display: block;
+      position: relative;
+    }
+
+    .search-r-list-item.history {
+      padding-left: px2rem(10);
+    }
+
+    .search-r-list-item.history::after {
+      content: "";
+      width: px2rem(6);
+      height: px2rem(6);
+      border-radius: 50%;
+      display: block;
+      background-color: #000000;
+      position: absolute;
+      left: 0;
+      top: px2rem(17);
+    }
+
+    .search-r-list-item > span {
+      width: px2rem(24);
+      height: px2rem(24);
+      display: inline-block;
+      text-align: center;
+      line-height: px2rem(24);
+      background-color: #CCCCCC;
+      margin-right: px2rem(15);
+      color: #ffffff;
+    }
+
+    .search-r-list-item:nth-child(1) > span {
+      background-color: #FC7A43;
+    }
+
+    .search-r-list-item:nth-child(2) > span {
+      background-color: #FDAB4D;
+    }
+
+    .search-r-list-item:nth-child(3) > span {
+      background-color: #D5C39E;
+    }
+
+    .search-history-clean {
+      font-size: px2rem(20);
+      line-height: px2rem(40);
+      color: #A2A2A2;
+      cursor: pointer;
+    }
+
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="public/head::head('贸易合作')"></head>
+
+<body>
+<header th:replace="public/header"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+
+<section>
+    <section>
+        <div class="wrapper">
+            <div class="page-title-switch left">
+                <a href="/ci/trade_details_1" class="switch-item small selected" data-tag="1">国际贸易合作</a>
+                <a href="/ci/trade_details_2" class="switch-item small" data-tag="2">国际物流合作</a>
+                <a href="/ci/trade_details_3" class="switch-item small" data-tag="3">产能合作</a>
+                <a href="/ci/trade_details_4" class="switch-item small" data-tag="4">商旅合作</a>
+                <a href="/ci/trade_details_5" class="switch-item small" data-tag="5">综合创意</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wrapper">
+            <div class="page-title">
+                <h3>建设互惠互利的国际贸易合作</h3>
+            </div>
+            <div class="flexbox _content-sb">
+                <div class="trade-detail-flex-item">
+                    <h4>国际贸易合作</h4>
+                    <p>
+                        全力推进我国与上合组织国家和“一带一路”沿线国家地区间经贸合作。研究和拓展货物贸易合作、发展跨境电商、推进服务贸易合作，搭建国际贸易发展平台、推动贸易服务便利化，建成“一带一路”地方经贸合作的先行区、双边多边经贸合作的示范区。</p>
+                </div>
+                <div class="trade-detail-flex-item">
+                    <h4>全域联动</h4>
+                    <p>
+                        2021年，青岛市对上合组织国家贸易额共720亿元，同比增长61%。上合示范区依托全域6340家与上合组织国家有进出口实绩的企业，特别是海尔海外电器产业等103家过亿元企业，精准发展对上合组织国家贸易进出口业务。 </p>
+                </div>
+            </div>
+            <div>
+                <img class="trade-detail-img1" src="../images/trade-detail1.png" alt="">
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <div class="wrapper">
+            <div class="page-title">
+                <h3>拓展货物贸易合作</h3>
+            </div>
+            <div class="trade-detail-country-wrap">
+                <div class="trade-detail-country-item">
+                    <p>力争未来5年同上合组织国家累计贸易额实现2.3万亿美元 </p>
+                    <br>
+                    <p>上合示范区货物贸易额从2019年的107亿元增至265亿元，增长147.7%；与上合组织国家贸易额从2019年的8.5亿元增至40亿元，增长5倍。</p>
+                    <div class="country-items">
+                        <img src="../images/country1.png" alt="">
+                        <img src="../images/country2.png" alt="">
+                        <img src="../images/country3.png" alt="">
+                        <img src="../images/country4.png" alt="">
+                        <img src="../images/country5.png" alt="">
+                        <img src="../images/country6.png" alt="">
+                        <img src="../images/country7.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="trade-detail-brand-wrap">
+                <div class="brand-item"><img th:src="@{/images/brand1.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand2.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand3.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand4.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand5.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand6.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand7.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand8.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand9.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand10.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand11.png}" alt=""></div>
+                <div class="brand-item"><img th:src="@{/images/brand12.png}" alt=""></div>
+            </div>
+            <!--            <div>swiper</div>-->
+        </div>
+    </section>
+    <section>
+        <div class="wrapper">
+            <div class="page-title">
+                <h3>发展跨境电商</h3>
+                <a href="">
+                    <div class="theme-button">[[#{Learnmore}]]</div>
+                </a>
+            </div>
+            <div class="flexbox _content-sb mt30">
+                <a class="trade-detail1-item scale">
+                    <div class="img">
+                        <img src="../images/trade-detail11.png" alt="">
+                    </div>
+                    <p>2021年，上合示范区跨境电商进出口同比增长300%，实现跨越式增长。</p>
+                    <div class="theme-button">[[#{Learnmore}]]</div>
+                </a>
+                <a class="trade-detail1-item scale">
+                    <div class="img">
+                        <img src="../images/trade-detail12.png" alt="">
+                    </div>
+                    <p>培育4个跨境电商平台，为企业提供通关申报、跨境物流、供应链金融等一站式跨境电商综合服务。</p>
+                    <div class="theme-button">[[#{Learnmore}]]</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<footer th:replace="public/footer"></footer>
+
+
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.countup.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/qing.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script>
+    $(".switch-item").click(function (event) {
+        $(this).addClass("selected");
+        $(this).siblings().removeClass("selected");
+
+    })
+</script>
+</body>
+
+</html>

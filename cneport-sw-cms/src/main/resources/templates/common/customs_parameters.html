@@ -1,0 +1,44 @@
+<ul id="menu_ul" class="tab-list">
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/parameterSearch')">商品编码查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/parameterChange')">商编变更明细查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/elementSearch')">申报要素查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/elementCmpResultSearch')">申报要素变更查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/currSearch')">币制代码查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/tradeSearch')">监管方式查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/transfSearch')">运输方式查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/unitSearch')">计量单位查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/wrapSearch')">包装种类查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/transacSearch')">成交方式查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/purposeSearch')">用途查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/levyTypeSearch')">征免性质查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/customsRelSearch')">关区代码查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/nationalityArea')">国别地区查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/internalAreaSearch')">国内地区代码查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/administrativeArea')">行政区划代码查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/classify')">归类实例查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/consumerStandardSearch')">单耗标准查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/exchangeRateSearch')">外汇汇率查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/tpara3CCertSearch')">3C认证查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/complex_banSearch')">加贸禁止类查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/complexLimitSearch')">加贸限制类查询</a></li>
+  <li><a href="javascript:void(0);" onclick="changeParamter('/homeParameters/tParaComplexBanSearch')">通关禁止类查询</a></li>
+  <li><a href="https://www.singlewindow.cn/#/parameter" target="_blank">更多参数查询</a></li>
+</ul>
+
+<script>
+  function changeParamter(url){
+    $.ajax({
+      url : url,
+      type : "GET",
+      success : function (data) {
+        $(".search_recorde").html(data);
+        // $(".search_recorde").load(data);
+      },
+      error:function (errorMsg) {
+        console.log(errorMsg);
+      }
+    })
+
+    // $(".search_recorde").load(url);
+  }
+</script>

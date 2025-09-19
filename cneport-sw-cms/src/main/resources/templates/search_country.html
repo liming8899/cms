@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(#{thinkTankSearchService})"></head>
+
+<body>
+    <header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+    <section th:replace="common/search"></section>
+    <section th:replace="common/nav"></section>
+    <section>
+        <div class="wrapper search-country">
+            <div class="page-title">
+                <h3>[[#{thinkTankSearchService}]]</h3>
+            </div>
+            <div class="search-page search-page__country">
+                <div class="search-page-header">
+                    <div class="search-box">
+                        <input class="search-box-input" name="keywords" th:value="${#strings.replace(keywords,'国别指南','')}" type="text" th:placeholder="#{selectCountry}" disabled>
+                        <div class="search-box-btn">
+                            <i class="iconfont icon-Icon_down"></i>
+                        </div>
+                    </div>
+                    <div class="search-select__row" style="display: none;">
+                        <div class="search-select__col">
+                            <div class="search-select__title">[[#{SCOMemberStates}]]</div>
+                            <a th:href="@{'?keywords='+#{India} }">[[#{India}]]</a>
+                            <a th:href="@{'?keywords='+#{Kazakhstan}}">[[#{Kazakhstan}]]</a>
+                            <a th:href="@{'?keywords='+#{China}}">[[#{China}]]</a>
+                            <a th:href="@{'?keywords='+#{Kyrgyzstan}}">[[#{Kyrgyzstan}]]</a>
+                            <a th:href="@{'?keywords='+#{Pakistan}}">[[#{Pakistan}]]</a>
+                            <a th:href="@{'?keywords='+#{Russia}}">[[#{Russia}]]</a>
+                            <a th:href="@{'?keywords='+#{Tajikistan}}">[[#{Tajikistan}]]</a>
+                            <a th:href="@{'?keywords='+#{Uzbekistan}}">[[#{Uzbekistan}]]</a>
+                            <a th:href="@{'?keywords='+#{Iran}}">[[#{Iran}]]</a>
+                            <a th:href="@{'?keywords='+#{Belarus}}">[[#{Belarus}]]</a>
+                            <!--<a href="?keywords=伊朗">伊朗</a>-->
+                        </div>
+                        <div class="search-select__col">
+                            <div class="search-select__title">[[#{SCOObserverSteates}]]</div>
+                            <a th:href="@{'?keywords='+#{Afghanistan}}">[[#{Afghanistan}]]</a>
+                            <a th:href="@{'?keywords='+#{Mongolia}}">[[#{Mongolia}]]</a>
+                        </div>
+                        <div class="search-select__col">
+                            <div class="search-select__title">[[#{SCODialoguePartners}]]</div>
+                            <a th:href="@{'?keywords='+#{Azerbaijan}}">[[#{Azerbaijan}]]</a>
+                            <a th:href="@{'?keywords='+#{Armenia}}">[[#{Armenia}]]</a>
+                            <a th:href="@{'?keywords='+#{Cambodia}}">[[#{Cambodia}]]</a>
+                            <a th:href="@{'?keywords='+#{Nepal}}">[[#{Nepal}]]</a>
+                            <a th:href="@{'?keywords='+#{Turkey}}">[[#{Turkey}]]</a>
+                            <a th:href="@{'?keywords='+#{SriLanka}}">[[#{SriLanka}]]</a>
+                            <a th:href="@{'?keywords='+#{SaudiArabia}}">[[#{SaudiArabia}]]</a>
+                            <a th:href="@{'?keywords='+#{Egypt}}">[[#{Egypt}]]</a>
+                            <a th:href="@{'?keywords='+#{Qatar}}">[[#{Qatar}]]</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-page-body">
+                    <div class="search-page-body-l" th:if="${articleList.total > 0}">
+                        <div class="search-result-total">[[#{RelatedResults}]]:[[${articleList.total}]]</div>
+                        <div class="search-result-list">
+                            <th:block th:each="article, articleStat : ${articleList.records}">
+                                <a th:data="${T(cn.hutool.json.JSONUtil).parseObj(article)}" class="search-result-item">
+                                    <div class="title ellipsis1" th:if="${#strings.trim(lang_session)} eq 'zh_CN'" th:utext="${article.title}"></div>
+                                    <div class="title ellipsis1" th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(article.enTitle)}" th:utext="${article.enTitle}"></div>
+                                    <div class="title ellipsis1" th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(article.enTitle)}" th:utext="${article.title}"></div>
+                                    <div class="title ellipsis1" th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(article.ruTitle)}" th:utext="${article.ruTitle}"></div>
+                                    <div class="title ellipsis1" th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(article.enTitle)}" th:utext="${article.title}"></div>
+                                    <div class="summary ellipsis3" th:if="${#strings.trim(lang_session)} eq 'zh_CN'">[[${article.description}]]</div>
+                                    <div class="summary ellipsis3" th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(article.enDescription)}">[[${article.enDescription}]]</div>
+                                    <div class="summary ellipsis3" th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(article.enDescription)}">[[${article.description}]]</div>
+                                    <div class="summary ellipsis3" th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(article.ruDescription)}">[[${article.ruDescription}]]</div>
+                                    <div class="summary ellipsis3" th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(article.ruDescription)}">[[${article.description}]]</div>
+                                    <div class="date datetime">[[${#dates.format(article.addTime,'yyyy-MM-dd')}]]</div>
+                                </a>
+                            </th:block>
+                        </div>
+                    </div>
+                    <div class="search-page__nodata" th:unless="${articleList.total > 0}">
+                        <div th:unless="${keywords==''}">
+                            <img th:src="@{/img/no_data.png}" th:alt="#{NoDataAvailable}">
+                            <p>[[#{NoDataAvailable}]]</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div th:replace="common/pagination::pagination(${articleList},'?keywords='+${keywords})"></div>
+        </div>
+    </section>
+    <footer th:replace="common/footer"></footer>
+    <script th:inline="javascript">
+        $(document).ready(function () {
+            $('.search-page__country .search-box').on('click', function () {
+                var row = $(this).siblings('.search-select__row').slideToggle('fast');
+            })
+        })
+
+
+        let lang=[[${lang_session}]]
+        $('.datetime').each(function () {
+            const dataTime = $(this).text()
+            $(this).text(bm.translateDate(dataTime, lang))
+        })
+
+        $('.search-result-item').each(function () {
+            const data = JSON.parse($(this).attr('data'))
+            if (data.menuId === 83 || data.menuId === 84 || data.menuId === 85) {
+                if (data.dataType === 1) {
+                    $(this).attr('href', `/article/SWB/${data.menuId}/${data.dataId}`)
+                } else if (data.dataType === 2) {
+                    $(this).attr('href', `/article/XHS/${data.menuId}/${data.dataId}`)
+                }
+            } else {
+                $(this).attr('href', `/article/${data.menuId}/${data.dataId}`)
+            }
+        })
+    </script>
+</body>
+</html>

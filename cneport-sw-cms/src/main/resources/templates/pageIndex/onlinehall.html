@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<!--<section th:utext="${view.content}"></section>-->
+
+<section>
+  <div class="wrapper onlinehall">
+    <div class="page-title">
+      <h3>
+        [[#{OnlineReceptionRoom}]]
+      </h3>
+    </div>
+    <div class="meeting-header-wrap">
+      <div class="meeting-header-item-wrap">
+        <div class="meeting-accordion-wrap">
+          <div class="t">
+            [[#{Functionalpositioning}]]
+          </div>
+          <ul id="accordion" class="accordion mt20">
+            <li class="accordion-item">
+              <div class="tit is-active">
+                <p class="ellipsis1"th:title="#{1.Buildacentralenterprise-orientedinformationexcha}" style="overflow: hidden">
+                  [[#{1.Buildacentralenterprise-orientedinformationexcha}]]
+                </p>
+                <i class="iconfont icon-Vector-top"></i>
+              </div>
+              <p class="desc ellipsis3 is-active ">
+                [[#{UtilizetheplatformoftheChina-SCOLocalEconomicandTr}]]
+              </p>
+            </li>
+            <li class="accordion-item">
+              <div class="tit">
+                <p class="ellipsis1" th:title="#{2.Createabaseforcentralenterprisestodisplaytotheou}" style="overflow: hidden">
+                  [[#{2.Createabaseforcentralenterprisestodisplaytotheou}]]
+                </p>
+                <i class="iconfont icon-Vector-down"></i>
+              </div>
+              <p class="desc ellipsis3">
+                [[#{Deepencooperationwithcentralenterprisesindifferent1}]]
+              </p>
+            </li>
+            <li class="accordion-item">
+              <div class="tit">
+                <p class="ellipsis1" th:title="#{3.Innovatethenewpatternofcooperativedevelopmentbet}" style="overflow: hidden">
+                  [[#{3.Innovatethenewpatternofcooperativedevelopmentbet}]]
+                </p>
+                <i class="iconfont icon-Vector-down"></i>
+              </div>
+              <p class="desc ellipsis3">
+                  [[#{Exploreandinnovatethecentral-localcooperationmodel}]]
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <img src="/images/Mask-group-img.png" alt="" />
+    </div>
+  </div>
+</section>
+<section>
+  <div class="gray-bg onlinehall pt60 pb60">
+    <div class="wrapper">
+<!--      <div class="notice-wrap">-->
+<!--        <i class="iconfont icon-notice"></i>-->
+<!--        <p>-->
+<!--          通知：中国—上海合作组织国家金融合作与资本市场发展论坛预约2022年7月14日会议成功-->
+<!--        </p>-->
+<!--      </div>-->
+      <div class="meeting-grid-wrap">
+        <a th:onclick="bm.commonLinkUrl2('/reservation','会议室预约');" class="tooltips">
+          <div class="meeting-grid-item">
+            <img src="/images/meeting_01.jpeg" alt="" />
+            <div class="tit">
+              <h4>
+                [[#{MeetingRoomReservation}]]
+              </h4>
+              <i class="iconfont icon-zhxx-right"></i>
+            </div>
+            <p class="ellipsis2">
+              [[#{Userscanquicklychecktheusageofallmeetingroomsthrou}]]
+            </p>
+          </div>
+        </a>
+        <a th:onclick="bm.commonLinkUrl2('/visualAngle','上合国家专家视角');" class="tooltips">
+        <div class="meeting-grid-item">
+          <img src="/images/meeting_02.jpeg" alt="" />
+          <div class="tit">
+            <h4>
+              [[#{PerspectivesofexpertsfromSCOcountries}]]
+            </h4>
+            <i class="iconfont icon-zhxx-right"></i>
+          </div>
+          <p class="ellipsis2">
+            [[#{Relyingonathinktankteamcomposedofexperts,scholars,}]]
+          </p>
+        </div>
+      </a> <a th:onclick="bm.commonLinkUrl2('/forum','上合国家讲堂');" class="tooltips">
+        <div class="meeting-grid-item">
+          <img src="/images/meeting_03.png" alt="" />
+          <div class="tit">
+            <h4>
+              [[#{SCONationalLectureHall}]]
+            </h4>
+            <i class="iconfont icon-zhxx-right"></i>
+          </div>
+          <p class="ellipsis2">
+            [[#{TheSCOLectureHallisanonlineeconomicandtradeclassro}]]
+          </p>
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $(document).ready(function() {
+    const mobileFlag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+    if (!mobileFlag) {
+      // tips 显示动画
+      $('.tooltips').hover(function() {
+        $(this).append('<div class="tooltips-txt">')
+        $(this).append('</div>')
+        $(this).find('.tooltips-txt').text($(this).find('p').text())
+        $(this).find('.tooltips-txt').fadeIn()
+      }, function() {
+        $(this).find('.tooltips-txt').fadeOut()
+        $(this).remove('.tooltips-txt')
+      })
+    }
+  })
+</script>
+
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

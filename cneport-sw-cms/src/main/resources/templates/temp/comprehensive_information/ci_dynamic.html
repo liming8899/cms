@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="public/head::head('新区动态')"></head>
+
+<body>
+<header th:replace="public/header"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+
+<section>
+    <section>
+        <div class="wrapper">
+            <div class="page-title flexbox _content-sb">
+                <h3>新区动态</h3>
+            </div>
+            <div class="flexbox _content-sb ">
+                <div class="l-nav mt60">
+                    <div class="l-nav-i is-active">
+                        <p>贸易往来</p>
+                        <i class="iconfont icon-Vector-right"></i>
+                    </div>
+                    <div class="l-nav-i">
+                        <p>营商环境</p>
+                        <i class="iconfont icon-Vector-right"></i>
+                    </div>
+                    <div class="l-nav-i">
+                        <p>经济发展</p>
+                        <i class="iconfont icon-Vector-right"></i>
+                    </div>
+                    <div class="l-nav-i">
+                        <p>商务信息</p>
+                        <i class="iconfont icon-Vector-right"></i>
+                    </div>
+                </div>
+                <div class="dynamic-list-wrap">
+                    <ul>
+                        <li>
+                            <div class="dynamic-list-item">
+                                <img src="" alt="" onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null">
+                                <div class="dynamic-list-item-info">
+                                    <p class="t1 ellipsis1">俄储蓄银行行长：由于卢布强势 出口有损俄罗斯经济</p>
+                                    <p class="t2">
+                                        俄罗斯储蓄银行行长格尔曼·格列夫表示，唯一对卢布有盈余的货币是人民币，至于其他货币，在当前条件下出口就是俄罗斯经济的毒药</p>
+                                    <a href="/article/26">
+                                        <!-- <div class="t3">查看详情-></div> -->
+                                        <div class="theme-button">[[#{Learnmore}]]</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+<footer th:replace="public/footer"></footer>
+
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.countup.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/qing.js"></script>
+
+<script>
+    $(function () {
+
+
+        // 菜单切换
+        $('.l-nav .l-nav-i').click(function () {
+            $(this).addClass('is-active');
+            $(this).siblings('.l-nav-i').removeClass('is-active');
+        });
+    });
+</script>
+</body>
+
+</html>

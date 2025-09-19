@@ -1,0 +1,77 @@
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .leadingEnterprises-head {
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0 px2rem(16);
+
+      a {
+        &:nth-child(1) {
+          width: 3em;
+        }
+
+        &:nth-child(2) {
+          width: 3em;
+        }
+
+        &:nth-child(3) {
+          width: 8em;
+        }
+
+        &:nth-child(4) {
+          width: 2em;
+        }
+
+        &:nth-child(5) {
+          width: 2em;
+        }
+
+        &:nth-child(6) {
+          width: 2em;
+        }
+
+        &:nth-child(7) {
+          width: 2em;
+        }
+
+        &:nth-child(8) {
+          width: 2em;
+        }
+      }
+    }
+  }
+
+  .leadingEnterprises {
+    margin: 0 px2rem(16);
+
+    .company-grid-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .company-grid-item {
+      margin-top: px2rem(30);
+      width: px2rem(220);
+      height: px2rem(220);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .company-grid-item img {
+      max-width: px2rem(200);
+      max-height: px2rem(200);
+    }
+  }
+}

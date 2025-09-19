@@ -1,0 +1,216 @@
+<section th:fragment="dataStatistics">
+    <div class="sh_cont1">
+        <div class="sh_wh">
+            <div class="sh_title">
+                <dt>[[#{DigitalSCO}]]</dt>
+            </div>
+            <div class="sh_a1_v2 sh_clearfix" style="position: relative;">
+                <!-- 上合跨境人民币服务中心 -->
+                <div style="display: flex;flex-direction: column;">
+                    <div class="static_data_1">
+                        <div style="text-align: center">[[#{SCO_National_Currency_Trading_Center}]]</div>
+                        <div style="text-align: center" id="statisticInfo2"></div>
+                    </div>
+                    <div class="static_data">
+                        <div style="text-align: center">[[#{SCO_Cross-border_RMB_Service_Center}]]</div>
+                        <div style="text-align: center" id="statisticInfo1"></div>
+                    </div>
+                </div>
+                <!-- 中国-上合组织成员国进口总额占比 -->
+                <div class="sh_a1_b2 sh_fl">
+                    <div class="sh_wehx-a">
+                        <div class="sh_tia-dt" id="chart1">
+                            [[#{ProportionoftotalimportsbetweenChinaandSCOmemberstates(#{'April'},'2025')}]]
+                        </div>
+                        <div class="sh_wehx_sa sh_clearfix">
+                            <div id="my-e" style="height: 340px" class="sh_a1c1 sh_fl"></div>
+                            <div class="sh_a1c2 sh_fr" id="chart_pie_1"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 中国-上合组织成员国出口总额占比 -->
+                <div class="sh_a1_b2 sh_fr">
+                    <div class="sh_wehx-a">
+                        <div class="sh_tia-dt">
+                            [[#{ProportionoftotalexportsbetweenChinaandSCOmemberstates(#{'April'},'2025')}]]
+                        </div>
+                        <div class="sh_wehx_sa sh_clearfix">
+                            <div id="my-c" style="height: 340px" class="sh_a1c1 sh_fl"></div>
+                            <div class="sh_a1c2 sh_fr" id="chart_pie_2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sh_a1_v1 sh_clearfix">
+                <!-- 中国-上合组织成员国进出口总额（亿美元） -->
+
+                <div class="sh_a1_b1 sh_fl">
+                    <div class="sh_wehx-a">
+                        <!--
+                            <div class="sh_tia-dt">
+                              [[#{TotalimportandexportvolumebetweenChinaandSCOmemberstates(#{'April'},'2025')}]]
+                            </div>
+                            <div class="sh_wehx_sa sh_clearfix">
+                                <div id="my-d" style="height: 340px" class="sh_a2c1"></div>
+                            -->
+                        <div class="sh_tia-dt">
+                            [[#{TotalimportsbetweenChinaandSCOmemberstates(#{'April'},'2025')}]]
+                        </div>
+                        <div class="sh_wehx_sa sh_clearfix">
+                            <div id="my-a" style="height: 340px" class="sh_a2c1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025年1-5月中国-上合组织成员国进口总额（亿美元） -->
+                <div class="sh_a1_b1 sh_fl">
+                    <div class="sh_wehx-a"  style="width: 100%;overflow-x: auto;display: block;">
+                        <div class="sh_tia-dt" id="bankTitle">
+<!--                            2025年8月8日货币挂牌交易牌价-->
+                        </div>
+                        <table class="sh_tia-dt">
+                            <thead>
+                            <tr>
+                                <th class="borderBottom"  style="width:25%;"></th>
+                                <th class="title1 borderRight borderBottom"  style="width:45%;" colspan="3">[[#{SCO_National_Money_1}]]</th>
+                                <th class="title1 borderBottom borderTop" style="width:45%;"  colspan="3">[[#{SCO_National_Money_2}]]</th>
+                            </tr>
+                            <tr>
+                                <td  class="borderBottom"></td>
+                                <td class="title2 borderBottom" >[[#{SCO_National_Spot}]]<br/>[[#{SCO_National_Buying}]]</td>
+                                <td class="title2 borderBottom" >[[#{SCO_National_Spot}]]<br/>[[#{SCO_National_Selling}]]</td>
+                                <td class="title2 borderRight borderBottom" style="min-width: 55px;" >[[#{SCO_National_Trading}]]<br/>([[#{SCO_National_Money_1}]])</td>
+                                <td class="title2 borderBottom" >[[#{SCO_National_Spot}]]<br/>[[#{SCO_National_Buying}]]</td>
+                                <td class="title2 borderBottom" >[[#{SCO_National_Spot}]]<br/>[[#{SCO_National_Selling}]]</td>
+                                <td class="title2 borderBottom"  style="min-width: 55px;">[[#{SCO_National_Trading}]]<br/>([[#{SCO_National_Money_2}]])</td>
+                            </tr>
+                            </thead>
+                            <tbody id="dataTable"></tbody>
+                        </table>
+                        <!--
+                            <div class="sh_tia-dt">
+                             [[#{TotalimportsbetweenChinaandSCOmemberstates(#{'April'},'2025')}]]
+                            </div>
+                            <div id="my-a" style="height: 340px" class="sh_myzt"></div>
+                          -->
+                    </div>
+                </div>
+                <!-- 中国-上合组织成员国出口总额（亿美元） -->
+                <div class="sh_a1_b1 sh_fl">
+                    <div class="sh_wehx-a">
+                        <div class="sh_tia-dt">
+                            [[#{TotalexportsbetweenChinaandSCOmemberstates(#{'April'},'2025')}]]
+                        </div>
+                        <div id="my-b" style="height: 340px" class="sh_myzta"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        table
+        {
+            border-collapse:collapse;
+        }
+        .bankTitle{
+            font-size: 12px;
+            color: white;
+            text-align:center;
+            height: 30px;
+        }
+        .title1{
+            font-size: 14px;
+            color: white;
+            text-align:center;
+            height: 40px;
+        }
+        .borderRight{
+            border-right: 1px solid #63A8FF;
+        }
+        .borderTop{
+            border-top: 1px solid #63A8FF;
+        }
+        .borderBottom{
+            border-bottom: 1px solid #63A8FF;
+        }
+
+        .title2{
+            font-size: 12px;
+            color: white;
+            min-width: 50px;
+            text-align:center;
+            height: 40px;
+        }
+        .cententCla{
+            text-align:center;
+            font-size: 13px;
+            color: white;
+        }
+
+
+        @media (min-width: 1200px) {
+            .static_data {
+                color: #fff;
+                position: absolute;
+                text-align: left;
+                bottom: 0;
+                font-size: 15px;
+                margin: 0 480px;
+                background: linear-gradient(180deg, #1E6BBE 0%, #165397 101.99%);
+                border: 1px solid #63A8FF;
+                box-shadow: inset 2px 2px 8px 8px rgba(99, 168, 255, 0.2);
+                border-radius: 10px;
+                padding: 10px;
+                width: calc(100% - 980px);
+            }
+
+            .static_data_1 {
+                display: none;
+                color: #fff;
+                position: absolute;
+                text-align: left;
+                bottom: 0;
+                font-size: 15px;
+                margin: 0 480px;
+                background: linear-gradient(180deg, #1E6BBE 0%, #165397 101.99%);
+                border: 1px solid #63A8FF;
+                box-shadow: inset 2px 2px 8px 8px rgba(99, 168, 255, 0.2);
+                border-radius: 10px;
+                padding: 10px;
+                width: calc(100% - 980px);
+            }
+
+            .static_data > div {
+                word-break: initial;
+            }
+
+            .static_data_1 > div {
+                word-break: initial;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .static_data,
+            .static_data_1 {
+                background: #1E6BBE;
+                border: 0.0133333333rem solid #63A8FF;
+                box-shadow: inset 0.0266666667rem 0.0266666667rem 0.1066666667rem 0.1066666667rem rgba(99, 168, 255, 0.2);
+                border-radius: 0.1333333333rem;
+                padding: 0.3rem 0.1866666667rem;
+                color: #fff;
+                font-size: 0.2666666667rem;
+                line-height: 0.5333333333rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .static_data > div,
+            .static_data_1 > div {
+                word-break: initial;
+            }
+        }
+    </style>
+    <link rel="stylesheet" th:href="@{/css/data.css}">
+    <script type="text/javascript" th:src="@{/js/echarts.min.js}"></script>
+    <script th:inline="javascript" th:src="@{/js/data.js(v=${T(java.lang.System).currentTimeMillis()})}"></script>
+    <script type="text/javascript" th:src="@{/js/big.min.js}"></script>
+</section>

@@ -1,0 +1,100 @@
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .funapp-finance-digitalPlatform-head{
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0  px2rem(16);
+      a{
+        &:nth-child(1){
+          width: 6em;
+        }
+        &:nth-child(2){
+          width: 5em;
+        }
+        &:nth-child(3){
+          width: 6em;
+        }
+      }
+
+    }
+  }
+  .digitalPlatForm-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 px2rem(16);
+    box-sizing: border-box;
+    .theme-button{
+    }
+  }
+  .express-simplex-wrapper h4,
+  .express-separate-wrapper h4 {
+    font-size:  px2rem(32);
+    padding-bottom:  px2rem(24);
+    margin: 0  px2rem(16);
+  }
+  .express-simplex-wrapper h5,
+  .express-separate-wrapper h5 {
+    font-size:  px2rem(20);
+    padding-bottom:  px2rem(30);
+  }
+
+  .express-simplex-wrapper p {
+    margin: 0  px2rem(16);
+    color: var(--font-color-text);
+    font-size:  px2rem(20);
+    line-height:  px2rem(30);
+    text-indent: 2em;
+  }
+  .express-simplex-wrapper img,
+  .express-separate-wrapper img {
+    border-radius:  px2rem(10);
+    overflow: hidden;
+  }
+
+  .express-simplex-img1 {
+    margin:  px2rem(50) 0  px2rem(40) 0;
+  }
+
+  .express-simplex-center img {
+    height:  px2rem(490);
+    margin:  px2rem(40) auto;
+  }
+
+  .express-simplex-item {
+    margin: 0  px2rem(16);
+  }
+
+  .express-simplex-item img {
+    height:  px2rem(383);
+    width: 100%;
+    background-color: lightgray;
+  }
+
+
+  .express-simplex-img2 {
+    height:  px2rem(900);
+    text-align: center;
+  }
+
+  .express-simplex-bottom img {
+    width: 100%;
+    height:  px2rem(200);
+    margin-bottom:  px2rem(20);
+  }
+
+  .express-separate-img1 {
+    height:  px2rem(566);
+    margin:  px2rem(50) 0  px2rem(40) 0;
+  }
+
+}

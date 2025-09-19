@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<!--<div class="sco-hbt-head">-->
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<!--</div>-->
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section class="cpic">
+  <div class="wrapper">
+    <div class="page-title">
+      <h3>
+        知识产权保险
+      </h3>
+    </div>
+    <div class="mg20">
+      <p class="content-p">
+        太平洋保险深耕科技保险17年，在科技保险创新领域形成太保特色，在科技创新、自主创业、知识产权维权等方面积累先进经验，中国太保自2014年起积极研发知识产权保险产品，建立了完善的知识产权保险产品体系。
+      </p>
+      <p class="content-p">
+        主要产品：专利申请费用补偿保险、专利/知识产权执行、保险、境外境外展会专利纠纷法律费用保险。
+      </p>
+      <p class="content-p">
+        产品优势：享受政府奖补政策
+      </p>
+      <p class="content-p ti0 important">
+        1、专利申请费用补偿保险
+      </p>
+      <p class="content-p">
+        补偿由于非专利瑕疵导致申请委托代理合同授权的专利不能取得国家专利局专利授权，产生的官费和申请代理费。
+      </p>
+
+      <p class="content-p ti0 important">
+        2、专利执行保险/知识产权执行保险
+      </p>
+      <p class="content-p">
+        主要赔偿知识产权的权利人主动维权时产生的调查费用和法律费用，以及维权成功后根据法院判决金额的直接损失，保险公司先行赔付。适用被保险人作为原告的主动维权型场景。
+      </p>
+
+      <p class="content-p ti0 important">
+        3、境外展会专利纠纷法律费用保险
+      </p>
+      <p class="content-p">
+        在中华人民共和国境外的承保区域的生产销售行为，导致侵犯他人知识产权或被他人侵权知识产权而发起维权产生的法律费用，包括了应诉抗辩的法律费用和主动维权的法律费用。
+      </p>
+
+    </div>
+
+    <hr class="hr-twill">
+
+    <div class="gzh">
+      <div class="gzh-left">
+        <p>更多产品服务，详情请咨询</p>
+        <p>太平洋保险官方客服电话：95500</p>
+        <p>太平洋产险服务专员：张经理</p>
+        <p>联系方式：13335058619</p>
+      </div>
+      <div class="gzh-right">
+        <div><img src="/images/finance/wxgzh.png"></div>
+        <div>
+          <p>太平洋保险微信公众号</p>
+          <p>请微信扫描</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer th:replace="common/footer"></footer>
+<style>
+
+  .cpic-img1 {
+    margin: 0 auto;
+  }
+  .ti0 {
+    text-indent: 0 !important;
+  }
+
+  .cpic .page-title {
+    margin-top: 0;
+  }
+
+  @media (min-width: 1200px) {
+    .mg20 {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+    .content-p {
+      text-indent: 2em;
+      font-size: 16px;
+      color: #5c5c5c;
+    }
+    .scancode {
+      max-width: 200px;
+    }
+
+    .important {
+      font-size: 18px !important;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .mg20 {
+      margin: 0.3rem 0;
+    }
+    .content-p {
+      margin: 0 0.2133333333rem;
+      color: var(--font-color-text);
+      font-size: 0.2666666667rem;
+      line-height: 0.4rem;
+      text-indent: 2em;
+    }
+    .scancode {
+      max-width: 2.3rem;
+    }
+
+    .important {
+      font-size: 0.28888888rem !important;
+      margin: 0.2rem 0.213rem;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+</style>
+</body>
+</html>

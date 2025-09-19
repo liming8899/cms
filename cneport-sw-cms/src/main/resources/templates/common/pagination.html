@@ -1,0 +1,56 @@
+<div class="pagination" th:fragment="pagination(page, jumpUrl)" th:if="${page.pages > 0}">
+    <div class="pagination-total" th:if="${#strings.trim(lang_session)} eq 'zh_CN'">
+        <span th:text="#{Totaldata1}"></span>
+        <span class="total-num" th:text="${page.total}"></span>
+        <span th:text="#{Totaldata2}"></span>
+    </div>
+    <div class="pagination-total" th:if="${#strings.trim(lang_session)} ne 'zh_CN'">
+        <span th:text="#{Totaldata1}+' '"></span>
+        <span th:text="#{Totaldata2}+':'"></span>
+        <span class="total-num" th:text="${page.total}"></span>
+    </div>
+    <!-- prve -->
+    <div class="pagination-item prev disabled" th:if="${page.current == 1}">
+        <i class="iconfont icon-right"></i>
+    </div>
+    <a class="pagination-item prev" th:if="${page.current != 1}" th:href="@{${jumpUrl}(currentPage=${page.current - 1},pageSize=${page.size})}">
+        <i class="iconfont icon-right"></i>
+    </a>
+    <!-- number -->
+    <a class="pagination-item" th:if="${page.current-4 >= 1 && page.current == page.pages}" th:href="@{${jumpUrl}(currentPage=${page.current-4},pageSize=${page.size})}">[[${page.current-4}]]</a>
+    <a class="pagination-item" th:if="${page.current-3 >= 1 && page.current <= 1 }" th:href="@{${jumpUrl}(currentPage=${page.current-3},pageSize=${page.size})}">[[${page.current-3}]]</a>
+    <a class="pagination-item" th:if="${page.current-2 >= 1}" th:href="@{${jumpUrl}(currentPage=${page.current-2},pageSize=${page.size})}">[[${page.current-2}]]</a>
+    <a class="pagination-item" th:if="${page.current-1 >= 1}" th:href="@{${jumpUrl}(currentPage=${page.current-1},pageSize=${page.size})}">[[${page.current-1}]]</a>
+    <!-- current -->
+    <div class="pagination-item is-active" th:text="${page.current}"></div>
+
+    <a class="pagination-item" th:if="${page.current+1 <= page.pages}" th:href="@{${jumpUrl}(currentPage=${page.current+1},pageSize=${page.size})}">[[${page.current+1}]]</a>
+    <a class="pagination-item" th:if="${page.current+2 <= page.pages}" th:href="@{${jumpUrl}(currentPage=${page.current+2},pageSize=${page.size})}">[[${page.current+2}]]</a>
+    <a class="pagination-item" th:if="${page.current+3 <= page.pages && page.current < 3}" th:href="@{${jumpUrl}(currentPage=${page.current+3},pageSize=${page.size})}">[[${page.current+3}]]</a>
+    <a class="pagination-item" th:if="${page.current+4 <= page.pages && page.current < 2}" th:href="@{${jumpUrl}(currentPage=${page.current+4},pageSize=${page.size})}">[[${page.current+4}]]</a>
+    <!-- next -->
+    <div class="pagination-item next disabled" th:if="${page.current == page.pages}">
+        <i class="iconfont icon-right"></i>
+    </div>
+    <a class="pagination-item next" th:if="${page.current != page.pages}" th:href="@{${jumpUrl}(currentPage=${page.current + 1},pageSize=${page.size})}" >
+        <i class="iconfont icon-right"></i>
+    </a>
+    <div class="pagination-total-pages">
+        <span th:text="${page.current}"></span>/<span th:text="${page.pages}"></span>
+    </div>
+
+    <div class="pagination-goto" th:if="${#strings.trim(lang_session) eq 'zh_CN'}">
+        到第
+        <input id="gotoNum" type="number" min="1" th:max="${page.pages}" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+        页
+        <button th:onclick="bm.goLink([[${jumpUrl}]],[[${page}]])">确定</button>
+    </div>
+
+    <div class="pagination-goto" th:if="${#strings.trim(lang_session) ne 'zh_CN'}">
+        <span th:text="#{GoToPage}"></span>
+        <input id="gotoNum" type="number" min="1" th:max="${page.pages}" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+        <button th:onclick="bm.goLink([[${jumpUrl}]],[[${page}]])">
+            <span th:text="#{submitted}"></span>
+        </button>
+    </div>
+</div>

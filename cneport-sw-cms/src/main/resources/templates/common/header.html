@@ -1,0 +1,59 @@
+<header class="m-head" th:classappend="${headerClass} != null ? ${headerClass} : _" th:fragment="header(navList, breadCrumb)">
+    <div class="h-wrap wrapper">
+        <div class="h-top">
+            <div class="h-logo">
+                <a th:href="@{/}">
+                    <img th:src="@{/img/main_logo.png}" alt="">
+                </a>
+            </div>
+            <div class="luange-div tr flexbox">
+                <div>
+<!--                    <a th:href="@{/}">中</a>-->
+<!--                    <a href="http://scocsp.com/language/index/webru/index">РУС</a>-->
+<!--                    <a href="http://scocsp.com/language/index/weben/index">EN</a>-->
+                    <a href="javascript:;" onclick="bm.setLang('zh_CN')">中</a>
+                    <a href="javascript:;" onclick="bm.setLang('ru_RU')">РУС</a>
+                    <a href="javascript:;" onclick="bm.setLang('en_US')">EN</a>
+                </div>
+                <div>
+                    <span class="sou-img ds" id="mSearchShowBtn">
+                        <i class="iconfont ds icon-fangdajing"></i>
+                    </span>
+                    <a href="javascript:;" id="mNavShowBtn">
+                        <i class="iconfont icon-daohang"></i>
+                        [[#{Navigation}]]
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="h-fot clearfix">
+            <div class="h-fot-nav fr">
+                <th:block  th:each="headerNav, headerNavStat : ${navList}">
+                    <th:block th:switch="${headerNav.attribute}">
+                        <a th:onclick="bm.commonLinkUrl2([[${headerNav.linkUrl}]],[[${headerNav.name}]]);" th:case="3">[[${headerNav.name}]]</a>
+                        <a th:onclick="bm.commonLinkUrl2([[${headerNav.linkUrl}]],[[${headerNav.name}]]);" th:case="4" target="_blank">[[${headerNav.name}]]</a>
+                        <a th:onclick="bm.commonLinkUrl2([['/'+${headerNav.path}]],[[${headerNav.name}]]);" th:case="*">[[${headerNav.name}]]</a>
+                    </th:block>
+                </th:block>
+            </div>
+        </div>
+    </div>
+    <div class="m-head__crumbs">
+        <ul class="crumbs wrapper">
+            <li><i class="iconfont icon-daohang" style="line-height: 30px"></i></li>
+            <li><a th:href="@{'/'}">[[#{Home}]]</a></li>
+            <th:block th:each="crumb, crumbStat : ${breadCrumb}">
+                <li th:if="${#strings.isEmpty(crumb?.get('id'))}">
+                    <a href="javascript:;">[[${crumb.name}]]</a>
+                </li>
+                <li th:unless="${#strings.isEmpty(crumb?.get('id'))}">
+                    <th:block th:switch="${crumb.attribute}">
+                        <a th:onclick="bm.commonLinkUrl2([[${crumb.linkUrl}]],[[${crumb.name}]]);" th:case="3">[[${crumb.name}]]</a>
+                        <a th:onclick="bm.commonLinkUrl2([[${crumb.linkUrl}]],[[${crumb.name}]]);" th:case="4" target="_blank">[[${crumb.name}]]</a>
+                        <a th:onclick="bm.commonLinkUrl2([['/'+${crumb.path}]],[[${crumb.name}]]);" th:case="*">[[${crumb.name}]]</a>
+                    </th:block>
+                </li>
+            </th:block>
+        </ul>
+    </div>
+</header>

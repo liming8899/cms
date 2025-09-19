@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<th:block th:if="${#strings.trim(lang_session) eq 'zh_CN'}">
+    <head th:replace="common/head::head(${financeProductDetails.name})"></head>
+</th:block>
+<th:block th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(financeProductDetails.enName)}">
+    <head th:replace="common/head::head(${financeProductDetails.enName})"></head>
+</th:block>
+<th:block th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(financeProductDetails.enName)}">
+    <head th:replace="common/head::head(${financeProductDetails.name})"></head>
+</th:block>
+<th:block th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(financeProductDetails.ruName)}">
+    <head th:replace="common/head::head(${financeProductDetails.ruName})"></head>
+</th:block>
+<th:block th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(financeProductDetails.ruName)}">
+    <head th:replace="common/head::head(${financeProductDetails.name})"></head>
+</th:block>
+
+<body>
+<!--<div class="sco-hbt-head">-->
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<!--</div>-->
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section class="cpic">
+    <div class="wrapper">
+        <div class="page-title">
+            <h3 th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${financeProductDetails.name}]]</h3>
+            <h3 th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(financeProductDetails.enName)}">[[${financeProductDetails.enName}]]</h3>
+            <h3 th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(financeProductDetails.enName)}">[[${financeProductDetails.name}]]</h3>
+            <h3 th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(financeProductDetails.ruName)}">[[${financeProductDetails.ruName}]]</h3>
+            <h3 th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(financeProductDetails.ruName)}">[[${financeProductDetails.name}]]</h3>
+        </div>
+
+        <th:block th:if="${#strings.trim(lang_session) eq 'zh_CN'}" th:utext="${financeProductDetails.content}"></th:block>
+        <th:block th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(financeProductDetails.enContent)}" th:utext="${financeProductDetails.enContent}"></th:block>
+        <th:block th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(financeProductDetails.enContent)}" th:utext="${financeProductDetails.content}"></th:block>
+        <th:block th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(financeProductDetails.ruContent)}" th:utext="${financeProductDetails.ruContent}"></th:block>
+        <th:block th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(financeProductDetails.ruContent)}" th:utext="${financeProductDetails.content}"></th:block>
+
+    </div>
+</section>
+<footer th:replace="common/footer"></footer>
+<style>
+
+    .cpic-img1 {
+        margin: 0 auto;
+    }
+
+    .cpic .page-title {
+        margin-top: 0;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .ti0 {
+        text-indent: 0 !important;
+    }
+    @media (min-width: 1200px) {
+        .mg20 {
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .content-p {
+            text-indent: 2em;
+            font-size: 16px;
+            color: #5c5c5c;
+        }
+        .scancode {
+            max-width: 200px;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .mg20 {
+            margin: 0.3rem 0;
+        }
+        .content-p {
+            margin: 0 0.2133333333rem;
+            color: var(--font-color-text);
+            font-size: 0.2666666667rem;
+            line-height: 0.4rem;
+            text-indent: 2em;
+        }
+        .scancode {
+            max-width: 2.3rem;
+        }
+    }
+</style>
+</body>
+</html>

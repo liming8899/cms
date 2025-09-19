@@ -1,0 +1,111 @@
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .funapp-service-transactionWin-manageServices-head {
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0 px2rem(16);
+
+    }
+  }
+  .manageServices {
+    margin: 0 px2rem(16);
+
+    .talent-affairs-detail-header .title {
+      font-weight: 400;
+      font-size: px2rem(40);
+      line-height: px2rem(58);
+      text-align: center;
+      border-bottom: solid px2rem(1) #E2E0E0;
+      padding-bottom: px2rem(40);
+    }
+
+    .talent-affairs-detail-header .share-wrap {
+      display: flex;
+      justify-content: space-between;
+      padding-top: px2rem(48);
+      padding-bottom: px2rem(35);
+    }
+
+    .talent-affairs-detail-header .desc {
+      font-weight: 400;
+      font-size: px2rem(20);
+      line-height: px2rem(30);
+      margin-top: px2rem(40);
+    }
+
+    .talent-affairs-detail-header .desc .t2 {
+      float: right;
+      text-align: right;
+    }
+
+    .talent-affairs-detail-header .desc p {
+      padding: px2rem(10) 0;
+    }
+
+    .talent-table {
+      background-color: #F4F4F4;
+      border-color: #d5d8dd;
+      font-size: px2rem(20);
+      line-height: px2rem(30);
+    }
+
+    .talent-affairs-detail-content h4 {
+      font-weight: 400;
+      font-size: px2rem(24);
+      line-height: px2rem(36);
+      text-align: center;
+      padding: px2rem(20) 0 px2rem(36) 0;
+    }
+
+    .talent-affairs-detail-content h5 {
+      font-weight: 400;
+      font-size: px2rem(24);
+      line-height: px2rem(36);
+      text-align: center;
+      padding: px2rem(20) 0 px2rem(36) 0;
+    }
+
+    .talent-affairs-detail-content p {
+      font-weight: 400;
+      font-size: px2rem(20);
+      line-height: px2rem(30);
+      color: #666666;
+      padding: px2rem(14) 0;
+    }
+
+    .talent-table tr {
+      height: px2rem(60);
+    }
+
+    .talent-table tr td:first-child {
+      width: px2rem(190);
+      padding: px2rem(20);
+    }
+
+    .talent-table tr td:nth-child(2) {
+      width: px2rem(456);
+      padding: px2rem(20);
+      color: var(--font-color-text);
+    }
+
+    .talent-table tr td:nth-child(3) {
+      width: px2rem(223);
+      padding: px2rem(20);
+    }
+
+    .talent-table tr td:nth-child(4) {
+      width: px2rem(335);
+      padding: px2rem(20);
+      color: var(--font-color-text);
+    }
+  }
+}

@@ -1,0 +1,39 @@
+server:
+  bind: http://127.0.0.1:8805
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://10.200.255.110:5432/dps_target?characterEncoding=utf8&currentSchema=dps_target
+    username: test
+    password: Wxy123456
+  #    url: jdbc:mysql://10.200.255.70:3307/dps_target?useUnicode=true&characterEncoding=utf8&useSSL=false&useOldAliasMetadataBehavior=true&useLegacyDatetimeCode=true&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+  #    username: wms
+  #    password: Dcjet@123456
+  redis:
+    database: 5
+    host: 10.200.255.99
+    port: 26379
+    password: sco23106Csp
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    call-setters-on-nulls: true
+logging:
+  config: classpath:logging-config.xml
+
+vReferer: http://10.200.255.99:8805,http://10.200.255.99:8801,http://10.200.255.99:80,http://10.200.255.99:8802/,http://10.200.255.99/,http://192.168.59.142:3000/
+#member前端页面
+memberUrl: http://10.200.255.99:80/sso/#/account/account
+accountUrl: http://10.200.255.99:8805/account
+mainUrl: http://10.200.255.99:80/
+logoutUrl: http://10.200.255.99:8801/sso/logout
+ssoLogoutUrl: http://10.200.255.99:9001/iam/cas/logout
+ssoRegisterUrl: http://10.200.255.99:80/sso/#
+ssoMainUrl: http://10.200.255.99:9001/iam
+ssoScodamotOwnerUrl: http://10.200.255.99:9001/iam/oauth2/authorize?client_id=20240002&response_type=code&redirect_uri=http://192.168.55.243:30000/api/portal/noauth/callback/owner?back=http://192.168.59.142:3000/sIndex
+ssoScodamotAgentUrl: http://10.200.255.99:9001/iam/oauth2/authorize?client_id=20240002&response_type=code&redirect_uri=http://192.168.55.243:30000/api/oauth/callback/agent?back=http://192.168.59.142:3000/dashboard
+scodamotMainUrl: http://192.168.59.142:3000/sIndex
+#是否开启单点
+ssoFlag: true
+#单点登录地址
+sso_login_url: http://10.200.255.99:9001/iam/oauth2/authorize?client_id=20240001&response_type=code&redirect_uri=http://10.200.255.99:8805/account/wtSSO/callback?back=

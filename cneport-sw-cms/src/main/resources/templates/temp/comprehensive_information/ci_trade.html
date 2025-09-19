@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head th:replace="public/head::head('[[#{Constructionachievementsdisplay}]]')"></head>
+
+<body>
+<header th:replace="public/header"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+
+<section>
+    <section>
+        <div class="wrapper">
+            <div class="trade-list-wrap">
+                <div class="trade-list-item">
+                    <img src="../images/trade1.png" alt="">
+                    <div class="trade-list-item-info">
+                        <p class="t1">国际贸易合作</p>
+                        <p class="t2">
+                            建成“一带一路”地方经贸合作的先行区、要素资源跨国流动的先导区、双边多边经贸合作的示范区。围绕拓展货物贸易合作、大力发展跨境电商、扩大服务贸易领域、搭建国际贸易平台、推动贸易服务便利化五个方面开展工作。</p>
+                        <a href="/ci/trade_details_1">
+                            <div class="theme-button">
+                                [[#{Learnmore}]]
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="trade-list-item">
+                    <div class="trade-list-item-info">
+                        <p class="t1">[[#{InternationalLogisticsCenter}]]</p>
+                        <p class="t2">
+                            国际物流中心以打造海陆空铁“四港一体”国际联运综合港为目标，重点围绕畅通多式联运通道、集聚发展现代物流产业、优化多式联运综合服务功能、开展国际物流合作四个方面开展工作，致力于打造上合组织国家及沿黄流域面向日韩等国家的出海口，构建“东接日韩面向亚太、北接蒙俄、南连东盟、西接上合组织国家“的国际物流大通道。</p>
+                        <a href="/ci/trade_details_2">
+                            <div class="theme-button">
+                                [[#{Learnmore}]]
+                            </div>
+                        </a>
+                    </div>
+                    <img src="../images/trade2.png" alt="">
+                </div>
+                <div class="trade-list-item">
+                    <img src="../images/trade3.png" alt="">
+                    <div class="trade-list-item-info">
+                        <p class="t1">产能合作</p>
+                        <p class="t2">
+                            双向投资中心的目标是建设双向投资制度创新的试验区、综合服务新高地、“一带一路”国家人流、物流、资金流、信息流、技术流的集聚地。围绕扩大城市间合作网络、加强研发和加工领域合作、开展现代农业合作、推进国际园区互动合作、便利优势企业走出去、强化金融支持力度六个方面开展16项重点工作。</p>
+                        <a href="/ci/trade_details_3">
+                            <div class="theme-button">
+                                [[#{Learnmore}]]
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="trade-list-item">
+                    <div class="trade-list-item-info">
+                        <p class="t1">[[#{Business,TravelandCultureExchangeDevelopmentCenter}]]</p>
+                        <p class="t2">建成知名的国际旅游目的地城市、具有国际影响力的文化创意产业中心。</p>
+                        <a href="/ci/trade_details_4">
+                            <div class="theme-button">
+                                [[#{Learnmore}]]
+                            </div>
+                        </a>
+                    </div>
+                    <img src="../images/trade4.png" alt="">
+                </div>
+                <div class="trade-list-item">
+                    <img src="../images/trade5.png" alt="">
+                    <div class="trade-list-item-info">
+                        <p class="t1">综合创意</p>
+                        <p class="t2">发挥青岛面向海洋的桥头堡优势，彰显在“一带一路”新亚欧大陆桥经济走廊和海上合作中的作用，以海带陆，以陆促海，真正形成东西双向互济、陆海内外联动的开放格局。</p>
+                        <a href="/ci/trade_details_5">
+                            <div class="theme-button">
+                                [[#{Learnmore}]]
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<footer th:replace="public/footer"></footer>
+
+
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.countup.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/qing.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script>
+    $(".switch-item").click(function (event) {
+        $(this).addClass("selected");
+        $(this).siblings().removeClass("selected");
+
+    })
+</script>
+</body>
+
+</html>

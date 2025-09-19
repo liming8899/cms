@@ -1,0 +1,67 @@
+server:
+  port: 8801
+  servlet:
+    session:
+      cookie:
+        http-only: true
+      tracking-modes: cookie
+spring:
+  application:
+    name: bm-main
+  profiles:
+    active: dev
+  redis:
+    timeout: 10s
+    lettuce:
+      pool:
+        max-active: 200
+        max-wait: -1ms
+        max-idle: 10
+        min-idle: 0
+  messages:
+    baseFolder: i18n
+    basename: i18n/home
+    encoding: UTF-8
+  thymeleaf:
+    check-template: false
+    check-template-location: false
+    cache: false
+    enabled: true
+  mvc:
+    favicon:
+      enabled: false
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 600000
+      connection-timeout: 30000
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 2
+      logic-not-delete-value: 1
+  configuration:
+    call-setters-on-nulls: true
+xh:
+  img:
+    server: https://scocsp.com/dpsfile/upload/
+    replace: /resources/third-upgrade/upload/
+sa-token:
+  token-name: token
+  jwt-secret-key: bomin@2022
+  timeout: 72000
+#  activity-timeout: 1800
+  sso:
+    is-http: true
+    is-slo: true
+    secretkey: kQwIOrYvnXmSDkwEiFngrKidMcdrgKof
+    auth-url: ${server.bind}/account/sso/auth
+    check-ticket-url: ${server.bind}/account/sso/checkTicket
+    slo-url: ${server.bind}/account/sso/logout
+sign:
+  maxTime: 60

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<!--<div class="sco-hbt-head">-->
+    <header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<!--</div>-->
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section >
+    <div class="wrapper pb60 sco-hbt">
+        <div class="page-title">
+            <h3>[[#{SCOExchangeandInsurance}]]</h3>
+        </div>
+        <div class="mt40">
+            <img class="huibaotong-img1" src="/images/huibaotong-1.png" alt="">
+            <p class="huibaotong-t1 mt40">
+                [[#{TheManagementCommitteeoftheChina-SCOLocalEconomica}]]
+            </p>
+            <p class="huibaotong-t2">
+                [[#{Inthepast,foreigntradecompaniesoftenneededtogothro}]]
+            </p>
+        </div>
+        <div class="mt40 flexbox _content-sb">
+            <div style="width: 370px">
+                <p class="huibaotong-t1">
+                    [[#{SCOExchangeRateInsurancecanbeappliedbymediumsma}]]
+                </p>
+                <p class="huibaotong-t2">
+                    [[#{QingdaoJiaozhouShengyuFinancingGuaranteeCo.,Ltd.is}]]
+                </p>
+            </div>
+            <div style="width: 773px;">
+                <img class="huibaotong-img2" src="/images/huibaotong-02.png" alt="">
+                <div class="mt50 flexbox _content-sb">
+                    <img class="huibaotong-img3" src="/images/huibaotong-03.png" alt="">
+                    <img class="huibaotong-img3" src="/images/huibaotong-04.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="mt40 flexbox _content-sb _items-mid">
+            <div style="width: 600px;">
+                <img class="huibaotong-img4" src="/images/huibaotong-05.png" alt="">
+            </div>
+            <div style="width: 543px">
+                <p class="huibaotong-t1">
+                    [[#{TheSCOExchangeRateInsurancebusinesshasobviousadv}]]
+                </p>
+                <p class="huibaotong-t2">
+                    [[#{Firstofall,thefinancialsupportisstrong.TheManageme}]]
+                </p>
+            </div>
+        </div>
+    </div>
+    <style>
+        @media (min-width: 1200px) {
+            .huibaotong-img1 {
+                width: 1200px;
+                height: 380px;
+                border-radius: 10px;
+            }
+
+            .huibaotong-img2 {
+                width: 773px;
+                height: 190px;
+                border-radius: 10px;
+            }
+
+            .huibaotong-img3 {
+                width: 360px;
+                height: 190px;
+                border-radius: 10px;
+            }
+
+            .huibaotong-img4 {
+                width: 600px;
+                height: 455px;
+                border-radius: 10px;
+            }
+
+            .huibaotong-t1 {
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 35px;
+            }
+
+            .huibaotong-t2 {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 28px;
+                /*text-align: justify;*/
+                color: #626262;
+                margin-top: 25px;
+            }
+        }
+    </style>
+</section>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

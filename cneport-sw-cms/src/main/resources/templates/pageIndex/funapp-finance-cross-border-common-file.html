@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="iframediv">
+    <iframe id="iframe" src="" frameborder="0" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;"></iframe>
+</div>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script>
+    function reloadIframe(url) {
+        $('#iframe').attr('src',url.replace('http://','https://'))
+        // $('#iframe').attr('src',url)
+    }
+
+    reloadIframe(localStorage.getItem('url'));
+
+</script>
+</html>

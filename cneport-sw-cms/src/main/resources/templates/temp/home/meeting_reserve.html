@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head th:replace="public/head::head('会议室预定-确定')"></head>
+
+<body>
+<header th:replace="public/header3"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+    <section>
+        <section>
+            <div class="wrapper flexbox _content-sb">
+                <div class="meetingOrder-form">
+                    <h4>[[#{Pleasefillincarefully}]]</h4>
+                    <ul>
+                        <li>
+                            <input type="text" width="100%" placeholder="预约会议室" />
+                        </li>
+                        <li><input type="text" th:placeholder="#{applicant}" /></li>
+                        <li><input type="text" th:placeholder="#{nameofthemeeting}" /></li>
+                        <li><input type="text" placeholder="预约会议室" /></li>
+                        <li><input type="text" th:placeholder="#{typeofthemeeting}" /></li>
+                        <li><input type="text" placeholder="会议地点" /></li>
+                        <li><input type="text" th:placeholder="#{starttimeofthemeeting}" /></li>
+                        <li><input type="text" th:placeholder="#{endtimeofthemeeting}" /></li>
+                        <li><input type="text" placeholder="参会人数" /></li>
+                        <li><input type="" placeholder="参会人数" /></li>
+                        <li><textarea placeholder="备注" name="" id="" cols="30" rows="4"></textarea></li>
+                        <li>
+                            <div class="check-wrap">
+                                <p>[[#{meetingservice}]]</p>
+                                <form class="check-items">
+                                    <label><input name="ser" type="checkbox"><span>[[#{tea}]]</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>[[#{paper}]]</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>[[#{pen}]]</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>[[#{microphonemicrophone}]]</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>音响</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>讲台</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>[[#{bigscreen}]]</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>桌椅</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>[[#{seatcard}]]</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>[[#{indicatorboard}]]</span> </label>
+                                    <label><input name="ser"  type="checkbox"><span>其他</span> </label>
+
+                                </form>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="agree-item"><input type="checkbox"><span>同意并阅读<a href="">《签约书》</a></span> </label>
+                        </li>
+                        <li>
+                            <div class="theme-button mt40">
+                                提交
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="meetingOrder-calendar">
+                    <p>[[#{reservationstatus}]]</p>
+                    <div class="calendar-wrap">
+                        <div class="calendar-title-grid mt20">
+                            <div>周一</div>
+                            <div>周二</div>
+                            <div>周三</div>
+                            <div>周四</div>
+                            <div>周五</div>
+                        </div>
+                        <div class="calendar-grid" id="calendar">
+
+                        </div>
+                        <div class="btn-wrap">
+                            <div class="btn1">[[#{lastmonth}]]</div>
+                            <div id="month-tit">07月</div>
+                            <div class="btn2">[[#{nextmonth}]]</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </section>
+<footer th:replace="public/footer"></footer>
+
+    <script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+    <script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+    <script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.countup.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/qing.js"></script>
+<script>
+    var dateObj = (function() {
+        var _date = new Date();
+        return {
+            getDate: function() {
+                return _date;
+            },
+            setDate: function(date) {
+                _date = date;
+            }
+        };
+    })();
+    showCalendarData()
+
+    function loadData() {
+        var calendar = document.getElementById("calendar")
+        var div = document.createElement('div')
+        div.innerHTML = "1"
+        calendar.appendChild(div)
+    }
+
+    function showCalendarData() {
+        var _year = dateObj.getDate().getFullYear();
+        var _month = dateObj.getDate().getMonth() + 1;
+        var _days = new Date(_year, _month, 0).getDate();
+        var _week = new Date(_year, _month - 1).getDay()
+        var monthT = document.getElementById('month-tit')
+        monthT.innerHTML = _month + "月"
+        var calendar = document.getElementById("calendar")
+        while (calendar.hasChildNodes()) {
+            calendar.removeChild(calendar.firstChild);
+        }
+        if (_week < 6) {
+            for (var i = 1; i < _week; i++) {
+                var div = document.createElement('div')
+                div.innerHTML = ""
+                calendar.appendChild(div)
+            }
+        }
+        for (var i = 1; i < _days + 1; i++) {
+            let tempW = new Date(_year, _month - 1, i).getDay()
+            if (tempW != 0 && tempW != 6) {
+                var div = document.createElement('div')
+                div.innerHTML = i
+                calendar.appendChild(div)
+            }
+        }
+    }
+    $('.btn1').click(function() {
+        var date = dateObj.getDate();
+        dateObj.setDate(new Date(date.getFullYear(), date.getMonth() - 1, 1));
+        showCalendarData();
+    });
+    $('.btn2').click(function() {
+        var date = dateObj.getDate();
+        dateObj.setDate(new Date(date.getFullYear(), date.getMonth() + 1, 1));
+        showCalendarData();
+    });
+
+    function getDateStr(date) {
+        var _year = date.getFullYear();
+        var _month = date.getMonth() + 1; // 月从0开始计数
+        var _d = date.getDate();
+
+        _month = (_month > 9) ? ("" + _month) : ("0" + _month);
+        _d = (_d > 9) ? ("" + _d) : ("0" + _d);
+        return _year + _month + _d;
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<header class="m-head" th:fragment="header">
+  <div class="h-wrap wrapper">
+    <div class="h-top">
+      <div class="h-logo">
+        <img th:src="@{/img/main_logo.png}" alt="">
+      </div>
+      <div class="luange-div tr">
+        <a href="">中文</a>
+        <a href="">РУС</a>
+        <a href="">ENG</a>
+        <span class="sou-img ds">
+                        <i class="iconfont ds icon-fangdajing"></i>
+                    </span>
+        <a href="javascript:;" id="mNavShowBtn">
+          <i class="iconfont icon-daohang"></i> [[#{Navigation}]]
+        </a>
+      </div>
+    </div>
+    <div class="h-fot">
+      <ul class="crumbs">
+        <li><i class="iconfont icon-daohang"></i></li>
+        <li><a href="/temp/templateslates/temp/public">首页</a></li>
+        <!--                <li><a href="http://">综合信息</a></li>-->
+        <!--                <li><a href="http://">头部企业</a></li>-->
+      </ul>
+      <div class="h-fot-nav">
+        <a href="/home/figure">[[#{DigitalSCO}]]</a>
+        <a href="http://10.200.255.86:8802/">外贸撮合</a>
+        <a href="/home/pass">智能通关</a>
+        <a href="/home/express">智慧物流</a>
+        <a href="/home/tax">电子税务</a>
+        <a href="/home/financial">金融赋能</a>
+        <a href="/cs/law">综合服务</a>
+        <a href="/ci/news">新区之窗</a>
+        <a href="/home/meetingOrder">[[#{OnlineReceptionRoom}]]</a>
+      </div>
+    </div>
+
+  </div>
+</header>

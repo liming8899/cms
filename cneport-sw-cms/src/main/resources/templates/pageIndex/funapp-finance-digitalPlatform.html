@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section >
+  <div class="wrapper express-simplex-wrapper pb60">
+    <div class="flexbox _content-sb">
+      <div class="digitalPlatForm-header">
+        <div class="page-title">
+          <h3>[[#{SCOBlockchain-basedFinancingServicePlatform}]]</h3>
+          <a id="openUrl" href="http://39.107.236.126/" target="_blank">
+            <div class="theme-button">[[#{Enterthesystem}]]</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="express-simplex-img1">
+      <img src="/images/express-s-1.png" alt="">
+    </div>
+    <div>
+      <h4>[[#{ProjectOverview}]]</h4>
+      <p>[[#{Inordertounblockthegoldenchannelofinternationallog}]]</p>
+      <p>[[#{TheSCOEasyFinancingChainwillrealizefunctionssuc}]]</p>
+    </div>
+    <div class="express-simplex-center flexbox _content-sb">
+      <img src="/images/shheyrl.jpg" alt="">
+    </div>
+    <div>
+      <h4>[[#{ProjectFunction}]]</h4>
+      <div class="express-simplex-item">
+        <img src="/images/express-s-3.png" alt="">
+        <div class="express-simplex-info">
+          <h5>[[#{Buildaninterconnectedandtrustedcross-borderallianc}]]</h5>
+          <p>
+            [[#{Basedonblockchaindistributedledger,digitalidentity}]]
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="express-simplex-img2">
+      <img src="/images/express-s-5.png" alt="">
+    </div>
+    <div class="express-simplex-bottom">
+      <h4>[[#{Advantages}]]</h4>
+      <div class="express-simplex-item">
+        <img src="/images/express-s-6.png" alt="">
+        <div class="express-simplex-info">
+          <h5>[[#{Transparenttransactiondatareshapesthetrustnetwork}]]</h5>
+          <p>[[#{Relyingonblockchaintechnology,realizetheexchangean}]]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $.ajax({
+      url: '/cmsWeb/isLogin',
+      type: 'get',
+      contentType: 'application/json',
+      dataType: 'json',
+      success: function (res) {
+        if (res) {
+          // $("#openUrl").attr("href","https://scocsp.com/sso/oauth2/authorize?client_id=42009&response_type=code&redirect_uri=http://scoda-efi.com/prod-api/uaa/loginRtn/callback");
+          $("#openUrl").attr("href","https://scocsp.com/iam/oauth2/authorize?client_id=42009&response_type=code&redirect_uri=https://scoda-efi.com/prod-api/auth/sso/callback");
+        } else {
+          $("#openUrl").attr("href","http://scoda-efi.com/sy");
+        }
+      }
+    })
+  </script>
+</section>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

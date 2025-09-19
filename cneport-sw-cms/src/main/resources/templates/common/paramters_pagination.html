@@ -1,0 +1,28 @@
+<div class="pagination" th:fragment="pagination(page , jumpUrl)" th:if="${page.pages > 0}">
+    <!-- prve -->
+    <div class="pagination-item prev disabled" th:if="${page.current == 1}">
+        <i class="iconfont icon-right"></i>
+    </div>
+    <a class="pagination-item prev" th:if="${page.current != 1}" th:onclick="changePage([[${jumpUrl}]],[[${page.current-1}]],[[${page.size}]])">
+        <i class="iconfont icon-right"></i>
+    </a>
+    <!-- number -->
+    <a class="pagination-item" th:if="${page.current-4 >= 1 && page.current == page.pages}"    th:onclick="changePage([[${jumpUrl}]],[[${page.current-4}]],[[${page.size}]])">[[${page.current-4}]]</a>
+    <a class="pagination-item" th:if="${page.current-3 >= 1 && page.current <= 1 }" th:onclick="changePage([[${jumpUrl}]],[[${page.current-3}]],[[${page.size}]])">[[${page.current-3}]]</a>
+    <a class="pagination-item" th:if="${page.current-2 >= 1}"th:onclick="changePage([[${jumpUrl}]],[[${page.current-2}]],[[${page.size}]])">[[${page.current-2}]]</a>
+    <a class="pagination-item" th:if="${page.current-1 >= 1}" th:onclick="changePage([[${jumpUrl}]],[[${page.current-1}]],[[${page.size}]])">[[${page.current-1}]]</a>
+    <!-- current -->
+    <div class="pagination-item is-active" th:text="${page.current}"></div>
+
+    <a class="pagination-item" th:if="${page.current+1 <= page.pages}" th:onclick="changePage([[${jumpUrl}]],[[${page.current+1}]],[[${page.size}]])" >[[${page.current+1}]]</a>
+    <a class="pagination-item" th:if="${page.current+2 <= page.pages}" th:onclick="changePage([[${jumpUrl}]],[[${page.current+2}]],[[${page.size}]])">[[${page.current+2}]]</a>
+    <a class="pagination-item" th:if="${page.current+3 <= page.pages && page.current < 3}" th:onclick="changePage([[${jumpUrl}]],[[${page.current+3}]],[[${page.size}]])">[[${page.current+3}]]</a>
+    <a class="pagination-item" th:if="${page.current+4 <= page.pages && page.current < 2}" th:onclick="changePage([[${jumpUrl}]],[[${page.current+4}]],[[${page.size}]])">[[${page.current+4}]]</a>
+    <!-- next -->
+    <div class="pagination-item next disabled" th:if="${page.current == page.pages}">
+        <i class="iconfont icon-right"></i>
+    </div>
+    <a class="pagination-item next" th:if="${page.current != page.pages}" th:onclick="changePage([[${jumpUrl}]],[[${page.current+1}]],[[${page.size}]])" >
+        <i class="iconfont icon-right"></i>
+    </a>
+</div>

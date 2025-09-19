@@ -1,0 +1,14 @@
+package cloud.onion.cms.mapper;
+
+
+import cloud.onion.cms.model.entity.SiteConfig;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * @author 允泽
+ * @date 2022/7/15
+ */
+@Mapper
+public interface SiteConfigMapper extends BaseMapper<SiteConfig> {
+}

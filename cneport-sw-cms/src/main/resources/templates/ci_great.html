@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavListTop},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section>
+    <div class="wrapper history">
+        <div class="page-title">
+            <h3>[[#{Constructionhistorydisplay}]]</h3>
+        </div>
+        <div class="timeline-wrap" >
+            <div class="timeline-left">
+                <div class="timeline-item" th:each="history, historyStat : ${historyList.records}">
+                    <th:block th:if="${historyStat.index}%2==1">
+                        <p class="datetime" th:data-time="${#dates.format(history.historyTime,'yyyy-MM-dd')}"></p>
+                        <img th:if="${history.coverImage!=null and history.coverImage.trim()!=''}"  th:src="${history.coverImage}" alt=""/>
+
+                        <h4 th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${history.title}]]</h4>
+                        <h4 th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(history.enTitle)}">[[${history.enTitle}]]</h4>
+                        <h4 th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(history.enTitle)}">[[${history.title}]]</h4>
+                        <h4 th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(history.ruTitle)}">[[${history.ruTitle}]]</h4>
+                        <h4 th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(history.ruTitle)}">[[${history.title}]]</h4>
+
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${history.description}]]</p>
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(history.enDescription)}">[[${history.enDescription}]]</p>
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(history.enDescription)}">[[${history.description}]]</p>
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(history.ruDescription)}">[[${history.ruDescription}]]</p>
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(history.ruDescription)}">[[${history.description}]]</p>
+
+<!--                        <div  class="timeline-item-image" th:unless="${history.coverImage!=null and history.coverImage.trim()!=''}" ></div>-->
+                        <div class="dot"></div>
+                    </th:block>
+                </div>
+            </div>
+            <div class="timeline-center">
+                <div class="line"></div>
+            </div>
+            <div class="timeline-right">
+                <div class="timeline-item" th:each="history, historyStat : ${historyList.records}">
+                    <th:block th:if="${historyStat.index}%2==0">
+                        <p class="datetime" th:data-time="${#dates.format(history.historyTime,'yyyy-MM-dd')}"></p>
+                        <img th:if="${history.coverImage!=null and history.coverImage.trim()!=''}" th:src="${history.coverImage}" alt=""/>
+
+                        <h4 th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${history.title}]]</h4>
+                        <h4 th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(history.enTitle)}">[[${history.enTitle}]]</h4>
+                        <h4 th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(history.enTitle)}">[[${history.title}]]</h4>
+                        <h4 th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(history.ruTitle)}">[[${history.ruTitle}]]</h4>
+                        <h4 th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(history.ruTitle)}">[[${history.title}]]</h4>
+
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${history.description}]]</p>
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(history.enDescription)}">[[${history.enDescription}]]</p>
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(history.enDescription)}">[[${history.description}]]</p>
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(history.ruDescription)}">[[${history.ruDescription}]]</p>
+                        <p class="p" th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(history.ruDescription)}">[[${history.description}]]</p>
+
+<!--                        <div class="timeline-item-image" th:unless="${history.coverImage!=null and history.coverImage.trim()!=''}" ></div>-->
+                        <div class="dot" style="right:-54px !important;"></div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+        <div th:replace="common/pagination::pagination(${historyList},'')"></div>
+    </div>
+</section>
+<footer th:replace="common/footer"></footer>
+<!--<script src="/js/jquery.min.js"></script>-->
+<script src="/js/wow.js"></script>
+<script src="/js/swiper/swiper-bundle.min.js"></script>
+<script src="/js/swiper.animate1.0.3.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/js/temp/jquery.countup.min.js"></script>
+<script src="/js/temp/jquery.waypoints.min.js"></script>
+<script src="/js/temp/qing.js"></script>
+<script src="/js/vue@2.6.0.js"></script>
+<script th:inline="javascript">
+    const timelines = $('.timeline-item').filter(function(index) {
+        return $(this).height() !== 0
+    })
+    for (let index = 0; index < timelines.length; index++) {
+        let t= $(timelines[index]).find('.p').text().length
+        if (t&&t<200){
+            if ($window.width()>=1200){
+                if ($(timelines[index]).find('img').length){
+                    $(timelines[index]).css('min-height', '450px' )
+                }else {
+                    $(timelines[index]).css('min-height', '400px' )
+                }
+            }else {
+                if ($(timelines[index]).find('img').length){
+                    $(timelines[index]).css('min-height', '9rem' )
+                }else {
+                     $(timelines[index]).css('min-height', '6rem' )
+                }
+            }
+
+        }
+    }
+
+    let lang=[[${lang_session}]]
+    $('.datetime').each(function () {
+        const dataTime = $(this).attr('data-time')
+        $(this).text(bm.translateDate(dataTime, lang))
+    })
+</script>
+</body>
+</html>

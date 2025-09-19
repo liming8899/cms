@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section>
+
+    <div class="wrapper translate">
+        <div class="page-title">
+            <h3>[[#{translationservice}]]</h3>
+        </div>
+        <div class="flexbox _content-sb mt60">
+            <div class="translate-item">
+                <div class="icon">
+                    <i class="iconfont icon-zhfw-icon1"></i>
+                </div>
+                <p class="translate-sub mt30">[[#{withampleexperience}]]</p>
+                <p class="translate-text mt10">[[#{(He)isexperiencedindictationtranslation,familiarwi}]]</p>
+            </div>
+            <div class="translate-item">
+                <div class="icon">
+                    <i class="iconfont icon-zhfw-icon2"></i>
+                </div>
+                <p class="translate-sub mt30">[[#{Accurateandsmooth}]]</p>
+                <p class="translate-text mt10">[[#{Professionaltranslatorsensurethatthegrammaticalexp}]]</p>
+            </div>
+            <div class="translate-item">
+                <div class="icon">
+                    <i class="iconfont icon-zhfw-icon4"></i>
+                </div>
+                <p class="translate-sub mt30">[[#{Qualityassurance}]]</p>
+                <p class="translate-text mt10">[[#{Haveafull-timeserviceteamcomposedofaudioandvideotr}]]</p>
+            </div>
+        </div>
+
+        <div class="translate-img1 mt40">
+            <a th:onclick="bm.commonLinkUrl2('https://www.iflyrec.com/html/translate.html','讯飞翻译');" target="_blank">
+                <div class="white-button">[[#{Learnmore}]]</div>
+            </a>
+        </div>
+    </div>
+</section>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

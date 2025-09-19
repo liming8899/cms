@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section class="mb60 smarttax">
+    <div class="wrapper">
+        <div class="wrapper">
+            <div class="tax-header">
+                <div class="page-title2">
+                    <h3 style="width: 360px;">
+                        [[#{TariffReductionRulesSmartEngine}]]
+                    </h3>
+                </div>
+                <p>
+                    [[#{Importandexportenterprises}]]
+                   <br />
+                    [[#{Throughtheoriginpre-judgmentfun}]]
+                </p>
+                <div class="btn_in">
+                    <a th:onclick="bm.commonLinkUrl2('https://scocsp.com/iam/oauth2/authorize?client_id=20240001&response_type=code&redirect_uri=http%3A%2F%2Fscocsp.com%2Faccount%2FwtSSO%2Fcallback%3Fback%3Dhttps%3A%2F%2Fscocsp.com%2Ffta%2F','关税减免规则智慧引擎')" target="_blank">
+                        <div class="theme-button">
+                            [[#{Enterthesystem}]]
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <img class="tax-img1" src="/images/dzsw-img.png" alt="" />
+        </div>
+    </div>
+    <div class="gray-bg">
+        <div class="wrapper pt60">
+            <div class="tax-grid-wrap">
+                <div class="tax-grid-item">
+                    <img src="/images/tax1.png" alt="" />
+                    <h4>
+                        [[#{CorporateTaxRefundService}]]
+                    </h4>
+                    <a th:onclick="bm.commonLinkUrl2('https://etax.qingdao.chinatax.gov.cn:7553/sso/login?service=https%3A%2F%2Fetax.qingdao.chinatax.gov.cn%2Fportal%2F','企业退税服务');" target="_blank">
+                        <div class="theme-button">
+                            [[#{Enterthesystem}]]
+                        </div>
+                    </a>
+                </div>
+                <div class="tax-grid-item">
+                    <img src="/images/tax2.png" alt="" />
+                    <h4>
+                        [[#{ElectronicTaxService}]]
+                    </h4>
+                    <a th:onclick="bm.commonLinkUrl2('https://etax.qingdao.chinatax.gov.cn:7553/sso/login?service=https%3A%2F%2Fetax.qingdao.chinatax.gov.cn%2Fportal%2F','电子税务局');" target="_blank">
+                        <div class="theme-button">
+                            [[#{Enterthesystem}]]
+                        </div>
+                    </a>
+                </div>
+                <div class="tax-grid-item">
+                    <img src="/images/tax3.png" alt="" />
+                    <h4>
+                        [[#{Taxlevelinquiry}]]
+                    </h4>
+                    <a th:onclick="bm.commonLinkUrl2('http://www.chinatax.gov.cn/chinatax/n810346/c102299/index.html','税务等级查询');" target="_blank">
+                        <div class="theme-button">
+                            [[#{Enterthesystem}]]
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    <div class="wrapper">-->
+<!--        <div class="trade-list-item">-->
+<!--            <img src="images/dzsw-img4.png" alt="" />-->
+<!--            <div class="trade-list-item-info">-->
+<!--                <p class="t1">-->
+<!--                    远程可视化核查-->
+<!--                </p>-->
+<!--                <p class="t2">-->
+<!--                    对信用较高的出口企业，在首次申报等实地核查时，创新“非接触式”核查模式，由线下改为线上，实现零距离远程核查。-->
+<!--                </p>-->
+<!--                <a class="mt20 theme-button openwin" href="javascript:void(0)">进入系统</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="trade-list-item">-->
+<!--            <div class="trade-list-item-info">-->
+<!--                <p class="t1">-->
+<!--                    海关证明材料上传-->
+<!--                </p>-->
+<!--                <p class="t2">-->
+<!--                    深化海关、税务部门合作，积极推动《出口货物已补税/未退税证明》信息共享，在办理出口货物退运通关时，凡可查验信息的，不再要求企业报送纸质证明，改为查验共享信息，帮助企业加速办理退运通关。-->
+<!--                </p>-->
+<!--                <a class="mt20 theme-button openwin" href="javascript:void(0)">进入系统</a>-->
+<!--            </div>-->
+<!--            <img src="/images/dzsw-img5.png" alt="" />-->
+<!--        </div>-->
+<!--    </div>-->
+</section>
+<div class="win" style="width:480px;height:135px;position:fixed;top:50%;left:50%;margin-left:-240px;margin-top:-70px;display:none;border:1px solid rgba(34, 84, 155, 1);background-color:#FFF;">
+    <p style="background-color:rgba(34, 84, 155, 1);height:40px;line-height:40px;">
+        <span style="color:#FFF;float:left;padding-left:10px;">提示</span><span style="color:#FFF;float:right;padding-right:10px;cursor:pointer;" class="closex">关闭</span>
+    </p>
+    <div style="text-align:center;padding:30px 0px;background-color:#FFF;">
+        功能建设中，尽情期待！
+    </div>
+</div>
+<footer th:replace="common/footer"></footer>
+</body>
+<script>
+    $(".openwin").click(function(){
+        $(".win").show();
+    })
+    $(".closex").click(function(){
+        $(".win").hide();
+    })
+</script>
+</html>

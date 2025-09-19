@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="baidu-site-verification" content="codeva-kL29yjMolf"/>
+<meta name="sogou_site_verification" content="YrPu1QMURv"/>
+<meta name="keywords" content="蒙古国国际贸易单一窗口">
+<head th:replace="common/head::head(${site.title})"></head>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+<link rel="stylesheet" th:href="@{/css/tipStyle.css}">
+<body>
+<header>
+
+        <div class="banner-container">
+            <!-- 底层图片 B -->
+            <img th:src="@{/img/top-1.png}" alt="底层图片" class="banner-bg">
+            <!-- 上层图片 A -->
+            <img th:src="@{/img/top-2.png}" alt="上层图片" class="banner-top">
+        </div>
+    <section th:replace="common/nav"></section>
+</header>
+
+<section class="mobile  index-head">
+    <div class="h-wrap wrapper">
+        <div class="h-top">
+            <div class="h-logo">
+                <a th:href="@{/}">
+                    <img th:src="@{/img/main_logo.png}" alt="">
+                </a>
+            </div>
+            <div class="luange-div tr">
+                <div>
+                    <span class="sou-img ds" id="mSearchShowBtn">
+                        <i class="iconfont ds icon-fangdajing"></i>
+                    </span>
+                    <a href="javascript:;" id="mNavShowBtn">
+                        <i class="iconfont icon-daohang"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;" onclick="bm.setLang('zh_CN')">中</a>
+                    <a href="javascript:;" onclick="bm.setLang('ru_RU')">РУС</a>
+                    <a href="javascript:;" onclick="bm.setLang('en_US')">EN</a>
+                </div>
+                <div>
+                    <th:block th:if="${isLogin}">
+                        <!--<a th:href="@{${memberUrl}}" target="_blank"  >[[#{MemberCenter}]]</a>-->
+                        <a th:if="${ssoFlag}" onclick="logoutSSO()" style="cursor:pointer">[[#{Logout}]]</a>
+                        <a th:unless="${ssoFlag}" th:href="@{'/sso/logout?back=self'}">[[#{Logout}]]</a>
+                    </th:block>
+                    <th:block th:unless="${isLogin}">
+                        <a th:if="${ssoFlag}" onclick="loginSSO()" style="cursor:pointer" th:text="#{Login}"></a>
+                        <a th:unless="${ssoFlag}"
+                           href="javascript:location.href='/sso/login?back=' + encodeURIComponent(location.href) + '&redirect=' + encodeURIComponent(location.href);"
+                           th:text="#{Login}"></a>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="mSearchShowContainer" class="searchbox in displaynone active mobile">
+    <div class="searchs">
+        <div class="sertext">
+            <input type="text" name="global-search-keywords" th:placeholder="#{Pleaseenterkeywords}"/>
+        </div>
+        <button type="button" class="serbtn global-search-submit">[[#{Search}]]</button>
+    </div>
+</section>
+<section class="header-wrap">
+    <div class="wrapper">
+        <div class="header-wrap__header">
+            <div class="wrap__header__logo">
+                <a th:href="@{/}">
+                    <img th:src="@{/img/main_logo.png}" alt="">
+                </a>
+            </div>
+            <div class="wrap__header__lang">
+                <!--                    <a th:href="@{/}">中</a>-->
+
+                <!--                    <a href="http://scocsp.com/language/index/webru/index">РУС</a>-->
+                <!--                    <a href="http://scocsp.com/language/index/weben/index">EN</a>-->
+                <a href="javascript:;" onclick="bm.setLang('zh_CN')">中</a>
+                <a href="javascript:;" onclick="bm.setLang('ru_RU')">РУС</a>
+                <a href="javascript:;" onclick="bm.setLang('en_US')">EN</a>
+
+                <th:block th:if="${isLogin}">
+                    <a th:href="@{${memberUrl}}" target="_blank">[[#{MemberCenter}]]</a>
+                    <a th:if="${ssoFlag}" onclick="logoutSSO()" style="cursor:pointer">[[#{Logout}]]</a>
+                    <a th:unless="${ssoFlag}" th:href="@{'/sso/logout?back=self'}">[[#{Logout}]]</a>
+                </th:block>
+                <th:block th:unless="${isLogin}">
+                    <a th:if="${ssoFlag}" onclick="loginSSO()" style="cursor:pointer" th:text="#{Login}"></a>
+                    <a th:unless="${ssoFlag}"
+                       href="javascript:location.href='/sso/login?back=' + encodeURIComponent(location.href) + '&redirect=' + encodeURIComponent(location.href);"
+                       th:text="#{Login}"></a>
+                </th:block>
+            </div>
+        </div>
+        <div class="header-wrap__body">
+            <div class="header-wrap__body__nav">
+                <ul th:replace="common/index_nav"></ul>
+            </div>
+            <div class="header-wrap__body__search">
+                <input class="header-wrap__body__search__input" type="text" name="global-search-keywords"
+                       th:placeholder="#{Pleaseenterthekeywordsyouwanttoquery}">
+                <button type="button" class="header-wrap__body__search__btn global-search-submit">
+                    <img th:src="@{/img/sou.png}" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 八大模块 -->
+<section class="customer-nav">
+    <div class="wrapper">
+        <div class="customer-nav__content">
+            <th:block th:each="menu, menuStat : ${menuList}">
+                <a th:id="'menu_a_'+${menu.id}" href="javascript:void(0);" class="customer-nav__item">
+                    <img th:src="@{${menu.coverImage}}" th:alt="${menu.name}">
+                    <p>[[${menu.name}]]</p>
+                </a>
+            </th:block>
+        </div>
+    </div>
+</section>
+<!-- 数字上合 -->
+<!--<section th:replace="common/data_statistics"></section>-->
+<section>
+    <div class="wrapper dynamic-news">
+        <div class="dynamic-news__header">
+            <div class="title">[[#{DynamicNews}]]</div>
+            <div class="title en">DYNAMIC NEWS</div>
+            <div class="dynamic-news__tab">
+                <th:block th:each="item, itemStat : ${dynamicMenus}">
+                    <div onclick="bm.showLoginTips()" class="dynamic-news__tab__btn"
+                         th:classappend="${itemStat.index} == 0 ? 'is-active' : ''" th:data-value="${itemStat.index}"
+                         th:title="${item.name}">[[${item.name}]]
+                    </div>
+                </th:block>
+            </div>
+        </div>
+        <div class="dynamic-news__body">
+            <th:block th:each="item, itemStat :${dynamicMenus}">
+                <div th:class="'tab-'+${itemStat.index}"
+                     th:style="'display:'+(${itemStat.index} == 0 ? 'block' : 'none')">
+                    <div class="dynamic-news__tab__wrap">
+                        <th:block th:each="article, articleStat : ${item.articleList}">
+                            <a th:href="@{'/article/'+${item.id}+'/' + ${article.id}}" class="dynamic-news__tab__item">
+                                <div class="dynamic-news__tab__item__body">
+                                    <h3 class="title ellipsis2" th:if="${#strings.trim(lang_session) eq 'zh_CN'}">
+                                        [[${article.get('title')}]]</h3>
+                                    <h3 class="title ellipsis2"
+                                        th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(article.get('enTitle'))}">
+                                        [[${article.get('enTitle')}]]</h3>
+                                    <h3 class="title ellipsis2"
+                                        th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(article.get('enTitle'))}">
+                                        [[${article.get('title')}]]</h3>
+                                    <h3 class="title ellipsis2"
+                                        th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(article.get('ruTitle'))}">
+                                        [[${article.get('ruTitle')}]]</h3>
+                                    <h3 class="title ellipsis2"
+                                        th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(article.get('ruTitle'))}">
+                                        [[${article.get('title')}]]</h3>
+
+                                    <p class="description ellipsis2" th:if="${#strings.trim(lang_session) eq 'zh_CN'}">
+                                        [[${article.get('description')}]]</p>
+                                    <p class="description ellipsis2"
+                                       th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(article.get('enDescription'))}">
+                                        [[${article.get('enDescription')}]]</p>
+                                    <p class="description ellipsis2"
+                                       th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(article.get('enDescription'))}">
+                                        [[${article.get('description')}]]</p>
+                                    <p class="description ellipsis2"
+                                       th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(article.get('ruDescription'))}">
+                                        [[${article.get('ruDescription')}]]</p>
+                                    <p class="description ellipsis2"
+                                       th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(article.get('ruDescription'))}">
+                                        [[${article.get('description')}]]</p>
+                                </div>
+                                <div class="dynamic-news__tab__item__footer">
+                                    <!--                                        <div class="datetime">[[${#dates.format(article.createTime,'yyyy年MM月dd日')}]]</div>-->
+                                    <div class="datetime"
+                                         th:data-time="${#dates.format(article.createTime,'yyyy-MM-dd')}"></div>
+                                    <div class="view">[[#{Details}]]>></div>
+                                </div>
+                            </a>
+                        </th:block>
+                    </div>
+                    <div class="dynamic-news__more">
+                        <a th:onclick="bm.commonLinkUrl2([[${item.path}]],[[${item.name}]]);"
+                           class="dynamic-news__more__btn">[[#{Learnmore}]]</a>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+
+    <div id="floating-window" style="display: none;">
+        <div id="close-btn">X</div>
+        <img style="border-radius: 25px; width: 100%" src="/images/new_home/float_img.png"/>
+    </div>
+
+    <div class="container_tip">
+        <div class="row_tip">
+            <div class="modalbox success col-sm-8 col-md-6 col-lg-5 center animate"><h1 id="tip_title">
+                请登录平台以方便使用更多功能</h1>
+                <button type="button" class="redo btn" id="tip_btn1">有账号，直接登录</button>
+                <button type="button" class="redo btn" id="tip_btn2">无账号，直接注册</button>
+                <span class="change"><a href="javascript:void(0);" id="tip_btn3">暂不登录</a></span>
+            </div>
+        </div>
+    </div>
+</section>
+<footer th:replace="common/footer"></footer>
+<script th:inline="javascript">
+    const accountUrl = [[${accountUrl}]];
+    const langSession = [[${lang_session}]];
+    const ssoLoginUrl = [[${ssoLoginUrl}]];
+    const logoutUrl = [[${logoutUrl}]]
+    const ssoLogoutUrl = [[${ssoLogoutUrl}]]
+    const mainUrl = [[${mainUrl}]]
+    const ssoMainUrl = [[${ssoMainUrl}]]
+    const ssoRegisterUrl = [[${ssoRegisterUrl}]]
+
+    function loginSSO() {
+        //window.location.href = "https://scocsp.com/sso/oauth2/authorize?client_id=42002&response_type=code&redirect_uri=" + encodeURIComponent(accountUrl + "/wtSSO/callback?back=" + location.href)
+        // window.location.href = "https://scocsp.com/sso/oauth2/authorize?client_id=42011&response_type=code&redirect_uri="+encodeURIComponent(accountUrl+"/wtSSO/callback?redirect="+location.href)
+        window.location.replace(ssoLoginUrl+location.href);
+    }
+
+    const adminToken = getCookie('Admin-Token');
+
+    function logoutSSO() {
+        // window.location.href = accountUrl + "/wtSSO/logout";
+        //window.location.href = "https://scocsp.com/sso/oauth2/logout";
+        //先注销远程登录，再注销本地登录
+        $.ajax({
+            url: ssoLogoutUrl,
+            type: 'get',
+            beforeSend: function (request) {
+                request.setRequestHeader("Authorization", "Bearer "+adminToken)
+            },
+            success: function (res) {
+                window.location.replace(logoutUrl+"?mainUrl="+mainUrl);
+            }})
+
+    }
+
+    function getCookie(cookieName) {
+        const strCookie = document.cookie
+        const cookieList = strCookie.split(';')
+
+        for (let i = 0; i < cookieList.length; i++) {
+            const arr = cookieList[i].split('=')
+            if (cookieName === arr[0].trim()) {
+                return arr[1]
+            }
+        }
+        return ''
+    }
+
+    const token = getCookie('token')
+    if (token === '') {
+        sessionStorage.removeItem('tip')
+    }
+    if (token !== '' && !sessionStorage.getItem("tip")) {
+        $.ajax({
+            url: ssoMainUrl+'/cas/info?client_id=20240001',
+            type: 'GET',
+            beforeSend: function (request) {
+                request.setRequestHeader("Authorization", "Bearer "+adminToken)
+            },
+            success: function (res) {
+                if(res===''){
+                    window.location.replace(logoutUrl+"?mainUrl="+mainUrl);
+                    return
+                }
+                if (res.code === 200) {
+                    const data = res.data
+                    if (data.role ==='1') {
+                        return
+                    }
+                    //如果是移动端设备，只提示企业认证需要到PC端
+                    if(isMobile()){
+                        let tip
+                        if (langSession === 'zh_CN') {
+                            tip = '您还未进行企业认证，如需认证请使用电脑登录'
+                        } else if (langSession === 'en_US') {
+                            tip = 'You have not been certified by the enterprise. If authentication is required, please log in using a computer.'
+                        } else if (langSession === 'ru_RU') {
+                            tip = 'Вы еще не прошли корпоративную сертификацию, Для аутентификации используйте компьютер.'
+                        }
+                        if (data.purchaserAuth !== 2 && data.supplierAuth !== 2) {
+                            swal(tip);
+                        }
+                    }else{
+                        let tip, cancel, sure
+                        if (langSession === 'zh_CN') {
+                            tip = '您还未进行企业认证，是否前往认证?'
+                            cancel = '取消'
+                            sure = '确认'
+                        } else if (langSession === 'en_US') {
+                            tip = 'You have not been certified by the enterprise. Do you want to go to the certification?'
+                            cancel = 'Cancel'
+                            sure = 'Confirm'
+                        } else if (langSession === 'ru_RU') {
+                            tip = 'Вы еще не прошли корпоративную сертификацию, вы идете на сертификацию?'
+                            cancel = 'Отменить'
+                            sure = 'Подтверждение'
+                        }
+
+                        if (data.purchaserAuth !== 2 && data.supplierAuth !== 2) {
+                            swal(tip, {
+                                buttons: [cancel, sure],
+                            }).then((btn) => {
+                                sessionStorage.setItem("tip", true);
+                                if (btn) {
+                                    window.open(ssoRegisterUrl+'/company/approve','_blank');
+                                }
+                            });
+                        }
+                    }
+
+                }
+            }
+        })
+    }
+
+    function encrypt(word) {
+        let key = CryptoJS.enc.Utf8.parse('g8dr2kxqd50354ks');
+        let iv = CryptoJS.enc.Utf8.parse('v2u0quc4olmnrgu7');
+        let srcs = CryptoJS.enc.Utf8.parse(word);
+        var encrypted = CryptoJS.AES.encrypt(srcs, key, {
+            iv: iv,
+            mode: CryptoJS.mode.CBC,
+            padding: CryptoJS.pad.ZeroPadding
+        });
+        return CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
+    }
+</script>
+<script>
+    /**
+     * tab切换效果
+     */
+    $(".dynamic-news__tab__btn").click(function (event) {
+        var value = $(this).data('value')
+        $('.dynamic-news__body > div').hide()
+        $('.dynamic-news__body > .tab-' + value).show()
+        $(this).addClass("is-active");
+        $(this).siblings().removeClass("is-active");
+    })
+    /**
+     * swiper
+     */
+    var swiper = new Swiper("#homeMySwiper", {
+        loop: true,
+        // autoplay: {
+        //     delay: 5000,
+        //     disableOnInteraction: false
+        // },
+        // effect: 'fade',
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            bulletClass: 'my-bullet',
+            bulletActiveClass: 'my-bullet-active'
+        },
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev'
+        // }
+    });
+
+    function gozbgyy() {
+        window.open('/article/40/414');
+    }
+
+    function goOutLink(item) {
+        // if (item === 3) {
+        //     window.open('https://mp.weixin.qq.com/s/rmp1ELoPvzY4d88rVd0zOQ');
+        // } else if (item === 4) {
+        //     window.open('https://mp.weixin.qq.com/s/55fUN960kIjsttyLS13ZiA');
+        // }
+        if (item && isURL(item)) {
+            window.open(item)
+        }
+    }
+
+    function isURL(url) {
+        try {
+            new URL(url)
+            return true
+        } catch (err) {
+            return false
+        }
+    }
+</script>
+</body>
+<style>
+    @media (min-width: 1200px) {
+        .my-bullet {
+            display: inline-block;
+            width: 40px;
+            height: 10px;
+            background: #fff;
+            border-radius: 10px;
+            margin: 0 5px 50px 5px;
+        }
+
+        .my-bullet:hover {
+            cursor: pointer;
+        }
+
+        .my-bullet-active {
+            background: #7f6938;
+            opacity: 1;
+        }
+
+
+        .header-wrap__body__search input::placeholder {
+            font-size: 11px;
+        }
+
+        .header-wrap__body__search input:-moz-placeholder { /* Firefox版本4-18 */
+            font-size: 11px;
+        }
+
+        .header-wrap__body__search input::-moz-placeholder { /* Firefox版本19+ */
+            font-size: 11px;
+        }
+
+        .header-wrap__body__search input:-ms-input-placeholder { /* IE浏览器 */
+            font-size: 11px;
+        }
+
+        .header-wrap__body__search input::-webkit-input-placeholder {
+            font-size: 11px;
+        }
+
+        .loginTips {
+            min-width: 520px;
+        }
+    }
+
+    /**/
+    .dynamic-news__tab > .dynamic-news__tab__btn {
+        overflow: hidden;
+        padding: 0 10px;
+    }
+
+    .swal-text {
+        font-size: 18px !important;
+    }
+
+    #floating-window {
+        position: fixed;
+        background-color: #f1f1f1;
+        border-radius: 25px;
+        z-index: 1000000;
+        width: 420px;
+        height: 195px;
+    }
+
+    #close-btn {
+        width: 15px;
+        line-height: 15px;
+        background: rgba(0, 0, 0, .5);
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+
+    .swal-footer {
+        width: 85%;
+        text-align: right;
+    }
+
+    .swal-footer .swal-button-container:nth-child(3) {
+        display: block;
+        text-align: right;
+    }
+
+    .swal-button {
+        box-shadow: 0 0 2px 2px rgba(55, 194, 203, 0.2), /*下面深蓝色立体阴影*/ 0px 0px 6px 1px #4379d0, /*内部暗色阴影*/ 0 -15px 2px 2px rgba(55, 194, 203, 0.10) inset;
+    }
+
+    .swal-footer .swal-button-container:nth-child(2) .swal-button {
+        margin-left: 35px;
+    }
+
+    .swal-footer .swal-button-container:nth-child(3) .swal-button {
+        background-color: #FFFFFF;
+        color: #0E7FDB;
+        box-shadow: 0 0 0 0;
+        font-size: 12px;
+        margin-top: 15px !important;
+        padding: 0;
+    }
+
+    @media (max-width: 1200px) {
+        #floating-window {
+            position: fixed;
+            background-color: #f1f1f1;
+            border-radius: 25px;
+            z-index: 1000000;
+            width: 5rem;
+            height: 2.32rem;
+        }
+
+        #close-btn {
+            width: 15px;
+            line-height: 15px;
+            background: rgba(0, 0, 0, .5);
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+
+        .swal-text {
+            font-size: 15px !important;
+        }
+
+        .swal-button-container {
+            /*display: list-item;*/
+            /*text-align: center;*/
+        }
+
+        .swal-button {
+            /*width: 150px;*/
+            font-size: 12px !important;
+        }
+
+        .swal-footer {
+            width: 100%;
+            padding: 10px 10px 10px 0;
+        }
+
+        .swal-footer .swal-button-container:nth-child(3) .swal-button {
+            font-size: 11px !important;
+        }
+
+        .swal-footer .swal-button-container:nth-child(2) .swal-button {
+            margin-left: 20px;
+        }
+    }
+</style>
+
+
+<script th:inline="javascript">
+    let lang = [[${lang_session}]]
+    const menuList = [[${menuList}]]
+    const mobileFlag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+
+    $('.customer-nav__item').each(e => {
+        const attribute = menuList[e].attribute
+        if (mobileFlag) {
+            $($('.customer-nav__item')[e]).bind('touchstart', function () {
+                bm.commonLinkUrl((attribute === 3 || attribute === 4) ? (menuList[e].linkUrl) : ('/' + menuList[e].path), menuList[e].name)
+            })
+        } else {
+            $($('.customer-nav__item')[e]).bind('click', function () {
+                bm.commonLinkUrl((attribute === 3 || attribute === 4) ? (menuList[e].linkUrl) : ('/' + menuList[e].path), menuList[e].name)
+            })
+        }
+    })
+
+    if ($(window).width() <= 1200) {
+        if (lang == 'en_US' || lang == 'ru_RU') {
+            $('.sh_title').css({'margin-top': "65%"})
+        }
+    }
+
+    if ($(window).width() > 1200) {
+        if (lang == 'en_US' || lang == 'ru_RU') {
+            $('.header-wrap__body__nav > .nav-ul > li').css("width", "100px")
+            $('.header-wrap__body__nav').css("line-height", "25px")
+
+        }
+    }
+
+    $('.datetime').each(function () {
+        const dataTime = $(this).attr('data-time')
+        $(this).text(bm.translateDate(dataTime, lang))
+    })
+
+    $(document).ready(function () {
+        var windowWidth = $(window).width();
+        var windowHeight = $(window).height();
+        var floatingWindowWidth = $("#floating-window").outerWidth();
+        var floatingWindowHeight = $("#floating-window").outerHeight();
+        var initialLeft = Math.random() * (windowWidth - floatingWindowWidth);
+        var initialTop = Math.random() * (windowHeight - floatingWindowHeight);
+        var speedX = 2; // Horizontal speed
+        var speedY = 2; // Vertical speed
+        var isMoving = true;
+        $("#floating-window").css({
+            left: initialLeft,
+            top: initialTop
+        });
+
+        function floatWindow() {
+            if (isMoving) {
+                var newLeft = parseFloat($("#floating-window").css("left")) + speedX;
+                var newTop = parseFloat($("#floating-window").css("top")) + speedY;
+                if (newLeft <= 0 || newLeft >= windowWidth - floatingWindowWidth) {
+                    speedX *= -1; // Reverse horizontal direction
+                }
+                if (newTop <= 0 || newTop >= windowHeight - floatingWindowHeight) {
+                    speedY *= -1; // Reverse vertical direction
+                }
+                $("#floating-window").css({
+                    left: newLeft,
+                    top: newTop
+                });
+            }
+            requestAnimationFrame(floatWindow);
+        }
+
+        floatWindow();
+        $("#floating-window").mouseenter(function () {
+            isMoving = false;
+        }).mouseleave(function () {
+            isMoving = true;
+        });
+        $("#close-btn").click(function () {
+            $("#floating-window").remove();
+        });
+    });
+
+</script>
+
+
+</html>

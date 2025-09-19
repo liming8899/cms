@@ -1,0 +1,123 @@
+
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+
+
+  .cpic{
+    .flexbox{
+      flex-direction: column;
+    }
+    .page-title{
+      margin: 0  px2rem(16);
+      margin-top:  px2rem(40);
+    }
+    .te{
+      flex-direction: column-reverse;
+    }
+  }
+  .cpic-header {
+    position: relative;
+  }
+
+  .cpic-item-hidden {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0;
+    background-color: #f4f4f4;
+  }
+
+  .cpic-img1 {
+     width: 100%;
+    border-radius:  px2rem(10);
+    overflow: hidden;
+  }
+
+  .cpic-img2 {
+    padding: 0  px2rem(16);
+    box-sizing: border-box;
+    width: 100%;
+    border-radius:  px2rem(10);
+    overflow: hidden;
+  }
+
+  .cpic-img3 {
+    width:  px2rem(380);
+    height:  px2rem(267);
+  }
+
+  .cpic-item1 {
+  }
+
+  .cpic-item2 {
+    margin: 0  px2rem(16);
+    margin-top:  px2rem(50);
+  }
+
+  .cpic-t1 {
+    font-weight: 400;
+    font-size:  px2rem(40);
+    line-height:  px2rem(58);
+    color: #000000;
+  }
+
+  .cpic-t2 {
+    font-weight: 400;
+    font-size:  px2rem(20);
+    line-height:  px2rem(30);
+    color: #666666;
+    padding-top:  px2rem(27);
+    padding-bottom:  px2rem(36);
+    cursor: pointer;
+  }
+
+  .cpic-t3 {
+    font-weight: 400;
+    font-size:  px2rem(36);
+    line-height:  px2rem(52);
+    color: #000000;
+  }
+
+  .cpic-t4 {
+    font-weight: 400;
+    font-size:  px2rem(18);
+    line-height:  px2rem(26);
+    color: #000000;
+    padding:  px2rem(20)  px2rem(10);
+  }
+
+  .cpic-t5 {
+    font-weight: 400;
+    font-size:  px2rem(16);
+    line-height:  px2rem(23);
+    color: #666666;
+    padding: 0  px2rem(10);
+  }
+
+  .cpic-grid-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0  px2rem(16);
+    margin-top:  px2rem(40);
+
+  }
+
+  .cpic-grid-item {
+    background: #FFFFFF;
+    border:  px2rem(1) solid #D5D8DD;
+    border-radius:  px2rem(10);
+    width:  px2rem(348);
+    padding-bottom:  px2rem(14);
+    margin-bottom:  px2rem(30);
+  }
+
+}
+
+
+

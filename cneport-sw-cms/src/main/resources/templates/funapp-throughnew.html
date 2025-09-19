@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[#{Parameters}]] </title>
+    <meta name="keywords" content="上合跨国供求信息平台">
+    <meta name="description" content="上合跨国供求信息平台">
+    <link rel="shortcut icon" href="/img/favicon.ico"/>
+    <link rel="bookmark" href="/img/favicon.ico"/>
+    <link rel="stylesheet" href="/font/iconfont.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/qing.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/font_3300752_h0zqlzzmss.css">
+    <link rel="stylesheet" href="/css/scssToCss.css">
+    <script src="/js/jquery.min.js"></script>
+</head>
+
+<body>
+<header class="m-head">
+    <div class="h-wrap wrapper">
+        <div class="h-top">
+            <div class="h-logo">
+                <a href="/">
+                    <img src="/img/main_logo.png" alt="">
+                </a>
+            </div>
+            <div class="luange-div tr flexbox">
+                <div>
+                    <a href="javascript:;" onclick="bm.setLang('zh_CN')">中</a>
+                    <a href="javascript:;" onclick="bm.setLang('ru_RU')">РУС</a>
+                    <a href="javascript:;" onclick="bm.setLang('en_US')">EN</a>
+
+                    <span class="sou-img ds" id="mSearchShowBtn">
+                        <i class="iconfont ds icon-fangdajing"></i>
+                    </span>
+                </div>
+                <div>
+                    <a href="javascript:;" id="mNavShowBtn">
+                        <i class="iconfont icon-daohang"></i>
+                        [[#{Navigation}]]
+                    </a>
+                </div>
+            </div>
+        </div>
+<!--        <div class="h-fot clearfix">-->
+<!--            <div class="h-fot-nav fr">-->
+
+<!--                <a href="/funapp-throughnew">通关参数应用查询</a>-->
+<!--                <a href="http://scocsp.com/shsw/" target="_blank">单一窗口标准版应用集成</a>-->
+<!--                <a href="/funapp-through-infoService">关务综合信息服务</a>-->
+<!--                <a href="/funapp-through-declaration">一单两报</a>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+<!--    <div class="m-head__crumbs">-->
+<!--        <ul class="crumbs wrapper">-->
+<!--            <li><i class="iconfont icon-daohang"></i></li>-->
+<!--            <li><a href="/">[[#{Home}]]</a></li>-->
+
+
+<!--            <li>-->
+<!--                <a href="/funapp-through">[[#{ComprehensiveFunctionApplication}]]</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="/funapp-through">[[#{One-stopCustomsClearance}]]</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="/funapp-throughnew">通关参数应用查询</a>-->
+<!--            </li>-->
+
+
+<!--        </ul>-->
+<!--    </div>-->
+</header>
+<section th:replace="common/nav"></section>
+<section id="mSearchShowContainer" class="searchbox in displaynone active">
+    <div class="searchs">
+        <div class="sertext">
+            <input type="text" name="global-search-keywords" th:placeholder="#{Pleaseenterthekeywordsyouwanttoquery}">
+        </div>
+        <button type="button" class="serbtn global-search-submit">[[#{Search}]]</button>
+    </div>
+</section>
+
+<section>
+    <div class="wrapper parameter-query">
+        <div class="mb60">
+        <div class="page-title">
+            <h3>
+                [[#{Parameters}]]
+            </h3>
+        </div>
+        <div class="pass-grid-wrap sh-visited" style="grid-template-columns: repeat(auto-fill, 388px);">
+
+            <div class="business">
+                <i class="business_icon"></i>
+                <a href="homeParameters/parameterSearch?pqcode='1'" class="business_link">[[#{CommodityCodeLookup}]]</a>
+            </div>
+            <div class="business">
+                <i class="business_icon"></i>
+                <a href="homeParameters/parameterChange?pqcode='1'" class="business_link">[[#{CommodityCodeChangeDetailsLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/elementSearch?pqcode='1'" class="business_link">[[#{DeclarationElementsLookup}]]</a>
+            </div>
+            <div class="business">
+                <i class="business_icon"></i>
+                <a href="homeParameters/elementCmpResultSearch?pqcode='1'" class="business_link">[[#{DeclarationElementsChangeLookup}]]</a>
+            </div>
+            <div class="business">
+                <i class="business_icon"></i>
+                <a href="homeParameters/currSearch?pqcode='1'" class="business_link">[[#{DelclarationElementLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/tradeSearch?pqcode='1'" class="business_link">[[#{CurrencyCodeLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/transfSearch?pqcode='1'" class="business_link">[[#{SupervisionMethodLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/unitSearch?pqcode='1'" class="business_link">[[#{MeasurementUnitLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/wrapSearch?pqcode='1'" class="business_link">[[#{PackagingTypeLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/transacSearch?pqcode='1'" class="business_link">[[#{TransctionMethodLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/purposeSearch?pqcode='1'" class="business_link">[[#{UsageLookup}]]</a>
+            </div>
+
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/levyTypeSearch?pqcode='1'" class="business_link">[[#{collectionorexemptioncharacterization}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/customsRelSearch?pqcode='1'" class="business_link">[[#{CustomsAreaCodeLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/nationalityArea?pqcode='1'" class="business_link">[[#{CountryandRegionLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/internalAreaSearch?pqcode='1'" class="business_link">[[#{DomesticAreaCodeLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/administrativeArea?pqcode='1'" class="business_link">[[#{AdministrativeDivisionCodeLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/classify?pqcode='1'" class="business_link">[[#{InstanceCategorizationLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/consumerStandardSearch?pqcode='1'" class="business_link">[[#{UnitConsumptionStandardLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/exchangeRateSearch?pqcode='1'" class="business_link">[[#{ForeignExchangeRateLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/tpara3CCertSearch?pqcode='1'" class="business_link">[[#{3CCertificationLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/complex_banSearch?pqcode='1'" class="business_link">[[#{ProcessingTradeProhibitionsLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/complexLimitSearch?pqcode='1'" class="business_link">[[#{ProcessingTradeRestrictionsLookup}]]</a>
+            </div>
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="homeParameters/tParaComplexBanSearch?pqcode='1'" class="business_link">[[#{CustomsClearanceProhibitionsLookup}]]</a>
+            </div>
+
+            <div class="business" >
+                <i class="business_icon"></i>
+                <a href="https://www.singlewindow.cn/#/parameter" target="_blank" class="business_link">[[#{MoreParameters}]]</a>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <style>
+        @media (min-width: 1200px) {
+            .business {
+                display: flex;
+                float: left;
+                flex-direction: row;
+                align-items: center;
+                width: 390px;
+                height: 40px;
+                margin-right: 10px;
+                margin-bottom: 5px;
+            }
+
+            .business_icon {
+                background: url(../img/tubiao.png) no-repeat center;
+                vertical-align: middle;
+                background-position: -10px -40px;
+                width: 13px;
+                height: 7px;
+                transform: rotate(-90deg);
+            }
+        }
+    </style>
+</section>
+<footer th:replace="common/footer"></footer>
+
+</body>
+</html>

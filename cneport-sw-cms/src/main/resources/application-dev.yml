@@ -1,0 +1,40 @@
+server:
+  bind: http://127.0.0.1:8805
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.100.2.55:3306/dps_target_sh?useUnicode=true&characterEncoding=utf8&useSSL=false&useOldAliasMetadataBehavior=true&useLegacyDatetimeCode=true&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+    username: acs
+    password: dbwork@123456
+  #    url: jdbc:mysql://10.200.255.70:3307/dps_target?useUnicode=true&characterEncoding=utf8&useSSL=false&useOldAliasMetadataBehavior=true&useLegacyDatetimeCode=true&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+  #    username: wms
+  #    password: Dcjet@123456
+  redis:
+    database: 0
+    host: 172.100.3.199
+    port: 6379
+    password:
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    log-sql: true
+    log-sql-data: false  # 关键配置：不输出查询数据
+logging:
+  config: classpath:logging-config.xml
+
+vReferer: http://localhost,http://192.168.59.142:3000/,http://192.168.61.163:9527/
+#member前端页面
+memberUrl: http://192.168.61.163:9527/sso/#/account/account
+accountUrl: http://192.168.59.142:8805/account
+mainUrl: http://192.168.59.142:8801/
+logoutUrl: http://192.168.59.142:8801/sso/logout
+ssoLogoutUrl: http://192.168.59.142:9001/iam/cas/logout
+ssoMainUrl: http://192.168.59.142:9001/iam
+ssoRegisterUrl: http://192.168.61.163:9527/sso/#
+ssoScodamotOwnerUrl: http://192.168.59.142:9001/iam/oauth2/authorize?client_id=20240002&response_type=code&redirect_uri=http://192.168.55.243:30000/api/portal/noauth/callback/owner?back=http://192.168.59.142:3000/sIndex
+ssoScodamotAgentUrl: http://192.168.59.142:9001/iam/oauth2/authorize?client_id=20240002&response_type=code&redirect_uri=http://192.168.55.243:30000/api/oauth/callback/agent?back=http://192.168.59.142:3000/dashboard
+scodamotMainUrl: http://192.168.59.142:3000/sIndex
+#是否开启单点
+ssoFlag: false
+#单点登录地址
+sso_login_url: http://192.168.59.142:9001/iam/oauth2/authorize?client_id=20240001&response_type=code&redirect_uri=http://192.168.59.142:8805/account/wtSSO/callback?back=

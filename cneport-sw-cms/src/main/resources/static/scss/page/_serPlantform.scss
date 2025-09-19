@@ -1,0 +1,155 @@
+
+@media (max-width: 1200px) {
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .express-separate-head{
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      padding: 0  px2rem(16);
+      a{
+        &:nth-child(1){
+          width: 13em;
+        }
+        &:nth-child(2){
+          width: 15em;
+        }
+      }
+
+    }
+  }
+
+  .express-separate-wrapper{
+    margin: 0 px2rem(16);
+    ._content-sb{
+      display: block !important;
+      .express-separate-title{
+        width: 100%;
+        display: flex !important;
+        display: -webkit-box !important;
+        display: -webkit-flex !important;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        border-bottom: solid  px2rem(1) #d5d8dd;
+        padding-bottom:  px2rem(15);
+        align-items: center;
+        h3 {
+          line-height:   px2rem(56);
+          font-size:   px2rem(36);
+          position: relative;
+          &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height:   px2rem(1);
+            background-color: #0e7fdb;
+            position: absolute;
+            left: 0;
+            bottom:   px2rem(-16);
+          }
+        }
+      }
+
+      .theme-button{
+        margin-top:  px2rem(34);
+        margin-bottom:  px2rem(36);
+      }
+    }
+    h4,h5{
+      line-height:   px2rem(56);
+      font-size:   px2rem(36);
+      position: relative;
+    }
+    h5{
+      line-height:   px2rem(56);
+      font-size:   px2rem(24);
+      position: relative;
+    }
+    .mt40{
+      margin-top: px2rem(40);
+    }
+    .detail-content-text{
+      font-size:  px2rem(20);
+      font-weight: 500;
+      color: #818181;
+      line-height:  px2rem(30);
+      margin-bottom:  px2rem(30);
+    }
+    br{
+      display: none;
+    }
+    .express-separate-img1 {
+    }
+    .express-simplex-bottom{
+      .expose{
+        margin-top:  px2rem(30);
+        display: flex !important;
+        .express-simplex-info {
+          width:  px2rem(322);
+          img{
+            width:  px2rem(322);
+            height:  px2rem(111);
+          }
+        }
+      }
+    }
+  }
+  /* 手风琴 */
+  .accordion {
+    width: 100%;
+    /* margin: 0 auto; */
+    .accordion-item {
+      margin-bottom:  px2rem(20);
+      > .tit {
+        padding: 0  px2rem(25);
+        border-radius:  px2rem(10);
+        height:  px2rem(70);
+        line-height:  px2rem(70);
+        font-size:  px2rem(20);
+        color: #000000;
+        font-weight: 400;
+        background-color: #F8F8F8;
+        cursor: pointer;
+        transition: all ease-in-out .3s;
+        display: flex;
+        justify-content: space-between;
+        .is-active {
+          background: #22549B;
+          color: #ffffff;
+        }
+      }
+      .tit.is-active > i {
+        color: #ffffff;
+      }
+      > .desc {
+        padding-top:  px2rem(20);
+        font-weight: 400;
+        font-size:  px2rem(18);
+        line-height:  px2rem(26);
+        color: #626262;
+        display: none;
+      }
+      > .desc.is-active {
+        display: block;
+      }
+      i {
+        color: var(--font-color-sub);
+        font-size:  px2rem(12);
+      }
+      .tit:hover {
+        color: #58bfbf;
+        background: #22549B;
+      }
+    }
+  }
+
+}
+
+
+
+

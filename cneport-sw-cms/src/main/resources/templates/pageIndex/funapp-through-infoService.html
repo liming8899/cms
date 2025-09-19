@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section>
+  <div class="wrapper pb60">
+    <div class="pass-customs-wrap">
+      <img src="/images/pass-001.png" alt="">
+      <div class="pass-customs-item">
+        <h4>智慧关务系统</h4>
+        <p> 智慧关务系统涵盖加工贸易保税管理和一般贸易进出口管理，支持对接海关单一窗口，及时获取通关状态，实现关务作业的统一化、标准化和智能化。系统实时同步海关通关参数和最新政策，搭建基于人工智能技术的OCR和RPA应用，智能识别进出口报关单证，减轻人工操作，提升关务效率。同时充分考虑海关监管要求和合规要素，建立事先预警、事中控制和事后审计的管控机制，提高企业全球关务合规能力；实现加工贸易模拟核销，及时进行差异分析，应对海关稽查，降低企业关务管理风险。</p>
+        <a href="http://scocsp.com/ICS/ssologin" target="_blank" class="theme-button">
+          [[#{Enterthesystem}]]
+        </a>
+      </div>
+    </div>
+    <div class="pass-customs-wrap">
+      <div class="pass-customs-item">
+        <h4>保税仓库管理系统</h4>
+        <p> 保税仓库管理系统以海关监管要求为依据，为海关提供辅助监管和数据查阅功能，帮助企业完成并优化日常清关申报及出入库业务流程。系统以企业为单元建立金二物流账册，对接单一窗口系统，为企业提供物流账册、核注清单、核放单等相关单证的申报，根据单证审核情况核增核减账册底账；平台提供保税仓库的仓储管理功能，为企业提供申请单管理、入出库管理、库存管理等功能，满足企业日常仓储管理的需求。</p>
+        <a href="https://scocsp.com/iam/oauth2/authorize?client_id=42006&response_type=code&redirect_uri=http://scocsp.com/wms/loginRtn/callback" target="_blank" class="theme-button">
+          [[#{Enterthesystem}]]
+        </a>
+      </div>
+      <img src="/images/pass-002.png" alt="">
+    </div>
+
+  </div>
+
+  <style>
+    .pass-customs-wrap {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+    }
+
+    .pass-customs-wrap img {
+      width: 583px;
+      height: 404px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .pass-customs-item {
+      width: 567px;
+    }
+
+    .pass-customs-item h4 {
+      font-weight: 700;
+      font-size: 24px;
+      color: #000000;
+      padding-top: 50px;
+    }
+
+    .pass-customs-item p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 23px;
+      color: #666666;
+      padding-top: 27px;
+      padding-bottom: 36px;
+    }
+  </style>
+</section>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

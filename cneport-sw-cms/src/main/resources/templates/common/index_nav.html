@@ -1,0 +1,28 @@
+<ul class="nav-ul clearfix" th:fragment="indexNav">
+    <li><a th:href="@{/}">[[#{Home}]]</a></li>
+    <li th:each="nav, navState : ${navList} ">
+        <th:block th:switch="${nav.attribute}">
+            <a th:onclick="bm.commonLinkUrl([[${nav.linkUrl}]],[[${nav.name}]]);" th:case="3">[[${nav.name}]]</a>
+            <a th:onclick="bm.commonLinkUrl([[${nav.linkUrl}]],[[${nav.name}]]);" th:case="4" target="_blank">[[${nav.name}]]</a>
+            <a th:onclick="bm.commonLinkUrl2([['/'+${nav.path}]],[[${nav.name}]]);" th:case="*">[[${nav.name}]]</a>
+        </th:block>
+        <ul class="erji-ul" th:if="${not #lists.isEmpty(nav.children)}">
+            <li th:each="child, childStat : ${nav.children}">
+                <th:block th:switch="${child.attribute}">
+                    <a th:onclick="bm.commonLinkUrl([[${child.linkUrl}]],[[${child.name}]]);" th:case="3">[[${child.name}]]</a>
+                    <a th:onclick="bm.commonLinkUrl([[${child.linkUrl}]],[[${child.name}]]);" th:case="4" target="_blank">[[${child.name}]]</a>
+                    <a th:onclick="bm.commonLinkUrl([['/'+${child.path}]],[[${child.name}]]);" th:case="*">[[${child.name}]]</a>
+                </th:block>
+                <ul class="snji-ul" th:if="${not #lists.isEmpty(child.children)}">
+                    <li th:each="sub, subState : ${child.children}">
+                        <th:block th:switch="${sub.attribute}">
+                            <a th:onclick="bm.commonLinkUrl([[${sub.linkUrl}]],[[${sub.name}]]);" th:case="3">[[${sub.name}]]</a>
+                            <a th:onclick="bm.commonLinkUrl([[${sub.linkUrl}]],[[${sub.name}]]);" th:case="4" target="_blank">[[${sub.name}]]</a>
+                            <a th:onclick="bm.commonLinkUrl([['/'+${sub.path}]],[[${sub.name}]]);" th:case="*">[[${sub.name}]]</a>
+                        </th:block>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>

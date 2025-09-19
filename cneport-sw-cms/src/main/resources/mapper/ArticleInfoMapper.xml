@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cloud.onion.cms.mapper.ArticleInfoMapper">
+
+    <select id="getCountryGuidePageListByTitle" resultType="cloud.onion.cms.model.res.CountryGuideRes">
+        SELECT
+        MAX(a.id) id,
+        MAX(a.category_id) category_id,
+        CONCAT(pci.COUNTRY_NAME, '国别指南') title,
+        MAX(a.en_title) en_title,
+        MAX(a.ru_title) ru_title,
+        MAX(a.create_time) create_time,
+        MAX(a.articleType) articleType,
+        MAX(a.is_top) is_top
+        FROM (
+        SELECT
+        bai.id,
+        bai.category_id,
+        bai.title,
+        COALESCE(NULLIF(bai.en_title, ''), bai.title) AS en_title,
+        COALESCE(NULLIF(bai.ru_title, ''), bai.title) AS ru_title,
+        bai.create_time,
+        'SWB' AS articleType,
+        bai.is_top
+        FROM
+        bm_article_info bai
+        INNER JOIN bm_nav_menu bnm ON bai.category_id = bnm.id
+        <where>
+            bai.status = 1
+            and bai.is_review = 2
+            and bai.deleted = 1
+            <if test="menuId != null and menuId != ''">
+                and bai.category_id = #{menuId}
+            </if>
+            <if test="title != null and title != ''">
+                and bai.title = #{title}
+            </if>
+        </where>
+        UNION
+        SELECT
+        xcwt.id::uint8,
+        xcwt.catalog_id AS category_id,
+        xcwt.title collate utf8mb4_general_ci,
+        COALESCE(NULLIF(xcwt.en_title collate utf8mb4_general_ci, ''), xcwt.title) AS en_title,
+        COALESCE(NULLIF(xcwt.ru_title collate utf8mb4_general_ci, ''), xcwt.title) AS ru_title,
+        xcwt.publish_time AS create_time,
+        'XHS' AS articleType,
+        1 AS is_top
+        FROM
+        xh_content_with_translate xcwt
+        INNER JOIN bm_nav_menu bnm ON FIND_IN_SET(xcwt.catalog_id, bnm.xh_category_id) > 0
+        <where>
+            ifnull(xcwt.review_status, 1) = 1
+            <if test="menuId != null and menuId != ''">
+                and bnm.id = #{menuId}
+            </if>
+            <if test="title != null and title != ''">
+                and xcwt.title = #{title}
+            </if>
+        </where>
+        ) AS a
+        LEFT JOIN public_country_info pci ON (SUBSTRING_INDEX(a.title, '国别指南', 1) = pci.COUNTRY_NAME OR SUBSTRING_INDEX(a.title, '国别指南', 1) = pci.COUNTRY_OTHER_NAME)
+        GROUP BY pci.COUNTRY_NAME
+        ORDER BY MAX(a.is_top) DESC, CONVERT(CONCAT(pci.COUNTRY_NAME, '国别指南') USING GBK)
+    </select>
+
+    <select id="getCountryGuidePageList" resultType="cloud.onion.cms.model.res.CountryGuideRes">
+        SELECT
+            id,
+            category_id,
+            title,
+            COALESCE(NULLIF(en_title, ''), title) AS en_title,
+            COALESCE(NULLIF(ru_title, ''), title) AS ru_title,
+            create_time,
+            articleType
+        FROM (
+        SELECT
+            CAST(bai.id AS bigint) AS id,
+            bai.category_id,
+            bai.title,
+            bai.en_title,
+            bai.ru_title,
+            bai.create_time,
+            'SWB' AS articleType,
+            bai.is_top
+        FROM
+            bm_article_info bai INNER JOIN bm_nav_menu bnm ON bai.category_id = bnm.id
+        <where>
+            bai.status = 1
+            AND bai.is_review = 2
+            AND bai.deleted = 1
+            <if test="menuId != null and menuId != ''">
+                and bai.category_id = #{menuId}
+            </if>
+            <if test="title != null and title != ''">
+                and (bai.title = #{title}
+                OR title = CONCAT(( SELECT country_other_name FROM public_country_info WHERE country_name = SUBSTRING_INDEX(#{title}, '国别指南', 1 )),'国别指南' COLLATE "utf8_general_ci")
+                )
+            </if>
+        </where>
+        UNION
+        SELECT
+            CAST(xcwt.id AS bigint) AS id,
+            xcwt.catalog_id AS category_id,
+            xcwt.title COLLATE "utf8_general_ci" AS title,
+            xcwt.en_title COLLATE "utf8_general_ci",
+            xcwt.ru_title COLLATE "utf8_general_ci",
+            xcwt.publish_time AS create_time,
+            'XHS' AS articleType,
+            1 AS is_top
+        FROM
+            xh_content_with_translate xcwt
+                INNER JOIN bm_nav_menu bnm ON FIND_IN_SET(xcwt.catalog_id, bnm.xh_category_id) > 0
+        <where>
+            ifnull(xcwt.review_status, 1) = 1
+            <if test="menuId != null and menuId != ''">
+                and bnm.id = #{menuId}
+            </if>
+            <if test="title != null and title != ''">
+                and (xcwt.title = #{title}
+                OR xcwt.title = CONCAT(( SELECT country_other_name FROM public_country_info WHERE country_name = SUBSTRING_INDEX(#{title}, '国别指南', 1 )),'国别指南' COLLATE "utf8_general_ci"))
+            </if>
+        </where>
+        ) AS alldata
+        ORDER BY
+            alldata.is_top DESC,
+            alldata.articleType,
+            alldata.title
+    </select>
+
+</mapper>

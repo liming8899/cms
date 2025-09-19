@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.title})"></head>
+
+<body>
+    <header th:replace="common/header::header(${menuList},${breadCrumb})"></header>
+    <section th:replace="common/search"></section>
+    <section th:replace="common/nav"></section>
+    <section>
+        <div class="wrapper">
+            <div class="article_details">
+                <div class="article_details__header">
+                    <div class="article_details__header__title">
+                        <span th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${view.title}]]</span>
+                        <span th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(view.enTitle)}">[[${view.enTitle}]]</span>
+                        <span th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(view.enTitle)}">[[${view.title}]]</span>
+                        <span th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(view.ruTitle)}">[[${view.ruTitle}]]</span>
+                        <span th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(view.ruTitle)}">[[${view.title}]]</span>
+                    </div>
+                    <div class="article_details__header__attr">
+                        [[#{Time}]]：<span id="time-span" th:data-time="${#dates.format(view.createTime,'yyyy-MM-dd')}">[[${#dates.format(view.createTime,'yyyy-MM-dd')}]]</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        [[#{Source}]]：
+                        <span th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${view.source}]]</span>
+                        <span th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(view.enSource)}">[[${view.enSource}]]</span>
+                        <span th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(view.enSource)}">[[${view.source}]]</span>
+                        <span th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(view.ruSource)}">[[${view.ruSource}]]</span>
+                        <span th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(view.ruSource)}">[[${view.source}]]</span>
+                    </div>
+                </div>
+                <div class="article_details__body">
+                    <div class="article_details__main">
+                        <th:block th:unless="${#strings.isEmpty(view.description)}">
+                            <div class="article_details__description">
+                                [[#{summary}]]：
+                                <span th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${view.description}]]</span>
+                                <span th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(view.enDescription)}">[[${view.enDescription}]]</span>
+                                <span th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(view.enDescription)}">[[${view.description}]]</span>
+                                <span th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(view.ruDescription)}">[[${view.ruDescription}]]</span>
+                                <span th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(view.ruDescription)}">[[${view.description}]]</span>
+                            </div>
+                        </th:block>
+                        <div class="article_details__content" th:if="${#strings.trim(lang_session) eq 'zh_CN'}" th:utext="${view.content}"></div>
+                        <div class="article_details__content" th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(view.enContent)}" th:utext="${view.enContent}"></div>
+                        <div class="article_details__content" th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(view.enContent)}" th:utext="${view.content}"></div>
+                        <div class="article_details__content" th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(view.ruContent)}" th:utext="${view.ruContent}"></div>
+                        <div class="article_details__content" th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(view.ruContent)}" th:utext="${view.content}"></div>
+                        <div>[[#{TheAboveContentIsMachineTranslatedAndIsForReferenceOnly}]]</div>
+                        <div class="article_details__attr" th:if="${not #lists.isEmpty(view.files)}">
+                            <div class="article_details__attr__title">相关附件</div>
+                            <a class="article_details__attr__item" th:href="@{${file.url}}" th:each="file, fileStat : ${view.files}" target="_blank">[[${file.name}]]</a>
+                        </div>
+                    </div>
+                    <th:block th:if="${#lists.size(niceList) > 0}">
+                        <div class="article_details__articles">
+                            <div class="article_details__articles__title">[[#{NewsRecommendation}]]</div>
+                            <th:block th:each="item, itemStat : ${niceList}">
+                                <a th:href="@{'/article/'+${item.categoryId}+'/'+${item.id}}" class="article_details__articles__item">
+                                    <th:block th:unless="${#strings.isEmpty(item.coverImage)}">
+                                        <div class="article_details__articles__item__images">
+                                            <img th:src="@{${item.coverImage}}" th:alt="${item.title}" />
+                                        </div>
+                                    </th:block>
+                                    <div class="article_details__articles__item__text">
+                                        <div class="article_details__articles__item__title" th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${item.title}]]</div>
+                                        <div class="article_details__articles__item__title" th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(item.enTitle)}">[[${item.enTitle}]]</div>
+                                        <div class="article_details__articles__item__title" th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(item.enTitle)}">[[${item.title}]]</div>
+                                        <div class="article_details__articles__item__title" th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(item.ruTitle)}">[[${item.ruTitle}]]</div>
+                                        <div class="article_details__articles__item__title" th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(item.ruTitle)}">[[${item.title}]]</div>
+                                        <div class="article_details__articles__item__description ellipsis2" th:if="${#strings.trim(lang_session) eq 'zh_CN'}">[[${item.description}]]</div>
+                                        <div class="article_details__articles__item__description ellipsis2" th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(item.enDescription)}">[[${item.enDescription}]]</div>
+                                        <div class="article_details__articles__item__description ellipsis2" th:if="${#strings.trim(lang_session) eq 'en_US' and #strings.isEmpty(item.enDescription)}">[[${item.description}]]</div>
+                                        <div class="article_details__articles__item__description ellipsis2" th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(item.ruDescription)}">[[${item.ruDescription}]]</div>
+                                        <div class="article_details__articles__item__description ellipsis2" th:if="${#strings.trim(lang_session) eq 'ru_RU' and #strings.isEmpty(item.ruDescription)}">[[${item.description}]]</div>
+                                        <div class="article_details__articles__item__datetime" th:data-time="${#dates.format(view.createTime,'yyyy-MM-dd')}"></div>
+                                    </div>
+                                </a>
+                            </th:block>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer th:replace="common/footer"></footer>
+</body>
+<script th:inline="javascript">
+    let lang=[[${lang_session}]]
+    $('#time-span').text(bm.translateDate($('#time-span').attr('data-time'), lang))
+    $('.article_details__articles__item__datetime').each(function () {
+        const dataTime = $(this).attr('data-time')
+        $(this).text(bm.translateDate(dataTime, lang))
+    })
+
+</script>
+</html>

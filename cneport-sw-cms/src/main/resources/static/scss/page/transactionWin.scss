@@ -1,0 +1,129 @@
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .funapp-service-transactionWin-head {
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0 px2rem(16);
+
+      a {
+        &:nth-child(1) {
+          width: 3em;
+        }
+
+        &:nth-child(2) {
+          width: 2em;
+        }
+
+        &:nth-child(3) {
+          width: 5em;
+        }
+
+        &:nth-child(4) {
+          width: 4em;
+        }
+
+        &:nth-child(5) {
+          width: 2em;
+        }
+
+        &:nth-child(6) {
+          width: 2em;
+        }
+
+        &:nth-child(7) {
+          width: 3em;
+        }
+
+        &:nth-child(8) {
+          width: 2em;
+        }
+      }
+    }
+  }
+  .transactionWin {
+    padding-bottom: px2rem(30);
+
+    .talent-affairs-img-item {
+      display: flex;
+      justify-content: space-between;
+      padding-top: px2rem(20);
+      font-weight: 400;
+      font-size: px2rem(24);
+      line-height: px2rem(35);
+      color: #fff;
+    }
+
+    .talent-affairs-img-item .txt {
+      padding: px2rem(15);
+    }
+
+    .talent-affairs-img-item .img1 {
+      width: px2rem(400);
+      height: px2rem(327);
+      background-size: cover;
+      background-image: url("../images/affairs1.png");
+      background-repeat: no-repeat;
+      border-radius: 10px;
+    }
+
+    .talent-affairs-img-item .img2 {
+      border-radius: 10px;
+      width: px2rem(300);
+      height: px2rem(327);
+      background-image: url("../images/affairs2.png");
+      background-repeat: no-repeat;
+    }
+
+    .talent-affairs-img-item .img3 {
+      border-radius: 10px;
+      width: px2rem(300);
+      height: px2rem(327);
+      background-image: url("../images/affairs3.png");
+      background-repeat: no-repeat;
+    }
+
+    .talent-affairs-img-item .img4 {
+      border-radius: 10px;
+      width: px2rem(400);
+      height: px2rem(327);
+      background-image: url("../images/affairs4.png");
+      background-repeat: no-repeat;
+    }
+
+    .talent-affairs-bottom-wrap {
+      padding: px2rem(54) px2rem(16);
+    }
+
+    .talent-affairs-bottom-wrap img {
+      width: 100%;
+      height: px2rem(404);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+
+    .talent-affairs-bottom-info h4 {
+      font-weight: 700;
+      font-size: px2rem(28);
+      line-height: px2rem(28);
+    }
+
+    .talent-affairs-bottom-info .detail-content-text {
+      padding: px2rem(40) 0;
+      font-size: px2rem(20);
+      font-weight: 400;
+      color: var(--font-color-text);
+      line-height: px2rem(30);
+    }
+
+  }
+}

@@ -1,0 +1,32 @@
+server:
+  bind: https://scocsp.com
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://10.200.255.114:5432/dps_target?characterEncoding=UTF-8&currentSchema=dps_target
+    username: dps_target
+    password: Vbase@26#
+  redis:
+    database: 1
+    host: 127.0.0.1
+    port: 26378
+    password: e44b@k52
+logging:
+  config: classpath:logging-config.xml
+
+vReferer: http://scocsp.com,http://www.scocsp.com,https://scocsp.com,https://www.scocsp.com,https://www.sogou.com/,http://www.sogou.com/,https://sogou.com/,http://sogou.com/,https://www.baidu.com/,http://www.baidu.com/,https://baidu.com/,http://baidu.com/,https://m.baidu.com/,http://15.72.179.13,https://15.72.179.13,https://www.scodamot.com/,http://114.67.83.211,http://114.67.83.211/sIndex,https://hqej.jiaozhou.gov.cn/hqej/web/,https://www.xjnyhg.com/,https://www.dingchenghuihe.com/,https://www.so.com,https://hqej.jiaozhou.gov.cn/,http://hqej.jiaozhou.gov.cn/,https://www.x315.cn/,https://www.zgjzcy.org.cn/,http://shanghe.zgjzcy.org.cn/,https://www.qdshjf.cn/,https://www.scodamot.com/,https://app.singlewindow.cn/
+#member前端页面
+memberUrl: https://scocsp.com/sso/#/account/account
+accountUrl: https://scocsp.com/account
+mainUrl: https://scocsp.com/
+logoutUrl: https://scocsp.com/account/logout
+ssoLogoutUrl: https://scocsp.com/iam/cas/logout
+ssoRegisterUrl: https://scocsp.com/sso/#
+ssoMainUrl: https://scocsp.com/iam
+ssoScodamotOwnerUrl: https://scocsp.com/iam/oauth2/authorize?client_id=20240002&response_type=code&redirect_uri=https://www.scodamot.com:9527/api/portal/noauth/callback/owner?back=https://www.scodamot.com/sIndex
+ssoScodamotAgentUrl: https://scocsp.com/iam/oauth2/authorize?client_id=20240002&response_type=code&redirect_uri=https://www.scodamot.com:9527/api/oauth/callback/agent?back=https://www.scodamot.com/dashboard
+scodamotMainUrl: https://www.scodamot.com/sIndex
+#是否开启单点
+ssoFlag: true
+#单点登录地址
+sso_login_url: https://scocsp.com/iam/oauth2/authorize?client_id=20240001&response_type=code&redirect_uri=https%3A%2F%2Fscocsp.com%2Faccount%2FwtSSO%2Fcallback%3Fback%3D

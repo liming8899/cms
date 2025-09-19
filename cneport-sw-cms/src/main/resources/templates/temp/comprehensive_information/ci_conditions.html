@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="public/head::head('上合国家国情图解')"></head>
+
+<body>
+<header th:replace="public/header"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+
+<section>
+    <section>
+        <div class="wrapper">
+            <div class="conditions-wrap">
+                <img class="conditions-img animate__animated animate__fadeIn" id="conditions-img"
+                     src="/images/banner01.png" alt="">
+                <div class="conditions-btn-wrap1">
+                    <div class="btn1"></div>
+                </div>
+                <div class="conditions-btn-wrap2 hide">
+                    <div class="btn1"></div>
+                </div>
+                <div class="conditions-btn-wrap3 hide">
+                    <div class="btn1"></div>
+                    <div class="btn2"></div>
+                </div>
+                <div class="conditions-btn-item">
+                    <p class="switch-item is-active" data-tag="1">上合8个成员国</p>
+                    <p class="switch-item" data-tag="2">上合4个观察国</p>
+                    <p class="switch-item" data-tag="3">上合9个对话伙伴国</p>
+                </div>
+            </div>
+            <div class="overlayer hide">
+                <div class="overlayer-wrap">
+                    <img id="country-img" class="wow fadeInUp" src="/images/eluosi.png" alt="">
+                    <div class="close-btn">关闭</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</section>
+
+<footer th:replace="public/footer"></footer>
+
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.countup.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/qing.js"></script>
+<script>
+    $(".switch-item").click(function(event) {
+        $(this).addClass("is-active");
+        $(this).siblings().removeClass("is-active");
+        var img = document.getElementById("conditions-img")
+        if (event.currentTarget.dataset.tag == "1") {
+            img.setAttribute('src', '/images/banner01.png')
+            $(".conditions-btn-wrap1").removeClass('hide')
+            $(".conditions-btn-wrap3").addClass('hide')
+        } else if (event.currentTarget.dataset.tag == "2") {
+            img.setAttribute('src', '/images/banner02.png')
+        } else {
+            img.setAttribute('src', '/images/banner03.png')
+            $(".conditions-btn-wrap3").removeClass('hide')
+            $(".conditions-btn-wrap1").addClass('hide')
+        }
+    })
+    $(".conditions-btn-wrap1 .btn1").click(function(event) {
+        var img = document.getElementById("country-img")
+        img.setAttribute('src', '/images/eluosi.png')
+        $(".overlayer").removeClass('hide')
+    })
+    $(".conditions-btn-wrap2 .btn1").click(function(event) {
+        var img = document.getElementById("country-img")
+        img.setAttribute('src', '/images/afuhan.png')
+        $(".overlayer").removeClass('hide')
+    })
+    $(".conditions-btn-wrap3 .btn1").click(function(event) {
+        var img = document.getElementById("country-img")
+        img.setAttribute('src', '/images/asaibaijiang.png')
+        $(".overlayer").removeClass('hide')
+    })
+    $(".conditions-btn-wrap3 .btn2").click(function(event) {
+        var img = document.getElementById("country-img")
+        img.setAttribute('src', '../images/afuhan.png')
+        $(".overlayer").removeClass('hide')
+    })
+    $(".close-btn").click(function(event) {
+        $(".overlayer").addClass('hide')
+    })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<!--<div class="sco-hbt-head">-->
+  <header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<!--</div>-->
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section class="cpic">
+  <div class="gray-bg">
+    <div class="wrapper pt60 pb60 point-item">
+      <div class="flexbox _content-sb cpic-header">
+        <div>
+          <img class="cpic-img1" src="/images/cpic-1.png" alt="">
+        </div>
+        <div class="cpic-item1">
+          <h4 class="cpic-t1">[[#{IntroductionoftheChinaPacificInsuranceCompany}]]</h4>
+          <div class="cpic-t2 cpic-desc" style="padding-top: 10px;">
+            <p class="text-indent">中国太平洋财产保险股份有限公司（简称“太平洋产险”）是中国太平洋保险（集团）股份有限公司旗下的专业子公司，为客户提供全面的财产保险产品和服务。公司总部设在上海，截至2022年底，公司注册资本为人民币194.7亿元。</p>
+            <br>
+            <p class="text-indent ellipsis3">太平洋产险承保机动车辆保险、财产保险、责任保险、农业保险、保证保险、意外伤害保险、短期健康保险等中国银保监会批准的各类保险业务，服务范围覆盖航空航天、电力能源、石油化工、船舶航运、纺织烟草、机械设备、电子通讯、金融贸易、科技创新、基础建设、农林牧渔等各行业和领域。公司目前已全面完成了在中国大陆各省级行政区域的机构布局，在全国拥有40家分公司，1家航运保险事业营运中心，3100余家中心支公司、支公司、营业部和营销服务部。</p>
+          </div>
+          <a href="http://property.cpic.com.cn/xccbx/" target="_blank" class="theme-button">[[#{Learnmore}]]</a>
+        </div>
+      </div>
+      <div class="cpic-t2" id="fullDescription" style="padding-bottom: 0; display: none;">
+        <p class="text-indent">太平洋产险以成为“行业健康稳定发展的引领者”为愿景，坚持以客户需求为导向，专注保险主业，做精保险专业，不断创新保险产品和服务，提升客户体验，为客户提供全方位的风险保障服务。2022年，公司实现财产保险业务收入1703.77亿元，同比增长11.6%，公司总资产和净资产分别为2326.67亿元和503.44亿元，实现净利润82.85亿元，实现可持续健康发展。</p>
+        <br>
+        <p class="text-indent">太平洋产险开拓进取，锐意创新，以完善的公司治理、领先的服务水平和优良的经营业绩，获得行业监管机构和权威评级机构的持续认可。公司穆迪投资者服务公司的保险财务实力评级结果为A1，中诚信国际信用评级的主体信用等级为AAA，标准普尔的发行人信用评级及财务实力评级结果为A。近年来，公司连续获得经营评价A级、公司治理评估B级、偿付能力风险管理能力评估（SARMRA）名列前茅，监管评分持续提升，2022年风险综合评级连续四个季度保持AA级，2021年度财产保险（车险业务）服务质量指数94.46，成为行业发展、服务和公司治理的新标杆。</p>
+        <p class="text-indent">中国太平洋保险（集团）股份有限公司是国内领先的综合性保险集团，也是国内首家在上海、香港、伦敦三地上市的保险公司，连续十二年入选《财富》世界500强，位列第182位。</p>
+        <br>
+        <p class="text-indent">太平洋保险与北京、上海等地从事国际化口岸物流信息和电子商务统一平台进行合作，参与国际贸易单一窗口的开发工作并开展进出口货运险保险合作。作为跨境贸易板块头部保险企业，太平洋保险可提供贯穿跨境贸易上下游供应链全场景的保险产品体系，涵盖生产、制造、加工企业、电商平台、物流、快递、货代公司、报关报检、援外人士、知识产权维护与应用、网络安全等多个场景，并通过平台的历史数据为不同类型企业预生成个性化保险组合方案。</p>
+        <p class="text-indent">太平洋保险创新开发“跨境保”、“无忧退”等跨境保险产品，通过一站式的保险服务，全方位为跨境生态保驾护航，持续赋能跨境贸易蓬勃发展。帮助企业抵御跨境经营风险、增强市场竞争力，减轻企业资金压力，助力跨境贸易发展。为头部电商平台、超5万家跨境电商中小企业以及1200家跨境物流服务企业，提供跨境全流程全方位保险产品解决方案，累计提供近700亿风险保障和3亿风险补偿资金，同时为企业提供超过200亿元关税保证服务。</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="wrapper pb60">
+    <div class="page-title">
+      <h4>产品分类</h4>
+    </div>
+    <div class="flexbox _content-sb _items-mid mt60">
+      <img class="cpic-img2" src="/images/cpic-10.png" alt="">
+      <div class="cpic-item2">
+        <h4 class="cpic-t3">网络安全保险</h4>
+        <p class="cpic-t2">自2017年《网络安全法》施行以来，太保便专注于网络安全保险，与国内外再保公司及第三方服务商一同合作，致力于为客户提供全方位的网络安全保险服务。</p>
+        <a href="/funapp-finance-CPIC-1" target="_blank" class="theme-button">[[#{Learnmore}]]</a>
+      </div>
+    </div>
+    <div class="flexbox _content-sb _items-mid mt60 te">
+      <div class="cpic-item2">
+        <h4 class="cpic-t3 h4t3" >货物运输保险</h4>
+        <p class="cpic-t2">针对货物运输过程中遭受自然灾害、意外事故、外来原因等的原因而受到损失进行风险保障，保险产品包含进口货运险、出口货运险、水路货运险、公路货运险、航空货运险、铁路货运险等。</p>
+        <a href="/funapp-finance-CPIC-2" target="_blank" class="theme-button">[[#{Learnmore}]]</a>
+      </div>
+      <img class="cpic-img2" src="/images/cpic-3.png" alt="">
+    </div>
+
+    <div class="flexbox _content-sb _items-mid mt60">
+      <img class="cpic-img2" src="/images/cpic-7.png" alt="">
+      <div class="cpic-item2">
+        <h4 class="cpic-t3">跨境电商保（货运险）</h4>
+        <p class="cpic-t2">适用于跨境电商的物流场景，产品保障涵盖中国跨境出口零售物流集货揽收、国际运输、目的国清关、尾程/境外配送全流程。主要产品包括：国际货代及提单责任险、报关责任及报关费用差错保险、电商物流保险等。</p>
+        <a href="/funapp-finance-CPIC-5" target="_blank" class="theme-button">[[#{Learnmore}]]</a>
+      </div>
+    </div>
+    <div class="flexbox _content-sb _items-mid mt60 te">
+      <div class="cpic-item2">
+        <h4 class="cpic-t3 h4t3" >跨境电商保（责任险）</h4>
+        <p class="cpic-t2">针对跨境电商在交易环节、物流环节、售后环节的潜在风险敞口提供全方位保障。</p>
+        <a href="/funapp-finance-CPIC-6" target="_blank" class="theme-button">[[#{Learnmore}]]</a>
+      </div>
+      <img class="cpic-img2" src="/images/cpic-4.png" alt="">
+    </div>
+
+
+    <div class="cpic-grid-wrap mt60">
+      <div class="cpic-grid-item scale">
+        <div class="img">
+          <img class="cpic-img3" src="/images/cpic-6.png" alt="">
+        </div>
+        <p class="cpic-t4">知识产权保险</p>
+        <p class="cpic-t5">太平洋保险深耕科技保险17年，在科技保险创新领域形成太保特色，在科技创新、自主创业、知识产权维权等方面积累先进经验，中国太保自2014年起积极研发知识产权保险产品，建立了完善的知识产权保险产品体系。</p>
+        <a href="/funapp-finance-CPIC-3" target="_blank" class="theme-button mg40">[[#{Learnmore}]]</a>
+      </div>
+      <div class="cpic-grid-item scale">
+        <div class="img">
+          <img class="cpic-img3" src="/images/cpic-8.png" alt="">
+        </div>
+        <p class="cpic-t4">法律费用保险</p>
+        <p class="cpic-t5">在跨境贸易企业面对复杂的国际纠纷和诉讼难题时，有效保护企业权益、提供法律援助，助力跨境企业迎战国际市场。</p>
+        <a href="/funapp-finance-CPIC-4" target="_blank" class="theme-button mg40">[[#{Learnmore}]]</a>
+      </div>
+    </div>
+
+    <div class="cpic-grid-wrap mt60">
+      <div class="cpic-grid-item scale">
+        <div class="img">
+          <img class="cpic-img3" src="/images/cpic-5.png" alt="">
+        </div>
+        <p class="cpic-t4">跨境财产险</p>
+        <p class="cpic-t5">全方位保障企业生产经营的固定和流动财产，便于企业做好风险管理、转移生产风险。保障企业厂房、设备、仓库、原材料等遭受自然灾害或意外事故导致的损失，含施救费用。提供“保险+风险管理”服务：保前风勘，排除隐患；保中预警，防患未然；事后赔偿，安心无忧。</p>
+      </div>
+      <div class="cpic-grid-item scale">
+        <div class="img">
+          <img class="cpic-img3" src="/images/cpic-9.png" alt="">
+        </div>
+        <p class="cpic-t4">出口产品责任险</p>
+        <p class="cpic-t5">因企业制造或销售的出口产品的缺陷或警示不足导致他人人身伤亡或财产损失，依照当地法律应承担经济赔偿责任风险。</p>
+      </div>
+    </div>
+
+    <hr class="hr-twill">
+
+    <div class="gzh">
+      <div class="gzh-left">
+        <p>更多产品服务，详情请咨询</p>
+        <p>太平洋保险官方客服电话：95500</p>
+        <p>太平洋产险服务专员：张经理</p>
+        <p>联系方式：13335058619</p>
+      </div>
+      <div class="gzh-right">
+        <div><img src="/images/finance/wxgzh.png"></div>
+        <div>
+          <p>太平洋保险微信公众号</p>
+          <p>请微信扫描</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @media (min-width: 1200px) {
+      .cpic-header {
+        position: relative;
+      }
+
+      .cpic-item-hidden {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 0;
+        background-color: #f4f4f4;
+      }
+
+      .cpic-img1 {
+        width: 593px;
+        height: 371px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .cpic-img2 {
+        width: 600px;
+        height: 400px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .cpic-img3 {
+        width: 570px;
+        height: 267px;
+      }
+
+      .cpic-item1 {
+        width: 551px;
+      }
+
+      .cpic-item2 {
+        width: 517px;
+        margin-top: 50px;
+      }
+
+      .cpic-t1 {
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 58px;
+        color: #000000;
+        word-break: initial;
+      }
+
+      .cpic-t2 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+        color: #666666;
+        padding-top: 27px;
+        padding-bottom: 36px;
+        cursor: pointer;
+        word-break: initial;
+      }
+
+      .cpic-t3 {
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 52px;
+        color: #000000;
+        word-break: initial;
+      }
+
+      .cpic-t4 {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        color: #000000;
+        padding: 20px 10px;
+      }
+
+      .cpic-t5 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+        color: #666666;
+        padding: 0 10px;
+        overflow-y: scroll;
+        height: 100px;
+      }
+
+      .cpic-grid-wrap {
+        display: flex;
+        grid-template-columns: repeat(auto-fill, 380px);
+        row-gap: 30px;
+        justify-content: space-between;
+      }
+
+      .cpic-grid-item {
+        background: #FFFFFF;
+        border: 1px solid #D5D8DD;
+        border-radius: 10px;
+        width: 570px;
+        height: 500px;
+      }
+
+      .h4t3{
+        width: 580px;
+      }
+
+      .mg40 {
+        margin: 0 40%;
+      }
+
+      .cpic-t5::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+    }
+
+
+
+    /*@media (max-width: 1200px) {*/
+    /*  .funapp-finance-CPIC-head .h-fot .h-fot-nav {*/
+    /*    !*float: none;*/
+    /*    text-align: center;*/
+    /*    display: flex;*/
+    /*    justify-content: space-between;*/
+    /*    align-items: center;*/
+    /*    text-align: center;*/
+    /*    padding: 0 0.2133333333rem; *!}*/
+    /*  .funapp-finance-CPIC-head .h-fot .h-fot-nav a:nth-child(1) {*/
+
+    /*  }*/
+    /*  .funapp-finance-CPIC-head .h-fot .h-fot-nav a:nth-child(2) {*/
+    /*    margin-left: 20px;}*/
+    /*  .funapp-finance-CPIC-head .h-fot .h-fot-nav a:nth-child(3) {*/
+    /*    margin-left: 20px;}*/
+
+    /*  .CPIC-header {*/
+    /*    display: flex;*/
+    /*    width: 100%;*/
+    /*    justify-content: space-between;*/
+    /*    padding: 0 0.2133333333rem;*/
+    /*    box-sizing: border-box; }*/
+
+    /*  .express-simplex-wrapper h4,*/
+    /*  .express-separate-wrapper h4 {*/
+    /*    font-size: 0.4266666667rem;*/
+    /*    padding-bottom: 0.32rem;*/
+    /*    margin: 0 0.2133333333rem; }*/
+
+    /*  .express-simplex-wrapper h5,*/
+    /*  .express-separate-wrapper h5 {*/
+    /*    font-size: 0.2666666667rem;*/
+    /*    padding-bottom: 0.4rem; }*/
+
+    /*  .express-simplex-wrapper p {*/
+    /*    margin: 0 0.2133333333rem;*/
+    /*    color: var(--font-color-text);*/
+    /*    font-size: 0.2666666667rem;*/
+    /*    line-height: 0.4rem;*/
+    /*    text-indent: 2em; }*/
+
+    /*  .express-simplex-wrapper img,*/
+    /*  .express-separate-wrapper img {*/
+    /*    border-radius: 0.1333333333rem;*/
+    /*    overflow: hidden; }*/
+
+    /*  .express-simplex-img1 {*/
+    /*    margin: 0.6666666667rem 0 0.5333333333rem 0; }*/
+
+    /*  .express-simplex-center img {*/
+    /*    height: 6.5333333333rem;*/
+    /*    margin: 0.5333333333rem auto; }*/
+
+    /*  .express-simplex-item {*/
+    /*    margin: 0 0.2133333333rem; }*/
+
+    /*  .express-simplex-item img {*/
+    /*    height: 5.1066666667rem;*/
+    /*    width: 100%;*/
+    /*    background-color: lightgray; }*/
+
+    /*  .express-simplex-img2 {*/
+    /*    height: 12rem;*/
+    /*    text-align: center; }*/
+
+    /*  .express-simplex-bottom img {*/
+    /*    width: 100%;*/
+    /*    height: 2.6666666667rem;*/
+    /*    margin-bottom: 0.2666666667rem; }*/
+
+    /*  .express-separate-img1 {*/
+    /*    height: 7.5466666667rem;*/
+    /*    margin: 0.6666666667rem 0 0.5333333333rem 0; } }*/
+
+
+  </style>
+
+  <script>
+    $(document).ready(function() {
+
+      $('.cpic-desc').hover(function() {
+        $(this).children('p').last().removeClass('ellipsis3')
+        $(this).siblings('.theme-button').first().hide()
+        $('#fullDescription').fadeIn()
+      }, function() {
+        $('#fullDescription').fadeOut()
+        $(this).children('p').last().addClass('ellipsis3')
+        $(this).siblings('.theme-button').first().show()
+      })
+    })
+  </script>
+</section>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

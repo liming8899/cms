@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="public/head::head('新区之声')"></head>
+
+<body>
+<header th:replace="public/header"></header>
+<section th:replace="public/search"></section>
+<section th:replace="public/nav"></section>
+<section>
+    <section>
+        <div class="gray-bg">
+            <div class="wrapper">
+                <div class="page-title-switch left">
+                    <div class="switch-item selected" data-tag="1">上合之声</div>
+                    <div class="switch-item" data-tag="2"><img src="../images/zhxx-new-icon.png" alt=""></div>
+                </div>
+                <div class="sound-grid-wrap">
+                    <a href="/article/12">
+                        <div class="sound-grid-item">
+                            <img src="" alt="" onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null">
+                            <p class="t1 ellipsis1">俄罗斯地方和国际B2B平台上线 旨在同金砖和上合组织国家开展贸易</p>
+                            <p class="t2">2022年07月11日</p>
+                        </div>
+                    </a>
+                    <a href="/article/13">
+                        <div class="sound-grid-item">
+                            <img src="" alt="" onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null">
+                            <p class="t1 ellipsis1">上海合作组织青年科技创新论坛在深圳举行</p>
+                            <p class="t2">2022年07月11日</p>
+                        </div>
+                    </a>
+                    <a href="/article/14">
+                        <div class="sound-grid-item">
+                            <img src="" alt="" onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null">
+                            <p class="t1 ellipsis1">上海农民工赵百云：“对梦想的投资才是最好的投资！”</p>
+                            <p class="t2">2022年07月11日</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wrapper">
+            <div class="sound-list-wrap">
+                <ul>
+                    <a href="/article/15" class="sound-list-item">
+                        <img src="" alt="" onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null">
+                        <div>
+                            <p class="t1 ellipsis1">上合示范区4年到发中欧班列超2000列</p>
+                            <p class="t3">上合示范区着力推动的国别中心项目正加速建设。2月22日，巴基斯坦中心项目推进专题会在上合示范区上合服务中心召开。</p>
+                            <div class="flexbox _content-sb">
+                                <p class="t2">2022年07月11日</p>
+                                <div class="theme-button">[[#{Learnmore}]]</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </ul>
+            </div>
+
+<!--            <div>swiper-pagenation</div>-->
+        </div>
+    </section>
+
+</section>
+<footer th:replace="public/footer"></footer>
+
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/jquery-2.1.1.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/wow.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/swiper.animate1.0.3.min.js"></script>
+<script src="//js-boooming.oss-accelerate.aliyuncs.com/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.countup.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/qing.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script>
+    $(".switch-item").click(function (event) {
+        $(this).addClass("selected");
+        $(this).siblings().removeClass("selected");
+
+    })
+</script>
+</body>
+
+</html>

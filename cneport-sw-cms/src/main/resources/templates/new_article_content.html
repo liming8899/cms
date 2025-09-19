@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<div class="news-head">
+    <header th:replace="common/header::header(${currentNavListTop},${breadCrumb})"></header>
+</div>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section>
+    <div class="wrapper news pb50">
+        <div class="page-title flexbox _content-sb">
+            <h3>[[${view.name}]]</h3>
+        </div>
+        <div class="article_list">
+            <th:block th:if="${#lists.size(currentNavList) > 1}">
+                <div class="article_list__nav">
+                    <div class="article_list__nav__list">
+                        <a class="article_list__nav__item"
+                           th:onclick="bm.commonLinkUrl2('/'+[[${current.path}]],[[${current.name}]]);"
+                           th:each="current, currentStat : ${currentNavList}"
+                           th:classappend="${current.id == view.id} ? 'is-active' : ''"
+                           th:title="@{${current.name}}">[[${current.name}]]</a>
+                    </div>
+                </div>
+            </th:block>
+
+            <div class="article_list__main">
+                <div th:if="${#strings.trim(lang_session) eq 'zh_CN'}" th:utext="${view.content}"></div>
+                <div th:if="${#strings.trim(lang_session) eq 'en_US' and !#strings.isEmpty(view.contentEn)}" th:utext="${view.contentEn}"></div>
+                <div th:if="${#strings.trim(lang_session) eq 'ru_RU' and !#strings.isEmpty(view.contentRu)}" th:utext="${view.contentRu}"></div>
+            </div>
+        </div>
+        <div th:replace="common/pagination::pagination(${articleList},'')"></div>
+    </div>
+</section>
+<footer th:replace="common/footer"></footer>
+<script th:inline="javascript">
+    let lang=[[${lang_session}]]
+    $('.article_list__item__datetime').each(function () {
+        const dataTime = $(this).attr('data-time')
+        $(this).text(bm.translateDate(dataTime, lang))
+    })
+</script>
+</body>
+</html>

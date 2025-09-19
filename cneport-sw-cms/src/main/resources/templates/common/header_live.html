@@ -1,0 +1,50 @@
+<header class="m-head live" th:classappend="${headerClass} != null ? ${headerClass} : _" th:fragment="header(navList,breadCrumb)">
+    <div class="h-wrap wrapper">
+        <div class="h-top">
+            <div class="h-logo">
+                <img th:src="@{/img/main_logo.png}" alt="">
+            </div>
+            <div class="luange-div tr">
+                <a href="javascript:;" onclick="bm.setLang('zh_CN')">中</a>
+                <a href="javascript:;" onclick="bm.setLang('ru_RU')">РУС</a>
+                <a href="javascript:;" onclick="bm.setLang('en_US')">EN</a>
+                <span class="sou-img ds" id="mSearchShowBtn">
+                    <i class="iconfont ds icon-fangdajing"></i>
+                </span>
+                <a href="javascript:;" id="mNavShowBtn">
+                    <i class="iconfont icon-daohang"></i>
+                    [[#{Navigation}]]
+                </a>
+            </div>
+        </div>
+        <div class="h-fot clearfix">
+            <div class="h-fot-nav fr">
+                <th:block  th:each="headerNav, headerNavStat : ${navList}">
+                    <th:block th:switch="${headerNav.attribute}">
+                        <a th:href="@{${headerNav.linkUrl}}" th:case="3">[[${headerNav.name}]]</a>
+                        <a th:href="@{${headerNav.linkUrl}}" th:case="4" target="_blank">[[${headerNav.name}]]</a>
+                        <a th:href="@{'/'+${headerNav.path}}" th:case="*">[[${headerNav.name}]]</a>
+                    </th:block>
+                </th:block>
+            </div>
+        </div>
+    </div>
+    <div class="m-head__crumbs">
+        <ul class="crumbs wrapper">
+            <li><i class="iconfont icon-daohang" style="line-height: 30px"></i></li>
+            <li><a th:href="@{'/'}">首页</a></li>
+            <th:block th:each="crumb, crumbStat : ${breadCrumb}">
+                <li th:if="${crumbStat.count == crumbStat.size}">
+                    <a href="javascript:;">[[${crumb.name}]]</a>
+                </li>
+                <li th:unless="${crumbStat.count == crumbStat.size}">
+                    <th:block th:switch="${crumb.attribute}">
+                        <a th:href="@{${crumb.linkUrl}}" th:case="3">[[${crumb.name}]]</a>
+                        <a th:href="@{${crumb.linkUrl}}" th:case="4" target="_blank">[[${crumb.name}]]</a>
+                        <a th:href="@{'/'+${crumb.path}}" th:case="*">[[${crumb.name}]]</a>
+                    </th:block>
+                </li>
+            </th:block>
+        </ul>
+    </div>
+</header>

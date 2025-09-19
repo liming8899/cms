@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${site.title})"></head>
+<body>
+    <div class="map-div pr ">
+        <div class="logo-div pa">
+            <a th:href="@{'/'}"> <img src="/img/main_logo.png" alt=""></a>
+        </div>
+        <div class="swiper-container" id="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/images/banner01.jpg" alt="" class="w100"></div>
+                <div class="swiper-slide"><img src="/images/banner02.jpg" alt="" class="w100"></div>
+                <div class="swiper-slide"><img src="/images/banner03.jpg" alt="" class="w100"></div>
+            </div>
+            <div class="banner-btn-item">
+                <p class="switch-item is-active" data-tag="0">8个成员国</p>
+                <p class="switch-item" data-tag="1">9个对话伙伴国</p>
+                <p class="switch-item" data-tag="2">4个观察国</p>
+            </div>
+        </div>
+    </div>
+    <div class="daohang ">
+        <div class="cons">
+            <ul th:replace="common/index_nav"></ul>
+            <div class="luange-div tr">
+                <a href="javascript:;">中文</a>
+                <a href="javascript:;">РУС</a>
+                <a href="javascript:;">ENG</a>
+<!--                <a href="#" th:if="${isLogin}">会员中心</a>-->
+<!--                <a href="javascript:location.href='/sso/login?back=' + encodeURIComponent(location.href);" th:unless="${isLogin}">登陆</a>-->
+                <span class="sou-img ds" id="mSearchShowBtn">
+                    <i class="iconfont ds icon-fangdajing"></i>
+                </span>
+            </div>
+        </div>
+        <section id="mSearchShowContainer" class="searchbox displaynone active">
+            <div class="searchs">
+                <div class="sertext">
+                    <input type="text" name="global-search-keywords" placeholder="请输入关键词">
+                </div>
+                <button type="button" class="serbtn global-search-submit">搜索</button>
+            </div>
+        </section>
+    </div>
+    <div class="nerrong wow fadeInUp">
+        <div class="neribox ">
+            <div class="logo-img pr ta">
+                <div class="imgs">
+                    <img src="/img/1.png" alt="" class="w100">
+                </div>
+                <div class="img1 z pa">
+                    <img src="/img/2.png" alt="" class="w100">
+                </div>
+                <div class="img2 z pa">
+                    <img src="/img/3.png" alt="" class="w100">
+                </div>
+                <div class="img3 z pa">
+                    <img src="/img/5.png" alt="" class="w100">
+                </div>
+                <div class="img4 z pa">
+                    <img src="/img/4.png" alt="" class="w100">
+                </div>
+                <ul class="pa tu-ul">
+                    <li>
+                        <div class="wen-zi ta mb12"><a href="/13">[[#{DigitalSCO}]]</a> </div>
+                        <div class="box-img">
+                            <a href="/13">
+                                <img src="/img/fn/1.png" alt="">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="box-img fl">
+                            <a href="http://39.105.156.249:8802/b2b/" target="_blank">
+                                <img src="/img/fn/2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="wen-zi fl ml25"> <a href="http://39.105.156.249:8802/b2b/">[[#{Cross-borderProcurement}]]</a></div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="box-img fl">
+                            <a href="/15">
+                                <img src="/img/fn/3.png" alt="">
+                            </a>
+                        </div>
+                        <div class="wen-zi fl ml25"> <a href="/15">[[#{One-stopCustomsClearance}]]</a></div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="box-img fl">
+                            <a href="/16">
+                                <img src="/img/fn/4.png" alt="">
+                            </a>
+                        </div>
+                        <div class="wen-zi fl ml25"> <a href="/16">[[#{FullChainLogistics}]]</a></div>
+                    </li>
+                    <li>
+                        <div class="box-img ">
+                            <a href="/17">
+                                <img src="/img/fn/5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="wen-zi mtop12"> <a href="/17">[[#{SmartTaxEngine}]]</a></div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="wen-zi fl mr25"> <a href="/18">[[#{FeaturedFianance}]]</a></div>
+                        <div class="box-img fl">
+                            <a href="/18">
+                                <img src="/img/fn/6.png" alt="">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="wen-zi fl mr25"> <a href="/42">[[#{PanoramaService}]]</a></div>
+                        <div class="box-img fl">
+                            <a href="/42">
+                                <img src="/img/fn/7.png" alt="">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="wen-zi fl mr25"> <a href="/37">[[#{NewDistrictWindow}]]</a></div>
+                        <div class="box-img fl">
+                            <a href="/37">
+                                <img src="/img/fn/8.png" alt="">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="flexbox _content-sb mt40 mb40">
+            <div class="idea-img-wrap flexbox _wrap _content-sb wow fadeInLeft">
+                <div class="page-title mb40">
+                    <h3>新闻资讯</h3>
+                    <a href="/53">
+                        <div class="theme-button">[[#{Learnmore}]]</div>
+                    </a>
+                </div>
+                <a th:href="@{'/article/53/' + ${item.id}}" th:each="item, itemStat : ${news}" class="idea-img-item scale">
+                    <div class="img">
+                        <img
+                                th:src="@{${item.coverImage}}"
+                                th:alt="${item.title}"
+                                onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null"
+                        >
+                    </div>
+                    <p class="idea-item-title ellipsis2">[[${item.title}]]</p>
+                    <p class="idea-item-desc">[[${#dates.format(item.createTime,'yyyy年MM月dd日')}]]</p>
+                </a>
+            </div>
+            <div class="idea-ctx-wrap  wow fadeInRight">
+                <div class="page-title mb40">
+                    <h3>上合经贸动态</h3>
+                    <a href="/32">
+                        <div class="theme-button">[[#{Learnmore}]]</div>
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <a th:href="@{'/article/10/' + ${item.id}}" th:each="item, itemStat : ${notice}" class="idea-ctx-item">
+                            <p class="idea-item-title ellipsis1">[[${item.title}]]</p>
+                            <p class="idea-item-desc">[[${#dates.format(item.createTime,'yyyy年MM月dd日')}]]</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="common/footer"></footer>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            }, //可选选项，自动滑动
+            effect: 'fade',
+            on: {
+                slideChange: function() {
+                    let index = this.activeIndex
+                    $(".switch-item").each(function() {
+                        if ($(this).index() == index_bak) {
+                            $(this).addClass('is-active')
+                        } else {
+                            $(this).removeClass('is-active')
+                        }
+                    })
+
+                },
+            }
+        })
+
+        $(".switch-item").click(function(event) {
+            $(this).addClass("is-active");
+            $(this).siblings().removeClass("is-active");
+
+            if (event.currentTarget.dataset.tag == "0") {
+                mySwiper.slideTo(0, 1000, false)
+            } else if (event.currentTarget.dataset.tag == "1") {
+                mySwiper.slideTo(1, 1000, false)
+            } else {
+                mySwiper.slideTo(2, 1000, false)
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<!--<div class="sco-hbt-head">-->
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<!--</div>-->
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section class="cpic">
+  <div class="wrapper">
+    <div class="page-title">
+      <h3>
+        跨境电商保（货运险）
+      </h3>
+    </div>
+    <div class="mg20">
+      <p class="content-p">
+        适用于跨境电商的物流场景，产品保障涵盖中国跨境出口零售物流集货揽收、国际运输、目的国清关、尾程/境外配送全流程。主要产品包括：国际货代及提单责任险、报关责任及报关费用差错保险、电商物流保险等。
+      </p>
+      <p class="content-p ti0 important">
+        1、国际货代及提单责任险
+      </p>
+      <p class="content-p">
+        针对具备货代资格，从事国际、国内货运代理业务的企业的特色产品，保障货物运输代理错发错运、货物延迟交付、货物储存保管、拆箱装箱等不当、失误操作为委托人造成费用损失的赔偿责任，鼓励经营区域涵盖全球范围的运输代理企业进行投保。
+      </p>
+
+      <p class="content-p ti0 important">
+        2、报关责任及报关费用差错保险
+      </p>
+      <p class="content-p">
+        适合海关办理进出口货物报关纳税等事务的企业、进出口货物发货人、所有人及代理报关企业等客户购买，可保障错误签发单证文件、电脑记录损坏、雇员不作为保管延迟等不当操作造成的报关费用差错的赔偿责任。
+      </p>
+    </div>
+
+    <hr class="hr-twill">
+
+    <div class="gzh">
+      <div class="gzh-left">
+        <p>更多产品服务，详情请咨询</p>
+        <p>太平洋保险官方客服电话：95500</p>
+        <p>太平洋产险服务专员：张经理</p>
+        <p>联系方式：13335058619</p>
+      </div>
+      <div class="gzh-right">
+        <div><img src="/images/finance/wxgzh.png"></div>
+        <div>
+          <p>太平洋保险微信公众号</p>
+          <p>请微信扫描</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer th:replace="common/footer"></footer>
+<style>
+
+  .cpic-img1 {
+    margin: 0 auto;
+  }
+  .ti0 {
+    text-indent: 0 !important;
+  }
+
+  .cpic .page-title {
+    margin-top: 0;
+  }
+
+  @media (min-width: 1200px) {
+    .mg20 {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+    .content-p {
+      text-indent: 2em;
+      font-size: 16px;
+      color: #5c5c5c;
+    }
+    .scancode {
+      max-width: 200px;
+    }
+
+    .important {
+      font-size: 18px !important;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .mg20 {
+      margin: 0.3rem 0;
+    }
+    .content-p {
+      margin: 0 0.2133333333rem;
+      color: var(--font-color-text);
+      font-size: 0.2666666667rem;
+      line-height: 0.4rem;
+      text-indent: 2em;
+    }
+    .scancode {
+      max-width: 2.3rem;
+    }
+
+    .important {
+      font-size: 0.28888888rem !important;
+      margin: 0.2rem 0.213rem;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+</style>
+</body>
+</html>

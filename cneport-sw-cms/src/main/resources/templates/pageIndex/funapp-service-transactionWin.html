@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<div class="gray-bg">
+    <div class="wrapper transactionWin">
+        <div class="page-title">
+            <h3>
+                [[#{ForeignAffairsDesk}]]
+            </h3>
+            <a th:onclick="bm.commonLinkUrl2('http://fao.qingdao.gov.cn/','外国人事务专窗');" target="_blank">
+                <div class="theme-button">
+                    [[#{Learnmore}]]
+                </div>
+            </a>
+        </div>
+        <div class="mt30 pb50">
+            <div class="talent-affairs-img-item">
+                <div class="img1">
+                    <div class="txt">
+                        [[#{PermitServiceforForeignersVisitingChina}]]
+                    </div>
+                </div>
+                <div class="img2">
+                    <div class="txt">
+                        [[#{VisaServiceforForeigners}]]
+                    </div>
+                </div>
+            </div>
+            <div class="talent-affairs-img-item">
+                <div class="img3">
+                    <div class="txt">
+                        [[#{StudentEnrollmentServiceforForeignChildren}]]
+                    </div>
+                </div>
+                <div class="img4">
+                    <div class="txt">
+                        [[#{OtherServices}]]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper transactionWin">
+    <div class="talent-affairs-bottom-wrap">
+        <img src="../images/affairs5.png" alt="" />
+        <div class="talent-affairs-bottom-info">
+            <h4>
+                [[#{InterimMeasuresforAdministrationandServicesofForeignersWorkinginQingdao}]]
+            </h4>
+            <p class="detail-content-text">
+                [[#{Article1Inordertofurtherregulatetheworkmanagements}]]
+            </p>
+            <a th:onclick="bm.commonLinkUrl2('/funapp-service-transactionWin-manageServices','外国人在青岛工作管理服务暂行办法');">
+                <div class="theme-button">
+                    [[#{Learnmore}]]
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

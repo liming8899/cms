@@ -1,0 +1,197 @@
+/* 联系上合 */
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .contact-head{
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0  px2rem(16);
+      a{
+        &:nth-child(1){
+          width: 4em;
+        }
+        &:nth-child(2){
+          width: 4em;
+        }
+        &:nth-child(3){
+          width: 4em;
+        }
+        &:nth-child(4){
+          width: 4em;
+        }
+        &:nth-child(5){
+          width: 4em;
+        }
+        &:nth-child(6){
+          width: 4em;
+        }
+        &:nth-child(7){
+          width: 4em;
+        }
+        &:nth-child(8){
+          width: 4em;
+        }
+      }
+    }
+  }
+  .contact-header-wrap {
+    margin-bottom:  px2rem(30);
+    padding-bottom:  px2rem(30);
+  }
+
+  .contact-header-left {
+    text-align: center;
+    img{
+      width: px2rem(290) !important;
+      height: px2rem(100) !important;
+    }
+  }
+
+  .contact-header-left img {
+    width:  px2rem(218);
+    height:  px2rem(254);
+  }
+
+  .contact-header-left h4 {
+    font-weight: 400;
+    font-size: px2rem(28)!important;
+    line-height: px2rem(28)!important;
+  }
+
+  .contact-header-left p {
+    font-weight: 400;
+    font-size:  px2rem(16);
+    line-height:  px2rem(26);
+  }
+
+  .contact-header-right {
+    margin-top: 30px;
+  }
+
+  .contact-header-right .page-title {
+    margin-bottom:  px2rem(60);
+    padding-top: 0;
+    display: block !important;
+    text-align: center;
+    font-size: px2rem(28)!important;
+    line-height: px2rem(28)!important;
+    span{
+      font-size: px2rem(28)!important;
+      line-height: px2rem(28)!important;
+    }
+  }
+
+  .contact-header-right p {
+    font-size:  px2rem(20);
+    line-height:  px2rem(30);
+    color: var(--font-color-text);
+    text-indent: 2em;
+    padding-bottom:  px2rem(10);
+  }
+
+  .contact-btn {
+    width:  px2rem(120);
+    right:  px2rem(20);
+    bottom:  px2rem(20);
+  }
+
+  /* 联系上合弹出层 */
+  .contact-popup {
+    position: fixed;
+    top:  px2rem(100);
+    left: 0;
+    right: 0;
+    //bottom: 0;
+    margin:  px2rem(40)  px2rem(40);
+    padding:  px2rem(25)  px2rem(35);
+    background: #FFFFFF;
+    border-radius:  px2rem(18);
+    display: none;
+    box-shadow: 0  0   px2rem(10) rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+  }
+
+  .contact-popup > .contact-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom:  px2rem(25);
+  }
+
+  .contact-popup > .contact-popup-header > .tit {
+    font-weight: 400;
+    font-size:  px2rem(28);
+    height:  px2rem(40);
+    line-height:  px2rem(40);
+  }
+
+  .contact-popup > .contact-popup-header > .close {
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    font-size:  px2rem(24);
+  }
+
+  .contact-popup > .contact-popup-header > .close:hover {
+    transform: rotate(90deg);
+  }
+
+  .contact-popup > .contact-form-item {
+    display: flex;
+    align-items: center;;
+    column-gap:  px2rem(80);
+  }
+  .map-wrap-box{
+    .page-title{
+      margin: 0  px2rem(16);
+    }
+
+  }
+  .map-wrap {
+    margin:  px2rem(40) 0;
+    height:  px2rem(495);
+    position: relative;
+    background-image: url("../images/map.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .map-wrap > ul {
+    position: absolute;
+    top:  px2rem(50);
+    left: 0 ;
+    margin:  px2rem(60);
+    background-color: #fff;
+    border-radius:  px2rem(17);
+    font-weight: 400;
+    font-size:  px2rem(20);
+    line-height:  px2rem(29);
+    padding:  px2rem(35)  px2rem(25);
+  }
+
+  .map-wrap li {
+    display: flex;
+    align-items: center;
+    margin-bottom:  px2rem(30);
+  }
+
+  .map-wrap li > img {
+    width:  px2rem(34);
+    height:  px2rem(34);
+  }
+
+  .map-wrap li > span {
+    flex: 1;
+    padding-left:  px2rem(10);
+    font-size:  px2rem(20);
+  }
+}

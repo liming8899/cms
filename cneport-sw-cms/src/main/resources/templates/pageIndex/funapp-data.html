@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<!--<div class="data-head">-->
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<!--</div>-->
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<div class="wrapper data">
+    <div class="trade-list-wrap mb60">
+        <div class="trade-list-item"><img src="../images/figure2.png" alt="" />
+            <div class="trade-list-item-info">
+                <p class="t1">[[#{DataCockpit}]]</p>
+                <p class="t2">[[#{ItgatherstheeconomicandtradedataoftheSCOcountries}]]</p>
+                <a th:href="@{'/redirect?redirectUrl=https://fininfov.cnfic.com.cn/shareScreen/eyJzY3JlZW5JZCI6Mjk0NDF9'}" target="_blank">
+                    <div class="theme-button">[[#{Learnmore}]]</div></a>
+            </div>
+        </div>
+        <div class="trade-list-item te">
+            <div class="trade-list-item-info">
+                <p class="t1">[[#{China-SCOTradeIndex}]]</p>
+                <p class="t2">[[#{Itcanrealizethemulti-dimensionalquery}]]</p>
+                <a th:onclick="bm.commonLinkUrl2('http://sco-tradeindex.customs.gov.cn/','中国-上合组织贸易指数');" target="_blank">
+                    <div class="theme-button">[[#{Learnmore}]]</div></a>
+            </div>
+            <img src="../images/figure1.png" alt="" /></div>
+    </div>
+</div>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

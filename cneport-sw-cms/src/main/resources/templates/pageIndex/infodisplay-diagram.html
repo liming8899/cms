@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<div class="wrapper pb50 diagram">
+    <div class="page-title-switch">
+        <div class="switch-item selected" data-tag="0">
+            [[#{SCOMemberStates}]]
+        </div>
+        <div class="switch-item" data-tag="1">
+            [[#{SCOObserverSteates}]]
+        </div>
+        <div class="switch-item" data-tag="2">
+            [[#{SCODialoguePartners}]]
+        </div>
+    </div>
+
+    <div class="article_list">
+        <div class="article_list__nav l-nav con1">
+            <div class="article_list__nav__list l-nav-2">
+                <a class="article_list__nav__item l-nav-i" data-id="1003030101">[[#{India}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030102">[[#{Kazakhstan}]]</a>
+<!--                <a class="article_list__nav__item l-nav-i" data-id="1003030103">[[#{China}]]</a>-->
+                <a class="article_list__nav__item l-nav-i" data-id="1003030104">[[#{Kyrgyzstan}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030105">[[#{Pakistan}]]</a>
+                <a class="article_list__nav__item l-nav-i is-active" data-id="1003030106">[[#{Russia}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030107">[[#{Tajikistan}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030108">[[#{Uzbekistan}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030203">[[#{Iran}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030202">[[#{Belarus}]]</a>
+            </div>
+        </div>
+
+        <div class="article_list__nav l-nav con2 hide">
+            <div class="article_list__nav__list l-nav-2">
+                <a class="article_list__nav__item l-nav-i is-active" data-id="1003030201">[[#{Afghanistan}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030204">[[#{Mongolia}]]</a>
+            </div>
+        </div>
+
+        <div class="article_list__nav l-nav con3 hide">
+            <div class="article_list__nav__list l-nav-2">
+                <a class="article_list__nav__item l-nav-i is-active" data-id="1003030301">[[#{Azerbaijan}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030302">[[#{Armenia}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030303">[[#{Cambodia}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030304">[[#{Nepal}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030305">[[#{Turkey}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030306">[[#{SriLanka}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030307">[[#{SaudiArabia}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030308">[[#{Egypt}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030309">[[#{Qatar}]]</a>
+                <a class="article_list__nav__item l-nav-i" data-id="1003030313">[[#{UnitedArabEmirates}]]</a>
+            </div>
+        </div>
+
+        <div class="country-img">
+            <img src="/images/eluosi.png" alt="" />
+        </div>
+    </div>
+</div>
+<style>
+    .country-img {
+        width: 860px;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        loadImage(1003030106)
+        $(".switch-item").click(function (event) {
+            $(this).addClass("selected");
+            $(this).siblings().removeClass("selected");
+            var tag = event.currentTarget.dataset.tag;
+            $('.l-nav').each(function(index, element) {
+                $(element).addClass('hide')
+                if(tag == index) {
+                    $(element).removeClass('hide')
+                    $(element).children('.l-nav-2').children('.l-nav-i').removeClass('is-active')
+                    $(element).children('.l-nav-2').children('.l-nav-i').first().addClass('is-active')
+                    var id = $(element).children('.l-nav-2').children('.l-nav-i').first().data('id')
+                    loadImage(id)
+                    if (tag === "0") {
+                        bm.commonLinkUrl2('/infodisplay-diagram','上合组织成员国国情图解',false)
+                    } else if (tag === "1") {
+                        bm.commonLinkUrl2('/infodisplay-diagram','上合组织观察员国国情图解',false)
+                    } else if (tag === "2") {
+                        bm.commonLinkUrl2('/infodisplay-diagram','上合组织对话伙伴国情图解',false)
+                    }
+                }
+            })
+        });
+        // 菜单切换
+        $(".l-nav .l-nav-2 .l-nav-i").click(function () {
+            $(this).addClass("is-active");
+            $(this).siblings(".l-nav-i").removeClass("is-active");
+            var id = $(this).data("id");
+            loadImage(id);
+        });
+    });
+    var loadImage = function(id) {
+        $.ajax({
+            url: "/ajax/country/img/" + id + "/国情",
+            type: "get",
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function(res) {
+                if (res.code > 0) {
+                    return
+                }
+                $(".country-img > img").attr("src", res.data);
+                $(".country-img > img").fadeIn();
+            },
+            error: function(xhr, type, errorThrown) {
+                console.log("异常：" + JSON.stringify(xhr))
+            }
+        });
+    }
+</script>
+<footer th:replace="common/footer"></footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+<!--<div class="sco-hbt-head">-->
+<header th:replace="common/header::header(${currentNavList},${breadCrumb})"></header>
+<!--</div>-->
+<section th:replace="common/search"></section>
+<section th:replace="common/nav"></section>
+<section class="cpic">
+  <div class="wrapper">
+    <div class="page-title">
+      <h3>
+        货物运输保险
+      </h3>
+    </div>
+    <div class="mg20">
+      <p class="content-p">
+        针对货物运输过程中遭受自然灾害、意外事故、外来原因等的原因而受到损失进行风险保障，保险产品包含进口货运险、出口货运险、水路货运险、公路货运险、航空货运险、铁路货运险等。
+      </p>
+      <p class="content-p ti0 important">
+        1、太好运1.0 ——公路货运承运人责任险（按车次投保）
+      </p>
+      <p class="content-p">
+        此产品可按航次/车次投保，方案灵活，保费低廉，适用于各类公路货运场景
+      </p>
+      <br>
+      <p class="content-p ti0 text-center">立即投保 - 扫描下方二维码</p>
+      <div class="flexbox">
+        <img class="cpic-img1 scancode" src="/images/finance/thy1.0.png">
+      </div>
+
+      <p class="content-p ti0 important">
+        2、太好运3.0——公路货运承运人责任险（年单）
+      </p>
+      <p class="content-p">
+        灵活定制，可选择性附加盗抢责任、火灾爆炸责任、冷藏冷冻货物责任、雨淋等共7项保障。
+      </p>
+      <br>
+      <p class="content-p ti0 text-center">立即投保 - 扫描下方二维码</p>
+      <div class="flexbox">
+        <img class="cpic-img1 scancode" src="/images/finance/thy3.0.png">
+      </div>
+
+      <p class="content-p ti0 important">
+        3、太好运4.0——果蔬货物运输保险
+      </p>
+      <p class="content-p">
+        保险货物仅限蔬菜水果，保额灵活可提供10-50万风险保障。
+      </p>
+      <br>
+      <p class="content-p ti0 text-center">立即投保 - 扫描下方二维码</p>
+      <div class="flexbox">
+        <img class="cpic-img1 scancode" src="/images/finance/thy4.0.png">
+      </div>
+
+      <p class="content-p ti0 important">
+        4、车行无忧保——物流货运责任保险
+      </p>
+      <p class="content-p">
+        灵活定制，可选择性附加包含错发错运费用、盗窃抢劫、冷藏货物责任、临时仓储责任等共7项保障。
+      </p>
+      <br>
+      <p class="content-p ti0 text-center">立即投保 - 扫描下方二维码</p>
+      <div class="flexbox">
+        <img class="cpic-img1 scancode" src="/images/finance/cxwyb.png">
+      </div>
+
+      <p class="content-p ti0 important">
+        5、定额暖心保——公路货物运输定额保险
+      </p>
+      <p class="content-p">
+        方案灵活，保障额度10万-300万任选。
+      </p>
+      <br>
+      <p class="content-p ti0 text-center">立即投保 - 扫描下方二维码</p>
+      <div class="flexbox">
+        <img class="cpic-img1 scancode" src="/images/finance/denxb.png">
+      </div>
+    </div>
+
+    <hr class="hr-twill">
+
+    <div class="gzh">
+      <div class="gzh-left">
+        <p>更多产品服务，详情请咨询</p>
+        <p>太平洋保险官方客服电话：95500</p>
+        <p>太平洋产险服务专员：张经理</p>
+        <p>联系方式：13335058619</p>
+      </div>
+      <div class="gzh-right">
+        <div><img src="/images/finance/wxgzh.png"></div>
+        <div>
+          <p>太平洋保险微信公众号</p>
+          <p>请微信扫描</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer th:replace="common/footer"></footer>
+<style>
+
+  .cpic-img1 {
+    margin: 0 auto;
+  }
+  .ti0 {
+    text-indent: 0 !important;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .cpic .page-title {
+    margin-top: 0;
+  }
+
+  @media (min-width: 1200px) {
+    .mg20 {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+    .content-p {
+      text-indent: 2em;
+      font-size: 16px;
+      color: #5c5c5c;
+    }
+    .scancode {
+      max-width: 200px;
+    }
+
+    .important {
+      font-size: 18px !important;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .mg20 {
+      margin: 0.3rem 0;
+    }
+    .content-p {
+      margin: 0 0.2133333333rem;
+      color: var(--font-color-text);
+      font-size: 0.2666666667rem;
+      line-height: 0.4rem;
+      text-indent: 2em;
+    }
+    .scancode {
+      max-width: 2.3rem;
+    }
+
+    .important {
+      font-size: 0.28888888rem !important;
+      margin: 0.2rem 0.213rem;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+</style>
+</body>
+</html>

@@ -1,0 +1,114 @@
+@media (max-width: 1200px) {
+
+  $baseFontSize: 75;
+  @function px2rem($px) {
+    @return $px /$baseFontSize * 1rem;
+  }
+  .translate-head {
+    .h-fot .h-fot-nav {
+      float: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0 px2rem(16);
+      a {
+        &:nth-child(1) {
+          width: 3em;
+        }
+
+        &:nth-child(2) {
+          width: 2em;
+        }
+
+        &:nth-child(3) {
+          width: 5em;
+        }
+
+        &:nth-child(4) {
+          width: 4em;
+        }
+
+        &:nth-child(5) {
+          width: 2em;
+        }
+
+        &:nth-child(6) {
+          width: 2em;
+        }
+
+        &:nth-child(7) {
+          width: 3em;
+        }
+
+        &:nth-child(8) {
+          width: 2em;
+        }
+      }
+    }
+  }
+.translate{
+  /* 翻译 */
+  .page-title{
+    margin: 0  px2rem(16);
+  }
+  .flexbox{
+    margin:  0  px2rem(16);
+  }
+  .translate-item {
+    width:  px2rem(350);
+    text-align: center;
+    padding-bottom:  px2rem(60);
+    margin:  px2rem(30)  px2rem(16) 0 ;
+  }
+
+  .translate-item > .icon {
+    width:  px2rem(104);
+    height:  px2rem(104);
+    border-radius: 50%;
+    background: rgba(245, 246, 249, 1);
+    margin: 0 auto;
+  }
+
+  .translate-item > .icon i {
+
+    font-size:  px2rem(40);
+    width:  px2rem(104);
+    height:  px2rem(104);
+    color: #22549B;
+    line-height:  px2rem(104);
+  }
+
+  .translate-sub {
+    font-size:  px2rem(20);
+    font-weight: 700;
+    line-height:  px2rem(30);
+    color: var(--font-color-title);
+  }
+
+  .translate-text {
+    font-size:  px2rem(18);
+    font-weight: 400;
+    color: var(--font-color-sub);
+    line-height:  px2rem(30);
+  }
+
+  .translate-img1 {
+    background-image: url("../images/zhfw-img10.png");
+    background-repeat: no-repeat;
+    height:  px2rem(380);
+    position: relative;
+    background-size: cover;
+  }
+
+  .translate-img1 .white-button {
+    position: absolute;
+    bottom:  px2rem(30);
+    right:  px2rem(30);
+    border-color: #999999;
+    color: #000;
+  }
+
+}
+}

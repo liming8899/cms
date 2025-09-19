@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/head::head(${view.name})"></head>
+
+<body>
+    <header th:replace="common/header::header(${currentNavList})"></header>
+    <section th:replace="common/search"></section>
+    <section th:replace="common/nav"></section>
+    <section>
+        <div class="wrapper">
+            <div class="page-title flexbox _content-sb">
+                <h3>[[${view.name}]]</h3>
+            </div>
+            <div class="flexbox _content-sb ">
+                <div class="l-nav mt60">
+                    <a th:href="@{'?categoryId='+${child.id}}"
+                       th:each="child, childStat : ${childNavList}"
+                       class="l-nav-i"
+                       th:classappend="${child.id == query.categoryId} ? 'is-active' : ''"
+                    >
+                        <p>[[${child.name}]]</p>
+                        <i class="iconfont icon-Vector-right"></i>
+                    </a>
+                </div>
+                <div class="dynamic-list-wrap">
+                    <ul>
+                        <li th:each="article, articleStat : ${articleList.records}">
+                            <div class="dynamic-list-item">
+                                <img th:src="@{${article.coverImage}}" alt="" onerror="this.src='https://cloud-assets-brwq.oss-cn-heyuan.aliyuncs.com/sh0722/uploads/20220722/6f99e70d29e4df3058f9484dba0d2390.png';this.οnerrοr=null">
+                                <div class="dynamic-list-item-info">
+                                    <p class="t1 ellipsis1">[[${article.title}]]</p>
+                                    <p class="t2">[[${article.description}]]</p>
+                                    <a th:href="@{'/article/'+${article.id}}">
+                                        <div class="theme-button">[[#{Learnmore}]]</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div th:replace="common/pagination::pagination(${articleList},'')"></div>
+            </div>
+        </div>
+    </section>
+    <footer th:replace="common/footer"></footer>
+</body>
+</html>

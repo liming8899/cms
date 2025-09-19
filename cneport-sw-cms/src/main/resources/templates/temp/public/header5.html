@@ -1,0 +1,34 @@
+<header class="m-head" th:fragment="header">
+    <div class="h-wrap wrapper">
+        <div class="h-top">
+            <div class="h-logo">
+                <img th:src="@{/img/main_logo.png}" alt="">
+            </div>
+            <div class="luange-div tr">
+                <a href="">中文</a>
+                <a href="">РУС</a>
+                <a href="">ENG</a>
+                <span class="sou-img ds">
+                        <i class="iconfont ds icon-fangdajing"></i>
+                    </span>
+                <a href="javascript:;" id="mNavShowBtn">
+                    <i class="iconfont icon-daohang"></i> [[#{Navigation}]]
+                </a>
+            </div>
+        </div>
+        <div class="h-fot">
+            <ul class="crumbs">
+                <li><i class="iconfont icon-daohang"></i></li>
+                <li><a href="/temp/templateslates/temp/public">首页</a></li>
+                <!--                <li><a href="http://">综合信息</a></li>-->
+                <!--                <li><a href="http://">头部企业</a></li>-->
+            </ul>
+            <div class="h-fot-nav">
+                    <a href="/home/article">通知公告</a>
+                    <a href="/home/article">新闻资讯</a>
+                    <a href="/home/article">政策法规</a>
+            </div>
+        </div>
+
+    </div>
+</header>

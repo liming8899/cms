@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="iframediv">
+    <iframe id="iframe" src="https://ecology.trusple.com/admin/operationManagement/seller-verify" frameborder="0" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;"></iframe>
+</div>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script>
+    function openWin(url) {
+        const a = document.createElement("a");
+        a.setAttribute("href", url);
+        a.setAttribute("target", "_blank");
+        document.body.appendChild(a);
+        a.click();
+        a.parentNode.removeChild(a);
+    }
+
+    //监听message事件
+    window.addEventListener("message", function (event) {
+        if (event.data.key === "NEWTAB_FOR_ROUTE") {
+            openWin("funapp-finance-cross-border-guard?options=" + event.data.options)
+        } else if (event.data.key === "NEWTAB_FOR_FILE") {
+            localStorage.setItem("url", event.data.url)
+            openWin("funapp-finance-cross-border-common-file")
+        }
+    }, false);
+</script>
+</html>
